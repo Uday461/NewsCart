@@ -15,14 +15,35 @@ class HeaderView: UIView{
     
     @IBOutlet var contentView: UIView!
     
-    var apiNewsManager = APINewsManager()
-
     var fetchCategoryNewsDelegate: fetchCategoryNews?
     
     @IBAction func businessButtonPressed(_ sender: UIButton) {
-        apiNewsManager.performRequestForNews(urlString: "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=2fa323dfd66b46a6a3f16e37f6dca6a6")
+        fetchCategoryNewsDelegate?.fetchBusinessNews()
     }
     
+    @IBAction func healthButtonPressed(_ sender: Any) {
+        fetchCategoryNewsDelegate?.fetchHealthNews()
+    }
+    
+    
+    @IBAction func scienceButtonPressed(_ sender: Any) {
+        fetchCategoryNewsDelegate?.fetchScienceNews()
+    }
+    
+    
+    @IBAction func entertainmentButtonPressed(_ sender: Any) {
+        fetchCategoryNewsDelegate?.fetchEntertainmentNews()
+    }
+    
+    
+    @IBAction func technologyButtonPressed(_ sender: Any) {
+        fetchCategoryNewsDelegate?.fetchTechnologyNews()
+    }
+    
+    
+    @IBAction func bookMarkButtonPressed(_ sender: Any) {
+        fetchCategoryNewsDelegate?.fetchSavedArticles()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

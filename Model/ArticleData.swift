@@ -13,5 +13,4 @@ struct ArticleData{
     var description: String?
     var url: String?
     var urlToImage: String?
-  //  var newsImage = UIImage()
 }

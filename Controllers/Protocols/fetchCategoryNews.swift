@@ -9,4 +9,9 @@ import Foundation
 
 protocol fetchCategoryNews{
     func fetchBusinessNews()
+    func fetchHealthNews()
+    func fetchScienceNews()
+    func fetchEntertainmentNews()
+    func fetchTechnologyNews()
+    func fetchSavedArticles()
 }

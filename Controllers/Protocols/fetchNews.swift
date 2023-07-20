@@ -11,5 +11,4 @@ import UIKit
 protocol fetchNews{
     func fetchAndUpdateNews (_ articlesArray: [ArticleData])
     func didFailError(error: Error)
-    func fetchImagesToNews(_ imagesArray: [UIImage])
 }
