@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -11,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="NewsCart" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="iN0-l3-epB" id="3U5-30-cjN"/>
-                <outlet property="imageView" destination="Q7N-TK-CFc" id="OE4-bX-aA3"/>
+                <outlet property="imageView" destination="Q7N-TK-CFc" id="GwM-PY-u5Z"/>
                 <outlet property="label" destination="F66-yW-xz5" id="y6U-oE-25d"/>
             </connections>
         </placeholder>
@@ -39,7 +40,8 @@
                         <constraint firstAttribute="width" constant="120" id="Jhg-Vs-yzg"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
-                    <state key="normal" title="Button"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Business"/>
                     <buttonConfiguration key="configuration" style="gray" title="Business"/>
                     <connections>
                         <action selector="businessButtonPressed:" destination="-1" eventType="touchUpInside" id="hiC-yg-bWp"/>
@@ -52,7 +54,8 @@
                         <constraint firstAttribute="width" constant="120" id="mhN-cH-cA1"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
-                    <state key="normal" title="Button"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Health"/>
                     <buttonConfiguration key="configuration" style="gray" title="Health"/>
                     <connections>
                         <action selector="healthButtonPressed:" destination="-1" eventType="touchUpInside" id="QAa-AT-OYo"/>
@@ -65,7 +68,8 @@
                         <constraint firstAttribute="width" constant="120" id="vdF-aS-YJp"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
-                    <state key="normal" title="Button"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Science"/>
                     <buttonConfiguration key="configuration" style="gray" title="Science"/>
                     <connections>
                         <action selector="scienceButtonPressed:" destination="-1" eventType="touchUpInside" id="ogp-Rh-5HY"/>
@@ -78,7 +82,8 @@
                         <constraint firstAttribute="width" constant="135" id="cUZ-MU-cPO"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
-                    <state key="normal" title="Button"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Entertainment"/>
                     <buttonConfiguration key="configuration" style="gray" title="Entertainment"/>
                     <connections>
                         <action selector="entertainmentButtonPressed:" destination="-1" eventType="touchUpInside" id="WIT-LR-Kue"/>
@@ -91,7 +96,8 @@
                         <constraint firstAttribute="width" constant="120" id="fH2-hW-1dK"/>
                     </constraints>
                     <color key="tintColor" systemColor="labelColor"/>
-                    <state key="normal" title="Button"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Technology"/>
                     <buttonConfiguration key="configuration" style="gray" title="Technology"/>
                     <connections>
                         <action selector="technologyButtonPressed:" destination="-1" eventType="touchUpInside" id="pWY-sp-Mje"/>
@@ -103,8 +109,7 @@
                         <constraint firstAttribute="height" constant="40" id="CKM-dK-0Sy"/>
                         <constraint firstAttribute="width" constant="60" id="SCG-LZ-xsN"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                     <connections>
                         <action selector="bookMarkButtonPressed:" destination="-1" eventType="touchUpInside" id="Khy-GJ-uQa"/>
                     </connections>

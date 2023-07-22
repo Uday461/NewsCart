@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 
 class SavedArticleViewController: UIViewController {
-
     
     @IBOutlet weak var titleLabel: UILabel!
     

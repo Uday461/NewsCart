@@ -203,7 +203,7 @@ extension NewsAPIViewController: ClickDelegate{
             print("Error saving data into context: \(error)")
         }
     }
-    
+   
 }
 
 
