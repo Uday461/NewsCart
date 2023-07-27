@@ -7,6 +7,7 @@
 
 import Foundation
 struct APINewsModel: Codable{
+    let totalResults: Int
     let articles: [Article]
 }
 

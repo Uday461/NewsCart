@@ -8,21 +8,24 @@
 import Foundation
 import UIKit
 
-struct APINewsManager{
-    var fetchNewsDelegate: fetchNews?
+class APINewsManager{
+    var fetchNewsDelegate: FetchNews?
     
     //Method for fetching News from API
-    func performRequestForNews(urlString: String){
-        let url = URL(string: urlString)
+    
+    func fetchNews(urlString: String, page:Int, pageSize: Int){
+        let url = URL(string: "\(urlString)&page=\(page)&pageSize=\(pageSize)")
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url!){Data, Response, Error in
             if let error = Error{
                 DispatchQueue.main.async {
-                    fetchNewsDelegate?.didFailError(error: error)
+                    self.fetchNewsDelegate?.didFailErrorDueToNetwork(error)
                 }
                 return
             } else if let data = Data{
-                parseJSON(data: data)
+                let dataString = String(data: data, encoding: .utf8)
+                print(dataString ?? "nil")
+                self.parseJSON(data: data)
             }
         }
         task.resume()
@@ -31,33 +34,89 @@ struct APINewsManager{
     //Method for decoding the fetched data from news API.
     func parseJSON(data: Data){
         let jsonDecode = JSONDecoder()
-        var articlesArray: [ArticleData] = []
-        var article: ArticleData = ArticleData()
+        var articleNewsModel: APINewsModel
         do{
             let decodedData = try jsonDecode.decode(APINewsModel.self, from: data)
-            let articles = decodedData.articles
-            print("total Number of Articles:\(articles.count)")
-            for index in 0..<(articles.count) {
-                article.sourceName = articles[index].source.name ?? nil
-                article.description = articles[index].description ?? nil
-                article.title = articles[index].title ?? nil
-                article.url = articles[index].url ?? nil
-                article.urlToImage = articles[index].urlToImage ?? nil
-                articlesArray.append(article)
-            }
-         //   downloadPhoto(articleArray: articlesArray)
-            fetchNewsDelegate?.fetchAndUpdateNews(articlesArray)
+            print(decodedData)
+            articleNewsModel = decodedData
+            fetchNewsDelegate?.fetchAndUpdateNews(articleNewsModel)
         }catch{
-            DispatchQueue.main.async {
-                fetchNewsDelegate?.didFailError(error: error)
-            }
+             print("Error: \(error)")
+             self.fetchNewsDelegate?.didFailErrorDueToDecoding(error)
         }
     }
     
+    func validArticlesList(articles: [Article])->[Article]?{
+        var validArticles: [Article]?
+        for index in 0..<articles.count{
+            if let _title = articles[index].title, let _description = articles[index].description, let _url = articles[index].url{
+                if (validArticles?.append(articles[index]) == nil){
+                    validArticles = [articles[index]]
+                }
+            }
+        }
+       return validArticles
+    }
 }
 
 
-//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //func downloadPhoto(articleArray: [ArticleData]){
 //    var newsImageArray: [UIImage] = []
 //    newsImageArray.removeAll() // this is the image array

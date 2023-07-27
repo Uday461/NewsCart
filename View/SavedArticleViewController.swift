@@ -52,7 +52,17 @@ class SavedArticleViewController: UIViewController {
             }catch{
                 print("Error saving data into context: \(error)")
             }
-            self.navigationController?.popViewController(animated: true)
+            if self.articleArray.count != 0{
+                self.navigationController?.popViewController(animated: true)
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Empty Bookmarked Items", message: "", preferredStyle: .alert)
+                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+                    alert.addAction(action)
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .default){ cancelAction in
             return

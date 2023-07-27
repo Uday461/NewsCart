@@ -7,5 +7,5 @@
 
 import Foundation
 protocol ClickDelegate{
-    func clicked(_ row:Int)
+    func clicked(_ row:Int, _ buttonState: String)
 }

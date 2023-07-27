@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol fetchCategoryNews{
+protocol FetchCategoryNews{
     func fetchBusinessNews()
     func fetchHealthNews()
     func fetchScienceNews()

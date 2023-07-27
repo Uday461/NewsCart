@@ -18,15 +18,20 @@ class CustomNewsCell: UITableViewCell {
     
     @IBOutlet weak var newsImage: UIImageView!
     
-    @IBOutlet weak var button: UIButton!
-    
     var cellIndex: IndexPath?
+    
+    @IBOutlet weak var saveImageView: UIImageView!
     
     var clickDelegate: ClickDelegate?
     
-    @IBAction func buttonTapped(_ sender: Any) {
-        button.backgroundColor = .systemFill
-        clickDelegate?.clicked(cellIndex!.row)
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        if (saveImageView.image == UIImage(systemName: "bookmark.fill")){
+            saveImageView.image = UIImage(systemName: "bookmark")
+            clickDelegate?.clicked(cellIndex!.row, "unsave")
+        } else{
+            saveImageView.image = UIImage(systemName: "bookmark.fill")
+            clickDelegate?.clicked(cellIndex!.row, "save")
+        }
     }
     
     override func awakeFromNib() {

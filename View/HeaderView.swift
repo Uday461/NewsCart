@@ -15,7 +15,7 @@ class HeaderView: UIView{
     
     @IBOutlet var contentView: UIView!
     
-    var fetchCategoryNewsDelegate: fetchCategoryNews?
+    var fetchCategoryNewsDelegate: FetchCategoryNews?
     
     @IBAction func businessButtonPressed(_ sender: UIButton) {
         fetchCategoryNewsDelegate?.fetchBusinessNews()
@@ -44,9 +44,6 @@ class HeaderView: UIView{
     @IBAction func bookMarkButtonPressed(_ sender: Any) {
         fetchCategoryNewsDelegate?.fetchSavedArticles()
     }
-    
-    
-    
     
     
     override init(frame: CGRect) {

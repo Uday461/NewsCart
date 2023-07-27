@@ -17,6 +17,7 @@ class NewsSavedVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(#function)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 180
@@ -48,39 +49,31 @@ class NewsSavedVC: UIViewController{
 
 extension NewsSavedVC: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if articleArray.count == 0{
-            return 1
-        }
-        else {
-            return articleArray.count
-        }
+//        if articleArray.count == 0{
+//            return 1
+//        }
+//        else {
+//        }
+        return articleArray.count
+
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if articleArray.count == 0{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NoSavedArticleCell") as! NoSavedArticleCell
-            return cell
-        }
+//        if articleArray.count == 0{
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "NoSavedArticleCell") as! NoSavedArticleCell
+//            return cell
+//        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "articleDataCell") as! CustomSavedNewsCell
-        if let title = articleArray[indexPath.row].newsTitle{
-            cell.titleLabel.text = title
-        } else {
-            cell.titleLabel.text = "No title."
-        }
-        if let description = articleArray[indexPath.row].newsDescritption{
-            cell.descriptionLabel.text = description
-        } else {
-            cell.descriptionLabel.text = "No description."
-        }
-        if let source = articleArray[indexPath.row].sourceName{
+            cell.titleLabel.text = articleArray[indexPath.row].newsTitle
+            cell.descriptionLabel.text = articleArray[indexPath.row].newsDescritption
+            if let source = articleArray[indexPath.row].sourceName{
             cell.sourceLabel.text = source
-        } else {
+           } else {
             cell.sourceLabel.text = "No source."
-        }
-        let imageBinary = articleArray[indexPath.row].newsImage
-        cell.newsImage.image = UIImage(data: imageBinary!)
-        
-        return cell
+           }
+           let imageBinary = articleArray[indexPath.row].newsImage
+           cell.newsImage.image = UIImage(data: imageBinary!)
+           return cell
     }
 
 }
