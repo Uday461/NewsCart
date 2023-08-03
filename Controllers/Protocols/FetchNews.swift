@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 protocol FetchNews{
-   // func fetchAndUpdateNews (_ articlesArray: [ArticleData])
     func fetchAndUpdateNews (_ apiNewsModel: APINewsModel)
     func didFailErrorDueToNetwork(_ networkError: Error)
     func didFailErrorDueToDecoding(_ decodingError: Error)

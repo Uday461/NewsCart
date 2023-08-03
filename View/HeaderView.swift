@@ -15,36 +15,29 @@ class HeaderView: UIView{
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet weak var popButton: UIButton!
+    
     var fetchCategoryNewsDelegate: FetchCategoryNews?
     
-    @IBAction func businessButtonPressed(_ sender: UIButton) {
-        fetchCategoryNewsDelegate?.fetchBusinessNews()
+    func setupPopButton(){
+        let optionClosure = {(action: UIAction)->() in
+            self.fetchCategoryNewsDelegate?.fetchCategoryNews(action.title)
+        }
+        popButton.menu = UIMenu(children: [
+            UIAction(title: "All", state: .on, handler: optionClosure),
+            UIAction(title: "Business", handler: optionClosure),
+            UIAction(title: "Health", handler: optionClosure),
+            UIAction(title: "Technology", handler: optionClosure),
+            UIAction(title: "Science", handler: optionClosure),
+            UIAction(title: "Sports", handler: optionClosure)
+        ])
+        popButton.showsMenuAsPrimaryAction = true
+        popButton.changesSelectionAsPrimaryAction = true
     }
-    
-    @IBAction func healthButtonPressed(_ sender: Any) {
-        fetchCategoryNewsDelegate?.fetchHealthNews()
-    }
-    
-    
-    @IBAction func scienceButtonPressed(_ sender: Any) {
-        fetchCategoryNewsDelegate?.fetchScienceNews()
-    }
-    
-    
-    @IBAction func entertainmentButtonPressed(_ sender: Any) {
-        fetchCategoryNewsDelegate?.fetchEntertainmentNews()
-    }
-    
-    
-    @IBAction func technologyButtonPressed(_ sender: Any) {
-        fetchCategoryNewsDelegate?.fetchTechnologyNews()
-    }
-    
     
     @IBAction func bookMarkButtonPressed(_ sender: Any) {
         fetchCategoryNewsDelegate?.fetchSavedArticles()
     }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,7 +50,7 @@ class HeaderView: UIView{
     }
     
     override var intrinsicContentSize: CGSize{
-        return CGSize(width: UIView.noIntrinsicMetric, height: 190)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 170)
     }
     
     private func commonInit(){
@@ -69,6 +62,5 @@ class HeaderView: UIView{
         contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-
     }
 }

@@ -19,13 +19,14 @@ class SavedArticleViewController: UIViewController {
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
     var indexPathRow: Int!
-    
+    let coreDataManager = CoreDataManager()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var articleArray = [ArticleInfo]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadArticles()
+        // loadArticles()
+        articleArray = coreDataManager.loadArticles()
         DispatchQueue.main.async {
             if let title = self.articleArray[self.indexPathRow].newsTitle{
                 self.titleLabel.text = title
@@ -45,13 +46,8 @@ class SavedArticleViewController: UIViewController {
     @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Are you sure, you want to delete.", message: "", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .destructive){ okAction in
-            self.context.delete(self.articleArray[self.indexPathRow])
+            self.coreDataManager.deleteArticle(articleInfo: self.articleArray[self.indexPathRow])
             self.articleArray.remove(at: self.indexPathRow)
-            do{
-                try self.context.save()
-            }catch{
-                print("Error saving data into context: \(error)")
-            }
             if self.articleArray.count != 0{
                 self.navigationController?.popViewController(animated: true)
             } else {
@@ -70,15 +66,6 @@ class SavedArticleViewController: UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         present(alert,animated: true, completion: nil)
-    }
-    
-    func loadArticles(){
-        let request: NSFetchRequest<ArticleInfo> = ArticleInfo.fetchRequest()
-        do{
-            articleArray = try context.fetch(request)
-        }catch{
-           print("Error in retrieving data from CoreData: \(error)")
-        }
     }
     
 }

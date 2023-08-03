@@ -12,7 +12,6 @@ class APINewsManager{
     var fetchNewsDelegate: FetchNews?
     
     //Method for fetching News from API
-    
     func fetchNews(urlString: String, page:Int, pageSize: Int){
         let url = URL(string: "\(urlString)&page=\(page)&pageSize=\(pageSize)")
         let session = URLSession(configuration: .default)
@@ -41,8 +40,8 @@ class APINewsManager{
             articleNewsModel = decodedData
             fetchNewsDelegate?.fetchAndUpdateNews(articleNewsModel)
         }catch{
-             print("Error: \(error)")
-             self.fetchNewsDelegate?.didFailErrorDueToDecoding(error)
+            print("Error: \(error)")
+            self.fetchNewsDelegate?.didFailErrorDueToDecoding(error)
         }
     }
     
@@ -55,100 +54,20 @@ class APINewsManager{
                 }
             }
         }
-       return validArticles
+        return validArticles
+    }
+    
+    func categoryConstants(category: String) -> String?{
+        let returnCategory: String?
+        switch category{
+        case "Business": returnCategory = Constants.businessNewsApiQuery
+        case "Health": returnCategory = Constants.healthNewsApiQuery
+        case "Technology": returnCategory = Constants.technologyNewsApiQuery
+        case "Science": returnCategory = Constants.scienceNewsApiQuery
+        case "Sports": returnCategory = Constants.sportsNewsApiQuery
+        default: returnCategory = nil
+        }
+        return returnCategory
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//func downloadPhoto(articleArray: [ArticleData]){
-//    var newsImageArray: [UIImage] = []
-//    newsImageArray.removeAll() // this is the image array
-//    for i in 0..<articleArray.count {
-//        if let urlToImage = articleArray[i].urlToImage{
-//            guard let url = URL(string: urlToImage) else {
-//                DispatchQueue.main.async {
-//                    newsImageArray.append(UIImage(named: "no-image-icon")!)
-//                }
-//                continue
-//            }
-//            let group = DispatchGroup()
-//            group.enter()
-//            URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
-//                if let imgData = data, let image = UIImage(data: imgData) {
-//                    DispatchQueue.main.async() {
-//                        newsImageArray.append(image)
-//                    }
-//                } else if let error = error {
-//                    DispatchQueue.main.async {
-//                        fetchNewsDelegate?.didFailError(error: error)
-//                    }
-//                    return
-//                }
-//                group.leave()
-//            }).resume()
-//            group.wait()
-//        } else {
-//            DispatchQueue.main.async {
-//                newsImageArray.append(UIImage(named: "no-image-icon")!)
-//            }
-//        }
-//
-//    }
-//}

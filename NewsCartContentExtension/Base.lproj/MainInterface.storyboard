@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Notification View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" userLabel="Notification View Controller" customClass="NotificationViewController" customModule="NewsCartContentExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zr7-XP-Yll">
+                                <rect key="frame" x="15" y="15" width="200" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsn-5y-Wix">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="36.666666666666664"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vvj-y7-hzB">
+                                        <rect key="frame" x="0.0" y="41.666666666666671" width="200" height="36.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Body" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOw-k9-em4">
+                                        <rect key="frame" x="0.0" y="83.333333333333329" width="200" height="36.666666666666671"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0Rr-T0-bVK">
+                                <rect key="frame" x="245" y="17.333333333333332" width="60" height="55.333333333333343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="a2k-z3-y3U"/>
+                                    <constraint firstAttribute="height" constant="60" id="xXz-Dm-GUw"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2BE-c3-nQJ"/>
+                        <color key="backgroundColor" red="0.45882353186607361" green="0.74901962280273438" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Zr7-XP-Yll" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="15" id="1yX-sq-GjX"/>
+                            <constraint firstAttribute="bottom" secondItem="Zr7-XP-Yll" secondAttribute="bottom" constant="15" id="JcF-sy-AkZ"/>
+                            <constraint firstAttribute="trailing" secondItem="0Rr-T0-bVK" secondAttribute="trailing" constant="15" id="Nnp-7n-EK7"/>
+                            <constraint firstItem="Zr7-XP-Yll" firstAttribute="leading" secondItem="2BE-c3-nQJ" secondAttribute="leading" constant="15" id="T5H-vP-Xu6"/>
+                            <constraint firstItem="0Rr-T0-bVK" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="15" id="ooB-NB-gc8"/>
+                            <constraint firstItem="0Rr-T0-bVK" firstAttribute="leading" secondItem="Zr7-XP-Yll" secondAttribute="trailing" constant="30" id="xZV-lT-FJ6"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="150"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-131.29770992366412" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="video.fill" catalog="system" width="128" height="81"/>
+    </resources>
+</document>

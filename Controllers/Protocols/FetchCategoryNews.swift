@@ -8,10 +8,6 @@
 import Foundation
 
 protocol FetchCategoryNews{
-    func fetchBusinessNews()
-    func fetchHealthNews()
-    func fetchScienceNews()
-    func fetchEntertainmentNews()
-    func fetchTechnologyNews()
     func fetchSavedArticles()
+    func fetchCategoryNews(_ category: String)
 }
