@@ -11,26 +11,18 @@ import UIKit
 class APINewsManager{
     var fetchNewsDelegate: FetchNews?
     
-    //Method for fetching News from API
-    func fetchNews(urlString: String, page:Int, pageSize: Int){
-        let url = URL(string: "\(urlString)&page=\(page)&pageSize=\(pageSize)")
-        let session = URLSession(configuration: .default)
-        let task = session.dataTask(with: url!){Data, Response, Error in
-            if let error = Error{
-                DispatchQueue.main.async {
-                    self.fetchNewsDelegate?.didFailErrorDueToNetwork(error)
-                }
-                return
-            } else if let data = Data{
-                let dataString = String(data: data, encoding: .utf8)
-                print(dataString ?? "nil")
-                self.parseJSON(data: data)
-            }
-        }
-        task.resume()
-    }
-    
     //Method for decoding the fetched data from news API.
+    func apiRequest(urlToImage: String, count:Int=0 , _ completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?, _ count: Int) -> Void){
+        let url = URL(string: urlToImage)
+        if let _url = url{
+            let task = URLSession.shared.dataTask(with: _url) { data, response, error in
+                completion(data, response, error, count)
+            }
+            task.resume()
+        }
+    }
+
+    
     func parseJSON(data: Data){
         let jsonDecode = JSONDecoder()
         var articleNewsModel: APINewsModel
@@ -41,7 +33,9 @@ class APINewsManager{
             fetchNewsDelegate?.fetchAndUpdateNews(articleNewsModel)
         }catch{
             print("Error: \(error)")
-            self.fetchNewsDelegate?.didFailErrorDueToDecoding(error)
+            DispatchQueue.main.async {
+                self.fetchNewsDelegate?.didFailErrorDueToDecoding(error)
+            }
         }
     }
     
@@ -69,5 +63,16 @@ class APINewsManager{
         }
         return returnCategory
     }
+  
 }
+
+
+
+
+
+
+
+
+
+
 

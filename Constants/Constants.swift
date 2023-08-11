@@ -7,8 +7,8 @@
 
 import Foundation
 struct Constants{
-    static let apiForFetchingNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e8e7563acd3f46b4b70bb69f63f3d48c"
-    static let apiForFetchingCategoryNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e8e7563acd3f46b4b70bb69f63f3d48c&category="
+    static let apiForFetchingNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=2fa323dfd66b46a6a3f16e37f6dca6a6&pageSize=\(pageSize)&page="
+    static let apiForFetchingCategoryNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=2fa323dfd66b46a6a3f16e37f6dca6a6&pageSize=\(pageSize)&category="
     static let businessNewsApiQuery = "business"
     static let healthNewsApiQuery = "health"
     static let scienceNewsApiQuery = "science"
@@ -16,4 +16,10 @@ struct Constants{
     static let technologyNewsApiQuery = "technology"
     static let sportsNewsApiQuery = "sports"
     static let pageSize = 5
+    static let goToEmptyVC = "goToEmptyVC"
+    static let goToSavedArticlesVC = "goToSavedArticlesVC"
+    static let newsCell = "newsCell"
+    static let articleDataCell = "articleDataCell"
+    static let goToNewsVC = "goToNewsVC"
+    static let noImage = "no-image-icon"
 }

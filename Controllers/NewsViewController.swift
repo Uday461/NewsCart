@@ -9,18 +9,21 @@ import UIKit
 import SafariServices
 import CoreData
 
-class NewsAPIViewController: UIViewController{
-    
+class NewsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
     var apiNewsModel: APINewsModel?
     var articles: [Article]?
     var page = 1
     let apiNewsManager = APINewsManager()
+    let fileSystemManager = FileSystemManager()
     var header = HeaderView(frame: .zero)
     var invalidArticlesCount = 0
     let coreDataManager = CoreDataManager()
     var fetchSavedArticle = [ArticleInfo]()
-    var imagesDictionary: [String:UIImage] = [:]
+   // var imagesDictionary: [String:UIImage] = [:]
+    var imagesDictionary:[String:ImageProperty] = [:]
+    var imageCount = 0
+    var _data: Data? = nil
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +36,16 @@ class NewsAPIViewController: UIViewController{
         tableView.dataSource = self
         setupTableHeaderView()
         header.setupPopButton()
-        apiNewsManager.fetchNews(urlString: Constants.apiForFetchingNews,page: page, pageSize: Constants.pageSize)
+        apiNewsManager.apiRequest(urlToImage: "\(Constants.apiForFetchingNews)\(page)") { data, response, error, count in
+            if let _data = data{
+                self.apiNewsManager.parseJSON(data: _data)
+            } else if let _error = error{
+                DispatchQueue.main.async {
+                    self.didFailErrorDueToNetwork(_error)
+                }
+            }
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

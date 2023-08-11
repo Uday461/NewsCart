@@ -22,3 +22,9 @@ struct Article: Codable{
 struct Source: Codable{
     let name: String?
 }
+
+struct ImageProperty{
+    var data: Data
+    var key: Int
+    var imageFormat: String
+}

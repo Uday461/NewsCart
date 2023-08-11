@@ -3,4 +3,309 @@
    uuid = "DC29978E-29F9-4557-932D-40F60E43ECB5"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
+            landmarkName = "clicked(_:_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc176"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "1704">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc176"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "222"
+                  endingLineNumber = "222"
+                  offsetFromSymbolStart = "4732">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc1b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "1704">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc1b4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "224"
+                  endingLineNumber = "224"
+                  offsetFromSymbolStart = "4732">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc533"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "2388">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc533"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "3084">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc533"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "3660">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc533"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "4212">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc533"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "5292">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "2388">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "3084">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "3660">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "4212">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "248"
+                  endingLineNumber = "248"
+                  offsetFromSymbolStart = "5292">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "2388">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "3084">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "3660">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "4212">
+               </Location>
+               <Location
+                  uuid = "E0786CBA-2E87-45E9-A072-9AA24D9CF946 - 8fe3628147adc6bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "NewsCart.NewsViewController.clicked(Swift.Int, Swift.String) -&gt; ()"
+                  moduleName = "NewsCart"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uday/Desktop/NewsCart/Controllers/Extensions/NewsAPIViewControllerExtensions.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "5292">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

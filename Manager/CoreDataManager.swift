@@ -42,4 +42,12 @@ class CoreDataManager{
             print("Error saving data into context: \(error)")
         }
     }
+    
+    func saveArticle(){
+        do{
+            try context.save()
+        }catch{
+            print("Error saving data into context: \(error)")
+        }
+    }
 }

@@ -23,45 +23,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UIApplication.shared.registerForRemoteNotifications()
         
         //MARK: - Actionable Notification Types
-        
-        let acceptAction = UNNotificationAction(identifier: "ACCEPT_ACTION",
-              title: "Accept",
-              options: [])
-        let declineAction = UNNotificationAction(identifier: "DECLINE_ACTION",
-              title: "Decline",
-              options: [])
-        // Define the notification type
-        let meetingInviteCategory =
-              UNNotificationCategory(identifier: "MEETING_INVITATION",
-              actions: [acceptAction, declineAction],
-              intentIdentifiers: [],
-              hiddenPreviewsBodyPlaceholder: "",
-              options: .customDismissAction)
-        // Register the notification type.
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.setNotificationCategories([meetingInviteCategory])
+        ActionableNotificationManager.configureActionableNotification()
         return true
     }
-   
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-           let meetingID = userInfo["MEETING_ID"] as! String
-           let userID = userInfo["USER_ID"] as! String
-           // Perform the task associated with the action.
-           switch response.actionIdentifier {
-           case "ACCEPT_ACTION":
-              print("Accepted Invitation.")
-              break
-           case "DECLINE_ACTION":
-              print("Declined Invitation")
-              break
-           default:
-              break
-           }
-           completionHandler()
-    }
     
-   
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Perform the task associated with the action.
+        switch response.actionIdentifier {
+        case "ACCEPT_ACTION":
+            print("Accepted Invitation.")
+            break
+        case "DECLINE_ACTION":
+            print("Declined Invitation")
+            break
+        case "BOOK":
+            print("Tickets booked.")
+            break
+        default:
+            break
+        }
+        completionHandler()
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.sound,.banner])
+    }
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         var token: String = ""
         for i in 0..<deviceToken.count {
@@ -72,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Error in registering for Remote Notifications: \(error)")
     }
-
+    
     // MARK: UISceneSession Lifecycle
     
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
@@ -80,9 +65,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
         self.saveContext()
     }
     

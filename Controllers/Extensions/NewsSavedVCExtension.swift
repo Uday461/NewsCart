@@ -17,7 +17,7 @@ extension NewsSavedVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "articleDataCell") as! CustomSavedNewsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.articleDataCell) as! CustomSavedNewsCell
         cell.titleLabel.text = articleArray[indexPath.row].newsTitle
         cell.descriptionLabel.text = articleArray[indexPath.row].newsDescritption
         if let source = articleArray[indexPath.row].sourceName{
@@ -29,7 +29,7 @@ extension NewsSavedVC: UITableViewDataSource{
         if let _imageBinary = imageBinary{
             cell.newsImage.image = UIImage(data: _imageBinary)
         } else {
-            cell.newsImage.image = UIImage(named: "no-image-icon")
+            cell.newsImage.image = UIImage(named: Constants.noImage)
         }
         return cell
     }
@@ -44,7 +44,7 @@ extension NewsSavedVC: UITableViewDelegate{
         if  (count == 0){
             return
         }
-        performSegue(withIdentifier: "goToNewsVC", sender: self)
+        performSegue(withIdentifier: Constants.goToNewsVC, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
