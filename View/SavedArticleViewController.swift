@@ -20,34 +20,32 @@ class SavedArticleViewController: UIViewController {
     
     var indexPathRow: Int!
     let coreDataManager = CoreDataManager()
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var articleArray = [ArticleInfo]()
+    let fileSystemManager = FileSystemManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // loadArticles()
         articleArray = coreDataManager.loadArticles()
         DispatchQueue.main.async {
-            if let title = self.articleArray[self.indexPathRow].newsTitle{
+            let title = self.articleArray[self.indexPathRow].newsTitle
                 self.titleLabel.text = title
-            } else {
-                self.titleLabel.text = "No title."
-            }
-            if let description = self.articleArray[self.indexPathRow].newsDescritption{
+            let description = self.articleArray[self.indexPathRow].newsDescritption
                 self.descriptionLabel.text = description
-            } else {
-                self.descriptionLabel.text = "No description."
+            if let _imageName = self.articleArray[self.indexPathRow].imageName {
+                self.imageView.image = self.fileSystemManager.retrieveImage(forImageName: _imageName)
             }
-            let imageBinary = self.articleArray[self.indexPathRow].newsImage
-            self.imageView.image = UIImage(data: imageBinary!)
         }
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Are you sure, you want to delete.", message: "", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .destructive){ okAction in
+            if let _imageName = self.articleArray[self.indexPathRow].imageName{
+                self.fileSystemManager.deleteImage(forImageName: _imageName)
+            }
             self.coreDataManager.deleteArticle(articleInfo: self.articleArray[self.indexPathRow])
             self.articleArray.remove(at: self.indexPathRow)
+            LogManager.i("News article is deleted.")
             if self.articleArray.count != 0{
                 self.navigationController?.popViewController(animated: true)
             } else {

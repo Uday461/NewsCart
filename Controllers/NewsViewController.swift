@@ -8,6 +8,7 @@
 import UIKit
 import SafariServices
 import CoreData
+import OSLog
 
 class NewsViewController: UIViewController{
     @IBOutlet weak var tableView: UITableView!
@@ -20,16 +21,13 @@ class NewsViewController: UIViewController{
     var invalidArticlesCount = 0
     let coreDataManager = CoreDataManager()
     var fetchSavedArticle = [ArticleInfo]()
-   // var imagesDictionary: [String:UIImage] = [:]
-    var imagesDictionary:[String:ImageProperty] = [:]
-    var imageCount = 0
+    var imagesDictionary: [String:ImageProperty] = [:]
+    var totalArticles = 0
     var _data: Data? = nil
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = CoreDataConfiguration.shared.persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
         // Do any additional setup after loading the view.
-        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         header.fetchCategoryNewsDelegate = self
         apiNewsManager.fetchNewsDelegate = self
         tableView.delegate = self
@@ -50,7 +48,6 @@ class NewsViewController: UIViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        print(#function)
         tableView.reloadData()
     }
     

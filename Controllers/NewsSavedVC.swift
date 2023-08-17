@@ -11,25 +11,22 @@ import CoreData
 class NewsSavedVC: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var articleArray = [ArticleInfo]()
     let coreDataManager = CoreDataManager()
+    let fileSystemManager = FileSystemManager()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(#function)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 180
         tableView.register(UINib(nibName: "NoSavedArticleCell", bundle: nil), forCellReuseIdentifier: "NoSavedArticleCell")
         articleArray = coreDataManager.loadArticles()
-        // loadArticles()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(false)
-        // loadArticles()
+        super.viewWillAppear(true)
         articleArray = coreDataManager.loadArticles()
         DispatchQueue.main.async {
             self.tableView.reloadData()

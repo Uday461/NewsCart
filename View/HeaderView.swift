@@ -18,7 +18,8 @@ class HeaderView: UIView{
     @IBOutlet weak var popButton: UIButton!
     
     var fetchCategoryNewsDelegate: FetchCategoryNews?
-    
+
+    //Following method is used to show the UIMenu() of various news categories.
     func setupPopButton(){
         let optionClosure = {(action: UIAction)->() in
             self.fetchCategoryNewsDelegate?.fetchCategoryNews(action.title)

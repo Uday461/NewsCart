@@ -13,22 +13,20 @@ import SafariServices
 
 extension NewsViewController: FetchNews{
 
+//Following method is used to handle the error when URLSession requesting fails and display alert to user.
     func didFailErrorDueToNetwork(_ networkError: Error) {
+        LogManager.e(networkError)
         let alert = UIAlertController(title: "Error!!.", message: "\(networkError.localizedDescription)", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
-    
-    func didFailErrorDueToDecoding(_ decodingError: Error) {
-        let alert = UIAlertController(title: "Error in Decoding!!.", message: "\(decodingError.localizedDescription)", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alert.addAction(action)
-        present(alert, animated: true, completion: nil)
-    }
-    
+//Following method is used for checking valid articles and updating "articles" variable.
+
     func fetchAndUpdateNews(_ apiNewsModel: APINewsModel) {
         self.apiNewsModel = apiNewsModel
+        totalArticles = totalArticles + apiNewsModel.articles.count
+        LogManager.i("Total Articles:\(self.totalArticles)")
         if (page == 1){
             self.articles = apiNewsManager.validArticlesList(articles: apiNewsModel.articles)
             invalidArticlesCount = invalidArticlesCount + (apiNewsModel.articles.count - (articles?.count ?? 0))
@@ -48,9 +46,11 @@ extension NewsViewController: FetchNews{
 //MARK: - FetchCategoryNews Protocol Methods
 
 extension NewsViewController: FetchCategoryNews{
+    //Following method is used for fetching the selected category news.
     func fetchCategoryNews(_ category: String) {
         page = 1
         invalidArticlesCount = 0
+        LogManager.i("Selected news category: \(category)")
         if (category != "All"){
             let categoryQuery = apiNewsManager.categoryConstants(category: category)!
             apiNewsManager.apiRequest(urlToImage: "\(Constants.apiForFetchingCategoryNews)\(categoryQuery)&page=\(page)") { data, response, error, count in
@@ -80,7 +80,7 @@ extension NewsViewController: FetchCategoryNews{
             }
         }
     }
-    
+//Following method is used for fetching saved news articles.
     func fetchSavedArticles() {
         let articlesPersisted = coreDataManager.loadArticles()
         if (articlesPersisted.count == 0){
@@ -103,7 +103,6 @@ extension NewsViewController:UITableViewDataSource{
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.newsCell) as! CustomNewsCell
         cell.clickDelegate = self
         cell.cellIndex = indexPath
-        
         fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink:(articles?[indexPath.row].url)!)
         
         if (fetchSavedArticle.count == 0){
@@ -119,23 +118,20 @@ extension NewsViewController:UITableViewDataSource{
         } else{
             cell.newsSource.text = "No Source."
         }
-        if let urlToImage = articles?[indexPath.row].urlToImage{
-            self.imageCount += 1
-        apiNewsManager.apiRequest(urlToImage: urlToImage, count: imageCount) { data, response, error, count in
+        let fileName = fileSystemManager.generateUniqueFilename(forUrlString: (articles?[indexPath.row].url)!)
+        if let urlToImage = articles?[indexPath.row].urlToImage, let fileName = fileName{
+            apiNewsManager.apiRequest(urlToImage: urlToImage, key: fileName) { data, response, error, fileName in
              var imageType = ""
                     if let _data = data{
-                        print(urlToImage)
-                        print(_data.format())
                         DispatchQueue.main.async {
                             let imageFetched: UIImage = UIImage(data: _data) ?? UIImage(named: Constants.noImage)!
                             cell.newsImage.image = imageFetched
-                         //   self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageFetched
                             if (_data.format() == .jpg){
                                 imageType = ".jpg"
                             } else if (_data.format() == .png){
                                 imageType = ".png"
                             }
-                            let imageProperty = ImageProperty(data: _data, key: count, imageFormat: imageType)
+                            let imageProperty = ImageProperty(data: _data, key: fileName, imageFormat: imageType)
                             self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
                         }
                     }
@@ -144,11 +140,18 @@ extension NewsViewController:UITableViewDataSource{
                         cell.newsImage.image = UIImage(named: Constants.noImage)
                         let imageData = UIImage(named: Constants.noImage)?.pngData()
                         guard let _imageData = imageData else {return}
-                        let imageProperty = ImageProperty(data: _imageData, key: count, imageFormat: ".png")
+                        let imageProperty = ImageProperty(data: _imageData, key: fileName, imageFormat: ".png")
                         self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
-//                        self.imagesDictionary[(self.articles?[indexPath.row].url)!] = UIImage(named: Constants.noImage)
                     }
                 }
+            }
+        } else {
+            DispatchQueue.main.async {
+                cell.newsImage.image = UIImage(named: Constants.noImage)
+                let imageData = UIImage(named: Constants.noImage)?.pngData()
+                guard let _imageData = imageData, let fileName = fileName else {return}
+                let imageProperty = ImageProperty(data: _imageData, key: fileName, imageFormat: ".png")
+                self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
             }
         }
         return cell
@@ -162,6 +165,7 @@ extension NewsViewController:  UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         let newsUrl = articles?[indexPath.row].url
         guard let url = URL(string: newsUrl ?? "") else{
+            LogManager.e("Selected news article url contains nil.")
             return
         }
         let vc = SFSafariViewController(url: url)
@@ -170,7 +174,8 @@ extension NewsViewController:  UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let _articles = articles{
             if (indexPath.row == _articles.count-1){
-                print("Articles fetched page wise: \(_articles.count)")
+                LogManager.i("Articles fetched page wise: \(_articles.count)")
+                LogManager.i("invalid Articles Count: \(self.invalidArticlesCount)")
                 if (_articles.count < (apiNewsModel!.totalResults - invalidArticlesCount)){
                     page = page + 1
                     apiNewsManager.apiRequest(urlToImage: "\(Constants.apiForFetchingNews)\(page)") { data, response, error, count in
@@ -183,6 +188,7 @@ extension NewsViewController:  UITableViewDelegate{
                         }
                     }
                 } else {
+                    LogManager.i("All the valid news updates has been fetched.")
                     let imageAttachment = NSTextAttachment()
                     imageAttachment.image = UIImage(systemName: "checkmark.circle")
                     
@@ -227,6 +233,7 @@ extension NewsViewController:  UITableViewDelegate{
 //MARK: - ClickDelegate Protocol Methods
 
 extension NewsViewController: ClickDelegate{
+    //Following is method used to handle the case of "saving"/"unsaving" a news article.
     func clicked(_ row: Int, _ buttonState: String) {
         if (buttonState == "save"){
             let newArticle = ArticleInfo(context: context)
@@ -235,20 +242,20 @@ extension NewsViewController: ClickDelegate{
             newArticle.sourceName = articles?[row].source.name
             newArticle.urlLink = articles?[row].url
             newArticle.newsImage = imagesDictionary[(articles?[row].url)!]?.data
-//            if let _imageData = newArticle.newsImage{
-//                let uiImage = UIImage(data: newArticle.newsImage!)
-//                print(_imageData.format())
-//                if (_imageData.format() == .jpg){
-//                    fileSystemManager.store(image: uiImage!, forKey: 1, imageFormat: ".jpg")
-//                } else if (_imageData.format() == .png){
-//                    fileSystemManager.store(image: uiImage!, forKey: 1, imageFormat: ".png")
-//                }
-//            }
-            guard let uiImage = UIImage(data: imagesDictionary[(articles?[row].url)!]!.data), let imageFormat = imagesDictionary[(articles?[row].url)!]?.imageFormat, let key = imagesDictionary[(articles?[row].url)!]?.key else { return }
-                fileSystemManager.store(image: uiImage, forKey: key, imageFormat: imageFormat)
+            guard let uiImage = UIImage(data: imagesDictionary[(articles?[row].url)!]!.data), let imageFormat = imagesDictionary[(articles?[row].url)!]?.imageFormat, let key = imagesDictionary[(articles?[row].url)!]?.key else {
+                LogManager.e("Optional variable contains nil.")
+                return
+            }
+            newArticle.imageName = key+imageFormat
+            fileSystemManager.store(image: uiImage, forImageName: key+imageFormat, imageFormat: imageFormat)
+            LogManager.i("News article is saved.")
         } else {
             fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink: (articles?[row].url)!)
+            if let _imageName = fetchSavedArticle[0].imageName{
+                fileSystemManager.deleteImage(forImageName: _imageName)
+            }
             coreDataManager.deleteArticle(articleInfo: fetchSavedArticle[0])
+            LogManager.i("News article is unsaved.")
         }
         coreDataManager.saveArticle()
     }

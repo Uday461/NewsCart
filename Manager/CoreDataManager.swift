@@ -8,18 +8,20 @@
 import Foundation
 import UIKit
 import CoreData
+import OSLog
+
 class CoreDataManager{
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = CoreDataConfiguration.shared.persistentContainer.viewContext
     var articleArray = [ArticleInfo]()
     func fetchSavedArticle(urlLink: String) -> [ArticleInfo]{
         var fetchSavedArticle = [ArticleInfo]()
         let request: NSFetchRequest<ArticleInfo> = ArticleInfo.fetchRequest()
-        let predicate = NSPredicate(format: "urlLink MATCHES[cd] %@", urlLink)
+        let predicate = NSPredicate(format: "urlLink == %@", urlLink)
         request.predicate = predicate
         do{
             fetchSavedArticle = try context.fetch(request)
         } catch {
-            print("Error fetching saved article: \(error)")
+            LogManager.e("Error in fetching Saved Articles in CoreData: \(error)")
         }
         return fetchSavedArticle
     }
@@ -29,7 +31,7 @@ class CoreDataManager{
         do{
             articleArray = try context.fetch(request)
         }catch{
-            print("Error in retrieving data from CoreData: \(error)")
+            LogManager.e("Error in retrieving data from CoreData: \(error)")
         }
         return articleArray
     }
@@ -39,7 +41,7 @@ class CoreDataManager{
         do{
             try self.context.save()
         }catch{
-            print("Error saving data into context: \(error)")
+            LogManager.e("Error saving data into context:\(error)")
         }
     }
     
@@ -47,7 +49,7 @@ class CoreDataManager{
         do{
             try context.save()
         }catch{
-            print("Error saving data into context: \(error)")
+            LogManager.e("Error saving data into context:\(error)")
         }
     }
 }

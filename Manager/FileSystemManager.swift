@@ -7,47 +7,76 @@
 
 import Foundation
 import UIKit
-
+import CommonCrypto
+import OSLog
 class FileSystemManager{
-    func filePath(forKey key: Int, imageFormat format: String) -> URL? {
+    //Method for fetching the documentary URL path.
+    func filePath(forImageName imageName: String) -> URL? {
         let fileManager = FileManager.default
-        guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else { return nil }
-        return documentURL.appendingPathComponent(String(key) + format)
+        guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
+            LogManager.e("Error: File doesn't exit.")
+            return nil
+        }
+        return documentURL.appendingPathComponent(imageName)
     }
-    
-    func store(image: UIImage, forKey key: Int, imageFormat format: String) {
+    //Method for storing the image into documentary.
+    func store(image: UIImage, forImageName imageName: String, imageFormat format: String) {
         if (format == ".png"){
             if let pngRepresentation = image.pngData() {
-                if let filePath = filePath(forKey: key, imageFormat: format) {
-                    print(filePath)
+                if let filePath = filePath(forImageName: imageName) {
+                    LogManager.i(filePath)
                     do  {
                         try pngRepresentation.write(to: filePath,
                                                     options: .atomic)
                     } catch let err {
-                        print("Saving file resulted in error: ", err)
+                        LogManager.e("Saving file resulted in error: \(err)")
                     }
                 }
             }
         } else if (format == ".jpg"){
             if let jpgRepresentation = image.jpegData(compressionQuality: 1){
-                if let filePath = filePath(forKey: key, imageFormat: format) {
-                    print(filePath)
+                if let filePath = filePath(forImageName: imageName) {
+                    LogManager.i(filePath)
                     do  {
                         try jpgRepresentation.write(to: filePath)
                     } catch let err {
-                        print("Saving file resulted in error: ", err)
+                        LogManager.e("Saving file resulted in error: \(err)")
                     }
                 }
             }
         }
     }
-    
-    func retrieveImage(forKey key: Int, imageFormat format: String) -> UIImage? {
-        if let filePath = self.filePath(forKey: key, imageFormat: format),
+    //Method for generating unique file name from URLString to identify images uniquely.
+    func generateUniqueFilename(forUrlString urlString: String)-> String?{
+        guard let data = urlString.data(using: .utf8) else {
+            return nil
+        }
+        var digest = [UInt8](repeating: 0, count: Int(CC_SHA256_DIGEST_LENGTH))
+        _ = data.withUnsafeBytes{
+            CC_SHA256($0.baseAddress,UInt32(data.count),&digest)
+        }
+        let fileName = digest.map{String(format: "%02hhx", $0)}.joined()
+        return "image_"+fileName
+    }
+    //Method for deleting the images from documentary.
+    func deleteImage(forImageName imageName: String){
+        if let filePath = self.filePath(forImageName: imageName){
+            print(filePath)
+            do{
+                try FileManager.default.removeItem(at: filePath)
+            } catch{
+                LogManager.e("Error in deleting file from documentry folder:\(error)")
+            }
+        }
+    }
+    //Method for retrieving the imageFile selected from Documentary.
+    func retrieveImage(forImageName imageName: String) -> UIImage? {
+        if let filePath = self.filePath(forImageName: imageName),
            let fileData = FileManager.default.contents(atPath: filePath.path),
            let image = UIImage(data: fileData) {
             return image
         }
+        LogManager.e("The selected Image File doesn't exit!!.")
         return nil
     }
 }

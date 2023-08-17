@@ -25,11 +25,10 @@ extension NewsSavedVC: UITableViewDataSource{
         } else {
             cell.sourceLabel.text = "No source."
         }
-        let imageBinary = articleArray[indexPath.row].newsImage
-        if let _imageBinary = imageBinary{
-            cell.newsImage.image = UIImage(data: _imageBinary)
-        } else {
-            cell.newsImage.image = UIImage(named: Constants.noImage)
+        DispatchQueue.main.async {
+            if let imageName = self.articleArray[indexPath.row].imageName {
+                cell.newsImage.image = self.fileSystemManager.retrieveImage(forImageName: imageName)
+            }
         }
         return cell
     }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+//Data model for decoding json object.
 struct APINewsModel: Codable{
     let totalResults: Int
     let articles: [Article]
@@ -25,6 +26,6 @@ struct Source: Codable{
 
 struct ImageProperty{
     var data: Data
-    var key: Int
+    var key: String
     var imageFormat: String
 }

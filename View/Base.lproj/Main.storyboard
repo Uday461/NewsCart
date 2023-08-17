@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NSb-SS-sHl">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -35,43 +36,40 @@
                                                         <constraint firstAttribute="width" constant="150" id="a0c-4e-miz"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LYx-wX-LB8">
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="LYx-wX-LB8">
                                                     <rect key="frame" x="10" y="10" width="218" height="182"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNg-UO-oTA">
-                                                            <rect key="frame" x="0.0" y="0.0" width="51" height="30"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="30" id="qZV-uY-YQW"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="0.0" width="51" height="62"/>
                                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zS0-4f-IB4">
-                                                            <rect key="frame" x="0.0" y="30" width="92" height="100"/>
+                                                            <rect key="frame" x="0.0" y="62" width="92" height="100"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="100" id="khE-D0-uJy"/>
+                                                                <constraint firstAttribute="height" constant="100" id="dEk-Pm-2ZB"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tNk-qd-GzA">
-                                                            <rect key="frame" x="0.0" y="130" width="154.33333333333334" height="52"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tNk-qd-GzA" userLabel="Horizontal Stack View" colorLabel="IBBuiltInLabel-Yellow">
+                                                            <rect key="frame" x="0.0" y="162" width="154.33333333333334" height="20"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P28-3W-KuV">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="52"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="52.666666666666664" height="20"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="UNq-0K-Hbr"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="6Rg-a9-1MW"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                     <color key="textColor" name="SourceLabelColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sourceName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aby-c4-CI2">
-                                                                    <rect key="frame" x="57.666666666666664" y="0.0" width="96.666666666666686" height="52"/>
+                                                                    <rect key="frame" x="57.666666666666664" y="0.0" width="96.666666666666686" height="20"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="20" id="hFp-Yq-F5U"/>
+                                                                        <constraint firstAttribute="height" constant="20" id="rT5-UZ-LhZ"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>

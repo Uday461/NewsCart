@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -61,11 +62,20 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="gray" title="Categories"/>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mount" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="kme-Ja-Iuv">
+                    <rect key="frame" x="506" y="138.33333333333334" width="30" height="16.666666666666657"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="3Qj-46-e2j"/>
+                        <constraint firstAttribute="height" constant="15" id="kgw-YG-m1D"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="QY4-CP-jzd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Beb-qP-ZJT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kme-Ja-Iuv" secondAttribute="bottom" constant="15" id="Dex-Jv-Rrb"/>
                 <constraint firstAttribute="trailing" secondItem="uGY-iL-ch9" secondAttribute="trailing" constant="20" id="Edu-eI-5fC"/>
                 <constraint firstItem="F66-yW-xz5" firstAttribute="top" secondItem="Q7N-TK-CFc" secondAttribute="bottom" constant="3" id="FKt-rN-Qu0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Q7N-TK-CFc" secondAttribute="trailing" constant="100" id="HMI-SV-7kF"/>
@@ -76,6 +86,7 @@
                 <constraint firstItem="6fx-DA-WVN" firstAttribute="top" secondItem="F66-yW-xz5" secondAttribute="bottom" constant="20" id="d0B-vk-X02"/>
                 <constraint firstItem="Q7N-TK-CFc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="fZp-I6-PEy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QY4-CP-jzd" secondAttribute="trailing" constant="20" id="g0O-Yx-esF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kme-Ja-Iuv" secondAttribute="trailing" constant="25" id="hDP-z5-sCj"/>
                 <constraint firstItem="6fx-DA-WVN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="pEV-eX-UWo"/>
                 <constraint firstItem="uGY-iL-ch9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="yfq-EF-Fpn"/>
             </constraints>
@@ -86,6 +97,7 @@
     <resources>
         <image name="HeaderImage" width="360" height="100"/>
         <image name="bookmark.circle" catalog="system" width="128" height="123"/>
+        <image name="mount" catalog="system" width="116" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

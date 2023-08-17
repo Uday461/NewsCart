@@ -6,8 +6,8 @@
 //
 
 import Foundation
-//URLSessionDownloadDelegate
 class DownloadVideoManager{
+    //URLSession Request for downloading the video.
     func downloadVideo(urlString: String,_ completion: @escaping (_ success: Bool, _ url: URL?) -> Void){
         let url = URL(string: urlString)
         if let _url = url{
