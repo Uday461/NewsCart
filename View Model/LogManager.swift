@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import OSLog
 
 class LogManager{
     static var isLoggingEnabled = true
@@ -25,18 +24,13 @@ class LogManager{
           let components = filePath.components(separatedBy: "/")
           return components.isEmpty ? "" : components.last!
        }
-    //Method for printing error messages to debug console.
-    static func e( _ object: Any,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function) {
-             if isLoggingEnabled {
-                 print("\(Date().toString()) \(LogEvent.e.rawValue)[\(sourceFileName(filePath: filename))]: Line: \(line) Col:\(column) \(funcName) -> \(object)")
-             }
-        }
-    //Method for printing info. messages to debug console.
-    static func i( _ object: Any,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function) {
-             if isLoggingEnabled {
-                 print("\(Date().toString()) \(LogEvent.i.rawValue)[\(sourceFileName(filePath: filename))]: Line:\(line) Col:\(column) \(funcName) -> \(object)")
-             }
-        }
+    //Method for printing log messages to console.
+    static func log( _ object: Any,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function, logType: LogEvent){
+        if LogManager.isLoggingEnabled {
+            print("\(Date().toString()) \(logType.rawValue)[\(LogManager.sourceFileName(filePath: filename))]: Line: \(line) Col:\(column) \(funcName) -> \(object)")
+            }
+    }
+
 }
 
 extension Date {
@@ -45,6 +39,6 @@ extension Date {
    }
 }
 enum LogEvent: String {
-   case e = "[❗️]" // error
-   case i = "[ℹ️]" // info
+   case error = "[❗️]"
+   case info = "[ℹ️]" 
 }

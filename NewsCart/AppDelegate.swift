@@ -15,10 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
             guard success else{
-                LogManager.e("Error in APNS registry: \(String(describing: error))")
+                LogManager.log("Error in APNS registry: \(String(describing: error))", logType: .error)
                 return
             }
-            LogManager.i("Success in APNS registry.")
+            LogManager.log("Success in APNS registry.", logType: .info)
         }
         UIApplication.shared.registerForRemoteNotifications()
         
@@ -52,10 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         for i in 0..<deviceToken.count {
             token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
         }
-        LogManager.i("Device Token: \(token)")
+        LogManager.log("Device Token: \(token)", logType: .info)
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        LogManager.e("Error in registering for Remote Notifications: \(error)")
+        LogManager.log("Error in registering for Remote Notifications: \(error)", logType: .error)
     }
     
     // MARK: UISceneSession Lifecycle

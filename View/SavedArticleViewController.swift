@@ -45,7 +45,7 @@ class SavedArticleViewController: UIViewController {
             }
             self.coreDataManager.deleteArticle(articleInfo: self.articleArray[self.indexPathRow])
             self.articleArray.remove(at: self.indexPathRow)
-            LogManager.i("News article is deleted.")
+            LogManager.log("News article is deleted.", logType: .info)
             if self.articleArray.count != 0{
                 self.navigationController?.popViewController(animated: true)
             } else {

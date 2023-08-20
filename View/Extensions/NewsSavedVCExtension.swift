@@ -17,7 +17,7 @@ extension NewsSavedVC: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.articleDataCell) as! CustomSavedNewsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.articleDataCell) as! CustomSavedNewsCell
         cell.titleLabel.text = articleArray[indexPath.row].newsTitle
         cell.descriptionLabel.text = articleArray[indexPath.row].newsDescritption
         if let source = articleArray[indexPath.row].sourceName{
@@ -43,7 +43,7 @@ extension NewsSavedVC: UITableViewDelegate{
         if  (count == 0){
             return
         }
-        performSegue(withIdentifier: Constants.goToNewsVC, sender: self)
+        performSegue(withIdentifier: Identifiers.goToNewsVC, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

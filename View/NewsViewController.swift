@@ -21,7 +21,7 @@ class NewsViewController: UIViewController{
     var invalidArticlesCount = 0
     let coreDataManager = CoreDataManager()
     var fetchSavedArticle = [ArticleInfo]()
-    var imagesDictionary: [String:ImageProperty] = [:]
+    var imagesDictionary: [String:ImagePropertyModel] = [:]
     var totalArticles = 0
     var _data: Data? = nil
     let context = CoreDataConfiguration.shared.persistentContainer.viewContext
@@ -34,7 +34,7 @@ class NewsViewController: UIViewController{
         tableView.dataSource = self
         setupTableHeaderView()
         header.setupPopButton()
-        apiNewsManager.apiRequest(urlToImage: "\(Constants.apiForFetchingNews)\(page)") { data, response, error, count in
+        apiNewsManager.apiRequest(urlToImage: "\(APIEndPoints.apiForFetchingNews)\(page)") { data, response, error, count in
             if let _data = data{
                 self.apiNewsManager.parseJSON(data: _data)
             } else if let _error = error{

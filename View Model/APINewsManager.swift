@@ -6,12 +6,10 @@
 //
 
 import Foundation
-import UIKit
-import OSLog
 
 class APINewsManager{
     var fetchNewsDelegate: FetchNews?
-    //Method for decoding the fetched data from news API.
+    //Method for URL session GET request.
     func apiRequest(urlToImage: String, key:String="" , _ completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?, _ key: String) -> Void){
         let url = URL(string: urlToImage)
         if let _url = url{
@@ -31,7 +29,7 @@ class APINewsManager{
             articleNewsModel = decodedData
             fetchNewsDelegate?.fetchAndUpdateNews(articleNewsModel)
         }catch{
-            LogManager.e(error)
+            LogManager.log(error, logType:  .error)
         }
     }
     
@@ -44,7 +42,7 @@ class APINewsManager{
                     validArticles = [articles[index]]
                 }
             } else {
-                LogManager.i("Invalid Article: News Article's title/description/url contains nil.")
+                LogManager.log("Invalid Article: News Article's title/description/url contains nil.", logType: .info)
             }
         }
         return validArticles

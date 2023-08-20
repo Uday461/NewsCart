@@ -10,8 +10,7 @@ import CoreData
 class CoreDataConfiguration{
     static let shared = CoreDataConfiguration()
     // MARK: - Core Data stack
-    
-    lazy var persistentContainer: NSPersistentContainer = {
+        lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "NewsCart")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {

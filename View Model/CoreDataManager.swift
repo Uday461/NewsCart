@@ -6,9 +6,7 @@
 //
 
 import Foundation
-import UIKit
 import CoreData
-import OSLog
 
 class CoreDataManager{
     let context = CoreDataConfiguration.shared.persistentContainer.viewContext
@@ -21,7 +19,7 @@ class CoreDataManager{
         do{
             fetchSavedArticle = try context.fetch(request)
         } catch {
-            LogManager.e("Error in fetching Saved Articles in CoreData: \(error)")
+            LogManager.log("Error in fetching Saved Articles in CoreData: \(error)", logType: .error)
         }
         return fetchSavedArticle
     }
@@ -31,7 +29,7 @@ class CoreDataManager{
         do{
             articleArray = try context.fetch(request)
         }catch{
-            LogManager.e("Error in retrieving data from CoreData: \(error)")
+            LogManager.log("Error in retrieving data from CoreData: \(error)", logType: .error)
         }
         return articleArray
     }
@@ -41,7 +39,7 @@ class CoreDataManager{
         do{
             try self.context.save()
         }catch{
-            LogManager.e("Error saving data into context:\(error)")
+            LogManager.log("Error saving data into context:\(error)", logType: .error)
         }
     }
     
@@ -49,7 +47,7 @@ class CoreDataManager{
         do{
             try context.save()
         }catch{
-            LogManager.e("Error saving data into context:\(error)")
+            LogManager.log("Error saving data into context:\(error)", logType: .error)
         }
     }
 }

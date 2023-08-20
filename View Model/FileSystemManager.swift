@@ -6,15 +6,14 @@
 //
 
 import Foundation
-import UIKit
 import CommonCrypto
-import OSLog
+import UIKit
 class FileSystemManager{
     //Method for fetching the documentary URL path.
     func filePath(forImageName imageName: String) -> URL? {
         let fileManager = FileManager.default
         guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
-            LogManager.e("Error: File doesn't exit.")
+            LogManager.log("Error: File doesn't exit.", logType: .error)
             return nil
         }
         return documentURL.appendingPathComponent(imageName)
@@ -24,23 +23,23 @@ class FileSystemManager{
         if (format == ".png"){
             if let pngRepresentation = image.pngData() {
                 if let filePath = filePath(forImageName: imageName) {
-                    LogManager.i(filePath)
+                    LogManager.log(filePath, logType: .info)
                     do  {
                         try pngRepresentation.write(to: filePath,
                                                     options: .atomic)
                     } catch let err {
-                        LogManager.e("Saving file resulted in error: \(err)")
+                        LogManager.log("Saving file resulted in error: \(err)", logType: .error)
                     }
                 }
             }
         } else if (format == ".jpg"){
             if let jpgRepresentation = image.jpegData(compressionQuality: 1){
                 if let filePath = filePath(forImageName: imageName) {
-                    LogManager.i(filePath)
+                    LogManager.log(filePath, logType: .info)
                     do  {
                         try jpgRepresentation.write(to: filePath)
                     } catch let err {
-                        LogManager.e("Saving file resulted in error: \(err)")
+                        LogManager.log("Saving file resulted in error: \(err)", logType: .error)
                     }
                 }
             }
@@ -65,7 +64,7 @@ class FileSystemManager{
             do{
                 try FileManager.default.removeItem(at: filePath)
             } catch{
-                LogManager.e("Error in deleting file from documentry folder:\(error)")
+                LogManager.log("Error in deleting file from documentry folder:\(error)", logType: .error)
             }
         }
     }
@@ -76,7 +75,8 @@ class FileSystemManager{
            let image = UIImage(data: fileData) {
             return image
         }
-        LogManager.e("The selected Image File doesn't exit!!.")
+        LogManager.log("The selected Image File doesn't exit!!.", logType: .error)
         return nil
     }
+    
 }

@@ -23,9 +23,3 @@ struct Article: Codable{
 struct Source: Codable{
     let name: String?
 }
-
-struct ImageProperty{
-    var data: Data
-    var key: String
-    var imageFormat: String
-}

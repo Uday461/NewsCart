@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 import ImageIO
 
 //Following methods used for recognizing image type (".jpg",".png") 
@@ -22,7 +21,7 @@ extension String {
     //This method is used for checking if the array of substrings is present in a given string.
     func contains(_ strings: [String]) -> Bool {
         guard strings.count > 0 else {
-            LogManager.e("String is empty.")
+            LogManager.log("String is empty", logType: .error)
             return false
         }
         var allContained = true
