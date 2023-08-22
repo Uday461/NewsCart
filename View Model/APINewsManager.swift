@@ -9,9 +9,34 @@ import Foundation
 
 class APINewsManager{
     var fetchNewsDelegate: FetchNews?
+    
+    //Method for fetching news.
+    func fetchNews(newsUrl: String){
+        apiRequest(url: newsUrl) { data, response, error, key in
+            if let _data = data{
+                self.parseJSON(data: _data)
+            } else if let _error = error{
+                DispatchQueue.main.async {
+                    self.fetchNewsDelegate?.didFailErrorDueToNetwork(_error)
+                }
+            }
+        }
+    }
+    
+    //Method for fetching selected category news.
+    func fetchSelectedCategoryNews(category: String, page: Int){
+        if (category != "All"){
+            let categoryQuery = categoryConstants(category: category)!
+            fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingCategoryNews)\(categoryQuery)&page=\(page)")
+        } else {
+            fetchNews(newsUrl:  "\(APIEndPoints.apiForFetchingNews)\(page)")
+        }
+    }
+    
+    
     //Method for URL session GET request.
-    func apiRequest(urlToImage: String, key:String="" , _ completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?, _ key: String) -> Void){
-        let url = URL(string: urlToImage)
+    func apiRequest(url: String, key:String="" , _ completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?, _ key: String) -> Void){
+        let url = URL(string: url)
         if let _url = url{
             let task = URLSession.shared.dataTask(with: _url) { data, response, error in
                 completion(data, response, error, key)
@@ -19,7 +44,7 @@ class APINewsManager{
             task.resume()
         }
     }
-
+    
     //Method for decoding the data from json object.
     func parseJSON(data: Data){
         let jsonDecode = JSONDecoder()
@@ -61,7 +86,7 @@ class APINewsManager{
         }
         return returnCategory
     }
-  
+    
 }
 
 

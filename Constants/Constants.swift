@@ -7,8 +7,8 @@
 
 import Foundation
 struct APIEndPoints{
-    static let apiForFetchingNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=&pageSize=\(pageSize)&page="
-    static let apiForFetchingCategoryNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=&pageSize=\(pageSize)&category="
+    static let apiForFetchingNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e8e7563acd3f46b4b70bb69f63f3d48c&pageSize=\(pageSize)&page="
+    static let apiForFetchingCategoryNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e8e7563acd3f46b4b70bb69f63f3d48c&pageSize=\(pageSize)&category="
     static let pageSize = 5
 }
 struct Constants{
@@ -27,4 +27,13 @@ struct Identifiers{
     static let newsCell = "newsCell"
     static let articleDataCell = "articleDataCell"
     static let goToNewsVC = "goToNewsVC"
+    static let headerView = "HeaderView"
+    static let save = "save"
+    static let unsave = "unsave"
+    static let noSavedArticleCell = "NoSavedArticleCell"
+    static let newsCart = "NewsCart"
+    struct systemName{
+        static let bookmarkfill = "bookmark.fill"
+        static let bookmark = "bookmark"
+    }
 }

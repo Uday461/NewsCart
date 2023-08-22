@@ -28,4 +28,10 @@ class AlertsManager{
         alert.addAction(action)
         return alert
     }
+    static func emptyBookMarkedItemsAlert()->UIAlertController{
+        let alert = UIAlertController(title: "Empty Bookmarked Items", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        return alert
+    }
 }

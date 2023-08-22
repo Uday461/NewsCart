@@ -34,16 +34,7 @@ class NewsViewController: UIViewController{
         tableView.dataSource = self
         setupTableHeaderView()
         header.setupPopButton()
-        apiNewsManager.apiRequest(urlToImage: "\(APIEndPoints.apiForFetchingNews)\(page)") { data, response, error, count in
-            if let _data = data{
-                self.apiNewsManager.parseJSON(data: _data)
-            } else if let _error = error{
-                DispatchQueue.main.async {
-                    self.didFailErrorDueToNetwork(_error)
-                }
-            }
-        }
-        
+        apiNewsManager.fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingNews)\(page)")
     }
     
     override func viewWillAppear(_ animated: Bool) {

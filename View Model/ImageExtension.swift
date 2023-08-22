@@ -8,6 +8,17 @@
 import Foundation
 import ImageIO
 
+class ImageExtension{
+    static func returnImageExtension (imageFormat: ImageFormat) -> String{
+        switch(imageFormat){
+        case .jpg: return ".jpg"
+        case .png: return ".png"
+        case .webp: return ".webp"
+        case .gif: return ".gif"
+        case .unknown: return ".jpg"
+        }
+    }
+}
 //Following methods used for recognizing image type (".jpg",".png") 
 enum ImageFormat {
     case gif, jpg, png, webp, unknown
@@ -45,7 +56,6 @@ extension Data {
             } else if prefix.contains(["RIFF", "WEBP"]) {
                 return .webp
             } else {
-                print ("prefix \(prefix) is unknown")
                 return .unknown
             }
         }

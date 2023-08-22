@@ -10,8 +10,8 @@ import CoreData
 class CoreDataConfiguration{
     static let shared = CoreDataConfiguration()
     // MARK: - Core Data stack
-        lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "NewsCart")
+    lazy var persistentContainer: NSPersistentContainer = {
+        let container = NSPersistentContainer(name: Identifiers.newsCart)
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
@@ -19,9 +19,9 @@ class CoreDataConfiguration{
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
-
+    
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {

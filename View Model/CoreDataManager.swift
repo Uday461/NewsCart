@@ -50,4 +50,14 @@ class CoreDataManager{
             LogManager.log("Error saving data into context:\(error)", logType: .error)
         }
     }
+    
+    func articleInfoModel(imageName: String, newsDescription: String, newsTitle: String, sourceName: String?, urlLink: String)->ArticleInfo{
+        let newArticle = ArticleInfo(context: context)
+        newArticle.imageName = imageName
+        newArticle.newsDescritption = newsDescription
+        newArticle.newsTitle = newsTitle
+        newArticle.sourceName = sourceName
+        newArticle.urlLink = urlLink
+        return newArticle
+    }
 }

@@ -28,9 +28,9 @@ class SavedArticleViewController: UIViewController {
         articleArray = coreDataManager.loadArticles()
         DispatchQueue.main.async {
             let title = self.articleArray[self.indexPathRow].newsTitle
-                self.titleLabel.text = title
+            self.titleLabel.text = title
             let description = self.articleArray[self.indexPathRow].newsDescritption
-                self.descriptionLabel.text = description
+            self.descriptionLabel.text = description
             if let _imageName = self.articleArray[self.indexPathRow].imageName {
                 self.imageView.image = self.fileSystemManager.retrieveImage(forImageName: _imageName)
             }
@@ -51,9 +51,7 @@ class SavedArticleViewController: UIViewController {
             } else {
                 self.navigationController?.popToRootViewController(animated: true)
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Empty Bookmarked Items", message: "", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default, handler: nil)
-                    alert.addAction(action)
+                    let alert = AlertsManager.emptyBookMarkedItemsAlert()
                     self.present(alert, animated: true, completion: nil)
                 }
             }

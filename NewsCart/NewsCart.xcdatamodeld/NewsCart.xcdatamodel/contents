@@ -3,7 +3,6 @@
     <entity name="ArticleInfo" representedClassName=".ArticleInfo" syncable="YES" codeGenerationType="class">
         <attribute name="imageName" attributeType="String"/>
         <attribute name="newsDescritption" optional="YES" attributeType="String"/>
-        <attribute name="newsImage" optional="YES" attributeType="Binary"/>
         <attribute name="newsTitle" optional="YES" attributeType="String"/>
         <attribute name="sourceName" optional="YES" attributeType="String"/>
         <attribute name="urlLink" optional="YES" attributeType="String"/>

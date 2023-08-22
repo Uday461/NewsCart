@@ -47,7 +47,7 @@
 		7899FB5C2A83723C00814E8F /* DownloadVideoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899FB582A836C5600814E8F /* DownloadVideoManager.swift */; };
 		7899FB5E2A83B4E700814E8F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801459A2A7B7B1600844EBC /* NotificationViewController.swift */; };
 		7899FB742A84D67C00814E8F /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899FB732A84D67C00814E8F /* FileSystemManager.swift */; };
-		7899FB762A84D87800814E8F /* CheckImageFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899FB752A84D87800814E8F /* CheckImageFormatManager.swift */; };
+		7899FB762A84D87800814E8F /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899FB752A84D87800814E8F /* ImageExtension.swift */; };
 		EBAD4DBF27BA6752A7FE548A /* Pods_NewsCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7F41C6B2F7B9F9C59A3581 /* Pods_NewsCart.framework */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +129,7 @@
 		78939D822A679E9700BDDD23 /* SavedArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SavedArticleViewController.swift; path = View/SavedArticleViewController.swift; sourceTree = SOURCE_ROOT; };
 		7899FB582A836C5600814E8F /* DownloadVideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVideoManager.swift; sourceTree = "<group>"; };
 		7899FB732A84D67C00814E8F /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
-		7899FB752A84D87800814E8F /* CheckImageFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckImageFormatManager.swift; sourceTree = "<group>"; };
+		7899FB752A84D87800814E8F /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		D507D4F704BB62ADB1A396A4 /* Pods-NewsCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCart.release.xcconfig"; path = "Target Support Files/Pods-NewsCart/Pods-NewsCart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -176,7 +176,7 @@
 			children = (
 				789267542A62F36C00959887 /* APINewsManager.swift */,
 				780145772A7122D600844EBC /* CoreDataManager.swift */,
-				7899FB752A84D87800814E8F /* CheckImageFormatManager.swift */,
+				7899FB752A84D87800814E8F /* ImageExtension.swift */,
 				78817A1E2A7BACA300AC2CA7 /* ActionableNotificationManager.swift */,
 				7899FB582A836C5600814E8F /* DownloadVideoManager.swift */,
 				7899FB732A84D67C00814E8F /* FileSystemManager.swift */,
@@ -497,7 +497,7 @@
 				7899FB592A836C5600814E8F /* DownloadVideoManager.swift in Sources */,
 				78939D7F2A66929E00BDDD23 /* NewsSavedVC.swift in Sources */,
 				7892673B2A6115B400959887 /* NewsViewController.swift in Sources */,
-				7899FB762A84D87800814E8F /* CheckImageFormatManager.swift in Sources */,
+				7899FB762A84D87800814E8F /* ImageExtension.swift in Sources */,
 				7801457B2A76A6B300844EBC /* NewsViewControllerExtension.swift in Sources */,
 				780145782A7122D600844EBC /* CoreDataManager.swift in Sources */,
 				789267512A61399F00959887 /* APINewsModel.swift in Sources */,

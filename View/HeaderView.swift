@@ -18,7 +18,7 @@ class HeaderView: UIView{
     @IBOutlet weak var popButton: UIButton!
     
     var fetchCategoryNewsDelegate: FetchCategoryNews?
-
+    
     //Following method is used to show the UIMenu() of various news categories.
     func setupPopButton(){
         let optionClosure = {(action: UIAction)->() in
@@ -56,7 +56,7 @@ class HeaderView: UIView{
     
     private func commonInit(){
         let bundle  = Bundle(for: HeaderView.self)
-        bundle.loadNibNamed("HeaderView", owner: self, options: nil)
+        bundle.loadNibNamed(Identifiers.headerView, owner: self, options: nil)
         addSubview(contentView)
         contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true

@@ -25,12 +25,12 @@ class CustomNewsCell: UITableViewCell {
     var clickDelegate: ClickDelegate?
     
     @IBAction func saveButtonPressed(_ sender: Any) {
-        if (saveImageView.image == UIImage(systemName: "bookmark.fill")){
-            saveImageView.image = UIImage(systemName: "bookmark")
-            clickDelegate?.clicked(cellIndex!.row, "unsave")
+        if (saveImageView.image == UIImage(systemName: Identifiers.systemName.bookmarkfill)){
+            saveImageView.image = UIImage(systemName: Identifiers.systemName.bookmark)
+            clickDelegate?.clicked(cellIndex!.row, Identifiers.unsave)
         } else{
-            saveImageView.image = UIImage(systemName: "bookmark.fill")
-            clickDelegate?.clicked(cellIndex!.row, "save")
+            saveImageView.image = UIImage(systemName: Identifiers.systemName.bookmarkfill)
+            clickDelegate?.clicked(cellIndex!.row, Identifiers.save)
         }
     }
     
