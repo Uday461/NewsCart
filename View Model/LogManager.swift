@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import OSLog
 class LogManager{
     static var isLoggingEnabled = true
     static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
@@ -28,6 +28,7 @@ class LogManager{
     static func log( _ object: Any,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function, logType: LogEvent){
         if LogManager.isLoggingEnabled {
             print("\(Date().toString()) \(logType.rawValue)[\(LogManager.sourceFileName(filePath: filename))]: Line: \(line) Col:\(column) \(funcName) -> \(object)")
+        
         }
     }
     

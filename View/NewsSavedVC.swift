@@ -19,7 +19,6 @@ class NewsSavedVC: UIViewController{
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 180
-     //   tableView.register(UINib(nibName: Identifiers.noSavedArticleCell, bundle: nil), forCellReuseIdentifier: Identifiers.noSavedArticleCell)
         articleArray = coreDataManager.loadArticles()
         DispatchQueue.main.async {
             self.tableView.reloadData()

@@ -1,3 +1,32 @@
-PODFILE CHECKSUM: b7d2e4a51b85863937f720c5249d194ad7709acc
+PODS:
+  - MoEngage-iOS-SDK (9.10.2)
+  - MoEngageGeofence (5.10.1):
+    - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
+  - MoEngageInbox (2.10.0):
+    - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
+    - MoEngageRichNotification (< 7.11.0, >= 7.10.0)
+  - MoEngageRichNotification (7.10.0):
+    - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
+
+DEPENDENCIES:
+  - MoEngage-iOS-SDK (~> 9.10.0)
+  - MoEngageGeofence (~> 5.10.0)
+  - MoEngageInbox (~> 2.10.0)
+  - MoEngageRichNotification (~> 7.10.0)
+
+SPEC REPOS:
+  trunk:
+    - MoEngage-iOS-SDK
+    - MoEngageGeofence
+    - MoEngageInbox
+    - MoEngageRichNotification
+
+SPEC CHECKSUMS:
+  MoEngage-iOS-SDK: 8ad13e521d92c19e0f1c05ee4242e88e0e6b42a2
+  MoEngageGeofence: 5e92ac6fba950916fd122195d62c219626663532
+  MoEngageInbox: 6f5c2d344f725b181a4044d2c281a3792c0247f2
+  MoEngageRichNotification: 790d4f5da384b80e822e4b8eda722d1ebdf574ad
+
+PODFILE CHECKSUM: 08cae73fe9cf22c3c09d966a033166fc434a5cc7
 
 COCOAPODS: 1.11.3

@@ -6,12 +6,17 @@
 	<dict>
 		<key>NSExtensionAttributes</key>
 		<dict>
+			<key>UNNotificationExtensionUserInteractionEnabled</key>
+			<true/>
 			<key>UNNotificationExtensionDefaultContentHidden</key>
 			<true/>
 			<key>UNNotificationExtensionCategory</key>
-			<string>MEETING_INVITATION</string>
+			<array>
+				<string>MEETING_INVITATION</string>
+				<string>MOE_PUSH_TEMPLATE</string>
+			</array>
 			<key>UNNotificationExtensionInitialContentSizeRatio</key>
-			<real>1</real>
+			<real>1.2</real>
 		</dict>
 		<key>NSExtensionMainStoryboard</key>
 		<string>MainInterface</string>

@@ -19,6 +19,7 @@ class HeaderView: UIView{
     
     var fetchCategoryNewsDelegate: FetchCategoryNews?
     
+    var fetchInboxMessagesDelegate: FetchInboxMessages?
     //Following method is used to show the UIMenu() of various news categories.
     func setupPopButton(){
         let optionClosure = {(action: UIAction)->() in
@@ -35,6 +36,12 @@ class HeaderView: UIView{
         popButton.showsMenuAsPrimaryAction = true
         popButton.changesSelectionAsPrimaryAction = true
     }
+    
+    
+    @IBAction func messageInboxButtonPressed(_ sender: Any) {
+        fetchInboxMessagesDelegate?.fetchInboxMessages()
+    }
+    
     
     @IBAction func bookMarkButtonPressed(_ sender: Any) {
         fetchCategoryNewsDelegate?.fetchSavedArticles()

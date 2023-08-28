@@ -14,7 +14,7 @@
         <!--News View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="NewsViewController" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="NewsViewController" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -150,7 +150,7 @@
         <!--EmptyVC-->
         <scene sceneID="KWo-5u-uAk">
             <objects>
-                <viewController id="oNr-cV-lrD" customClass="EmptyVC" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmptyVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oNr-cV-lrD" customClass="EmptyVC" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ofh-OM-8cY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -201,7 +201,7 @@
         <!--Saved Articles-->
         <scene sceneID="M0R-iW-6C4">
             <objects>
-                <viewController id="aIf-b6-I6a" customClass="NewsSavedVC" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsSavedVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aIf-b6-I6a" customClass="NewsSavedVC" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IkU-43-5Zs">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -316,7 +316,7 @@
         <!--Saved Article View Controller-->
         <scene sceneID="4jJ-Jy-tAk">
             <objects>
-                <viewController id="uWh-T7-NTv" customClass="SavedArticleViewController" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SavedArticleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uWh-T7-NTv" customClass="SavedArticleViewController" customModule="NewsCart" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gi1-Nv-9NK">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,7 +410,7 @@
         <!--Navigation Controller-->
         <scene sceneID="ICf-W6-znD">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NSb-SS-sHl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NSb-SS-sHl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dxp-cC-pHF">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

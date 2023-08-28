@@ -1,0 +1,1683 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "CommonCrypto",
+        "printedName": "CommonCrypto",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotificationsUI",
+        "printedName": "UserNotificationsUI",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "ImageIO",
+        "printedName": "ImageIO",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "AVFoundation",
+        "printedName": "AVFoundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageMessaging",
+        "printedName": "MoEngageMessaging",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageCore",
+        "printedName": "MoEngageCore",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "MoEngageAnalytics",
+        "printedName": "MoEngageAnalytics",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "Import",
+        "name": "UserNotifications",
+        "printedName": "UserNotifications",
+        "declKind": "Import",
+        "moduleName": "MoEngageRichNotification"
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "MoEngageSDKRichNotification",
+        "printedName": "MoEngageSDKRichNotification",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(richNotificationRequest:withContentHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotificationRequest",
+                "printedName": "UserNotifications.UNNotificationRequest",
+                "usr": "c:objc(cs)UNNotificationRequest"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UserNotifications.UNNotificationContent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UNNotificationContent",
+                    "printedName": "UserNotifications.UNNotificationContent",
+                    "usr": "c:objc(cs)UNNotificationContent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification(cm)handleWithRichNotificationRequest:withContentHandler:",
+            "mangledName": "$s24MoEngageRichNotification0ab7SDKRichD0C6handle04richD7Request18withContentHandlerySo014UNNotificationH0C_ySo0lJ0CctFZ",
+            "moduleName": "MoEngageRichNotification",
+            "static": true,
+            "objc_name": "handleWithRichNotificationRequest:withContentHandler:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "addPushTemplate",
+            "printedName": "addPushTemplate(toController:withNotification:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UIViewController",
+                "printedName": "UIKit.UIViewController",
+                "usr": "c:objc(cs)UIViewController"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotification",
+                "printedName": "UserNotifications.UNNotification",
+                "usr": "c:objc(cs)UNNotification"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification(cm)addPushTemplateToController:withNotification:",
+            "mangledName": "$s24MoEngageRichNotification0ab7SDKRichD0C15addPushTemplate12toController04withD0ySo06UIViewJ0C_So14UNNotificationCtFZ",
+            "moduleName": "MoEngageRichNotification",
+            "static": true,
+            "objc_name": "addPushTemplateToController:withNotification:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setAppGroupID",
+            "printedName": "setAppGroupID(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification(cm)setAppGroupID:",
+            "mangledName": "$s24MoEngageRichNotification0ab7SDKRichD0C13setAppGroupIDyySSFZ",
+            "moduleName": "MoEngageRichNotification",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "handle",
+            "printedName": "handle(localNotificationRequest:withContentHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "UNNotificationRequest",
+                "printedName": "UserNotifications.UNNotificationRequest",
+                "usr": "c:objc(cs)UNNotificationRequest"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(UserNotifications.UNNotificationContent) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UNNotificationContent",
+                    "printedName": "UserNotifications.UNNotificationContent",
+                    "usr": "c:objc(cs)UNNotificationContent"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification(cm)handleWithLocalNotificationRequest:withContentHandler:",
+            "mangledName": "$s24MoEngageRichNotification0ab7SDKRichD0C6handle05localD7Request18withContentHandlerySo014UNNotificationH0C_ySo0lJ0CctFZ",
+            "moduleName": "MoEngageRichNotification",
+            "static": true,
+            "objc_name": "handleWithLocalNotificationRequest:withContentHandler:",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "ObjC",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "MoEngageSDKRichNotification",
+                "printedName": "MoEngageRichNotification.MoEngageSDKRichNotification",
+                "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification(im)init",
+            "mangledName": "$s24MoEngageRichNotification0ab7SDKRichD0CACycfc",
+            "moduleName": "MoEngageRichNotification",
+            "overriding": true,
+            "implicit": true,
+            "objc_name": "init",
+            "declAttributes": [
+              "Dynamic",
+              "ObjC",
+              "Override"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "c:@M@MoEngageRichNotification@objc(cs)MoEngageSDKRichNotification",
+        "mangledName": "$s24MoEngageRichNotification0ab7SDKRichD0C",
+        "moduleName": "MoEngageRichNotification",
+        "declAttributes": [
+          "AccessControl",
+          "ObjC"
+        ],
+        "superclassUsr": "c:objc(cs)NSObject",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "ObjectiveC.NSObject"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObservingPublishing",
+            "printedName": "_KeyValueCodingAndObservingPublishing",
+            "usr": "s:10Foundation37_KeyValueCodingAndObservingPublishingP",
+            "mangledName": "$s10Foundation37_KeyValueCodingAndObservingPublishingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_KeyValueCodingAndObserving",
+            "printedName": "_KeyValueCodingAndObserving",
+            "usr": "s:10Foundation27_KeyValueCodingAndObservingP",
+            "mangledName": "$s10Foundation27_KeyValueCodingAndObservingP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "IntegerLiteral",
+      "offset": 864,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1118,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1397,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1490,
+      "length": 32,
+      "value": "\"<p><strong>\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1508,
+      "length": 2,
+      "value": "\"<\/strong><\/p>\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1524,
+      "length": 15,
+      "value": "\"<p>\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1534,
+      "length": 2,
+      "value": "\"<\/p>\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1796,
+      "length": 7,
+      "value": "\"white\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1805,
+      "length": 7,
+      "value": "\"black\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1847,
+      "length": 163,
+      "value": "\"<style> * {font-family: -apple-system; font-size: 17px;} .iosThemeDefault { color: \""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1950,
+      "length": 1,
+      "value": "\";} <\/style> <div class=\"iosThemeDefault\">\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 2003,
+      "length": 2,
+      "value": "\"<\/div>\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 2406,
+      "length": 37,
+      "value": "\"error in fetching attributed string\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3094,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 3306,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3358,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 3377,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 3415,
+      "length": 6,
+      "value": "\"%02x\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4954,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5027,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 5333,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 5564,
+      "length": 5,
+      "value": "\"png\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 5842,
+      "length": 9,
+      "value": "\"_\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 5850,
+      "length": 21,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5866,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichNotificationUtils.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6085,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 609,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 634,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 930,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 978,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3238,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3552,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3861,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4066,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4165,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4197,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4304,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4409,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4441,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4546,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4623,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "StringLiteral",
+      "offset": 4668,
+      "length": 4,
+      "value": "\"\n\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4748,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4759,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4998,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5386,
+      "length": 2,
+      "value": "10"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5412,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushBodyView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5439,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 246,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 278,
+      "length": 13,
+      "value": "\"Attachments\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 355,
+      "length": 18,
+      "value": "\"moe_app_group_ID\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 411,
+      "length": 30,
+      "value": "\"moe_push_template_click_info\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 484,
+      "length": 27,
+      "value": "\"moe_pending_notifications\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 574,
+      "length": 9,
+      "value": "\"card_id\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 616,
+      "length": 13,
+      "value": "\"campaign_id\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 661,
+      "length": 20,
+      "value": "\"received_epoch_val\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 763,
+      "length": 13,
+      "value": "\"NSExtension\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 818,
+      "length": 23,
+      "value": "\"NSExtensionAttributes\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Utils\/MoEngageRichConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 884,
+      "length": 45,
+      "value": "\"UNNotificationExtensionDefaultContentHidden\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 519,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 548,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 627,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "StringLiteral",
+      "offset": 701,
+      "length": 14,
+      "value": "\"carouselCell\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1673,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2345,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2608,
+      "length": 2,
+      "value": "70"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2774,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2811,
+      "length": 4,
+      "value": "0.70"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "StringLiteral",
+      "offset": 3280,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "FloatLiteral",
+      "offset": 4282,
+      "length": 3,
+      "value": "3.0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4356,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4432,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4499,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4574,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4673,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4714,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4983,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionViewCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 409,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionViewCell.swift",
+      "kind": "StringLiteral",
+      "offset": 973,
+      "length": 5,
+      "value": "\"gif\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngageCarouselCollectionViewCell.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1135,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 426,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 623,
+      "length": 4,
+      "value": "2845"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 797,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 841,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2666,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 2697,
+      "length": 15,
+      "value": "\"containerView\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 2788,
+      "length": 62,
+      "value": "\"H:|-0-[containerView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 2843,
+      "length": 1,
+      "value": "\")]-0-|\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 2896,
+      "length": 63,
+      "value": "\"V:|-0-[containerView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 2952,
+      "length": 1,
+      "value": "\")]-0-|\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "Array",
+      "offset": 3100,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "Array",
+      "offset": 3260,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3599,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3605,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 3640,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4369,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4440,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4511,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4556,
+      "length": 15,
+      "value": "\"containerView\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4588,
+      "length": 14,
+      "value": "\"templateView\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4618,
+      "length": 14,
+      "value": "\"pushBodyView\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4698,
+      "length": 60,
+      "value": "\"H:|-0-[templateView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4751,
+      "length": 1,
+      "value": "\")]-0-|\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4798,
+      "length": 60,
+      "value": "\"H:|-0-[pushBodyView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4851,
+      "length": 1,
+      "value": "\")]-0-|\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4899,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 4988,
+      "length": 113,
+      "value": "\"V:|-0-[pushBodyView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 5042,
+      "length": 1,
+      "value": "\")]-0-[templateView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 5094,
+      "length": 1,
+      "value": "\")]-0-|\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 5159,
+      "length": 113,
+      "value": "\"V:|-0-[templateView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 5213,
+      "length": 1,
+      "value": "\")]-0-[pushBodyView(\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "StringLiteral",
+      "offset": 5265,
+      "length": 1,
+      "value": "\")]-0-|\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "Array",
+      "offset": 5418,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "Array",
+      "offset": 5575,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "Array",
+      "offset": 5732,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6851,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6857,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6897,
+      "length": 2,
+      "value": "95"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7480,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7486,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8058,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8064,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngagePushTemplateController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 8104,
+      "length": 3,
+      "value": "200"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 362,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 520,
+      "length": 3,
+      "value": "100"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "FloatLiteral",
+      "offset": 1234,
+      "length": 3,
+      "value": "0.0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "StringLiteral",
+      "offset": 2290,
+      "length": 7,
+      "value": "\"image\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2601,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "FloatLiteral",
+      "offset": 2693,
+      "length": 5,
+      "value": "220.0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "StringLiteral",
+      "offset": 3722,
+      "length": 5,
+      "value": "\"gif\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4310,
+      "length": 2,
+      "value": "-1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/View\/MoEngagePushMediaView.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4430,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2184,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 2585,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 3650,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 3676,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 3702,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 4601,
+      "length": 18,
+      "value": "\"moe_reports_host\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4999,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 5134,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 5843,
+      "length": 28,
+      "value": "\"Mandatory Param is missing\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6962,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6997,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7269,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7302,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7693,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 7880,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8214,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 8307,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 9280,
+      "length": 3,
+      "value": "\".\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 9809,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10070,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 10333,
+      "length": 42,
+      "value": "\"Failed to save the notification resource\""
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10426,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 10466,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15592,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 15806,
+      "length": 1,
+      "value": "1"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16212,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16325,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 16371,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 17035,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 18158,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/babul.raj@moengage.com\/MoenWorkSpace\/MoEFramework\/MoEngage\/MoEngageRichNotification\/Controller\/MoEngageRichNotificationController.swift",
+      "kind": "StringLiteral",
+      "offset": 19378,
+      "length": 28,
+      "value": "\"Mandatory Param is missing\""
+    }
+  ]
+}

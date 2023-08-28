@@ -8,6 +8,8 @@
 import Foundation
 import UIKit
 import SafariServices
+import MoEngageSDK
+import MoEngageInbox
 
 //MARK: - FetchNews Protocol Methods
 
@@ -43,6 +45,16 @@ extension NewsViewController: FetchNews{
     
 }
 
+//MARK: - FetchInboxMessages Protocol Methods
+
+extension NewsViewController: FetchInboxMessages{
+    func fetchInboxMessages() {
+        MoEngageSDKInbox.sharedInstance.pushInboxViewController(toNavigationController: self.navigationController!, withUIConfiguration: MoEngageInboxConfiguration.getMoEngageInboxConfiguration(), withInboxWithControllerDelegate: self)
+    }
+    
+}
+
+
 //MARK: - FetchCategoryNews Protocol Methods
 
 extension NewsViewController: FetchCategoryNews{
@@ -58,6 +70,7 @@ extension NewsViewController: FetchCategoryNews{
         let articlesPersisted = coreDataManager.loadArticles()
         if (articlesPersisted.count == 0){
             performSegue(withIdentifier: Identifiers.goToEmptyVC, sender: self)
+            MoEngageSDKAnalytics.sharedInstance.trackEvent("Added To Cart")
         } else{
             performSegue(withIdentifier: Identifiers.goToSavedArticlesVC, sender: self)
         }
@@ -100,6 +113,7 @@ extension NewsViewController:UITableViewDataSource{
                         let imageFetched: UIImage = UIImage(data: _data) ?? UIImage(named: Constants.noImage)!
                         cell.newsImage.image = imageFetched
                         imageType = ImageExtension.returnImageExtension(imageFormat: _data.format())
+                        print(imageType)
                         let imageProperty = ImagePropertyModel(data: _data, key: fileName, imageFormat: imageType)
                         self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
                     }

@@ -70,10 +70,32 @@
                         <constraint firstAttribute="height" constant="15" id="kgw-YG-m1D"/>
                     </constraints>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="p0r-DJ-auP">
+                    <rect key="frame" x="20" y="20.333333333333332" width="50" height="29.333333333333339"/>
+                    <color key="tintColor" systemColor="labelColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="5tJ-zr-h8c"/>
+                        <constraint firstAttribute="width" constant="50" id="OpI-6R-IuG"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7y-CZ-6YA">
+                    <rect key="frame" x="20" y="20" width="50" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="IXC-pG-ech"/>
+                        <constraint firstAttribute="width" constant="50" id="yDb-uV-fUK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="messageInboxButtonPressed:" destination="-1" eventType="touchUpInside" id="0u0-TY-F1v"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="p0r-DJ-auP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="23k-wp-jpc"/>
+                <constraint firstItem="a7y-CZ-6YA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="4iE-BW-nwp"/>
                 <constraint firstItem="QY4-CP-jzd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Beb-qP-ZJT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kme-Ja-Iuv" secondAttribute="bottom" constant="15" id="Dex-Jv-Rrb"/>
                 <constraint firstAttribute="trailing" secondItem="uGY-iL-ch9" secondAttribute="trailing" constant="20" id="Edu-eI-5fC"/>
@@ -87,6 +109,8 @@
                 <constraint firstItem="Q7N-TK-CFc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="100" id="fZp-I6-PEy"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="QY4-CP-jzd" secondAttribute="trailing" constant="20" id="g0O-Yx-esF"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kme-Ja-Iuv" secondAttribute="trailing" constant="25" id="hDP-z5-sCj"/>
+                <constraint firstItem="a7y-CZ-6YA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="i59-GT-top"/>
+                <constraint firstItem="p0r-DJ-auP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="lDE-nZ-sea"/>
                 <constraint firstItem="6fx-DA-WVN" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="pEV-eX-UWo"/>
                 <constraint firstItem="uGY-iL-ch9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="yfq-EF-Fpn"/>
             </constraints>
@@ -97,6 +121,7 @@
     <resources>
         <image name="HeaderImage" width="360" height="100"/>
         <image name="bookmark.circle" catalog="system" width="128" height="123"/>
+        <image name="message" catalog="system" width="128" height="116"/>
         <image name="mount" catalog="system" width="116" height="128"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

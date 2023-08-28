@@ -7,7 +7,7 @@
 
 import Foundation
 import ImageIO
-
+import WebKit
 class ImageExtension{
     static func returnImageExtension (imageFormat: ImageFormat) -> String{
         switch(imageFormat){
@@ -18,6 +18,7 @@ class ImageExtension{
         case .unknown: return ".jpg"
         }
     }
+    
 }
 //Following methods used for recognizing image type (".jpg",".png") 
 enum ImageFormat {

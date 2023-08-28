@@ -20,7 +20,7 @@ class FileSystemManager{
     }
     //Method for storing the image into documentary.
     func store(image: UIImage, forImageName imageName: String, imageFormat format: String) {
-        if (format == ".png"){
+        if ((format == ".png") || (format == ".webp")){
             if let pngRepresentation = image.pngData() {
                 if let filePath = filePath(forImageName: imageName) {
                     LogManager.log(filePath, logType: .info)
@@ -45,6 +45,7 @@ class FileSystemManager{
             }
         }
     }
+    
     //Method for generating unique file name from URLString to identify images uniquely.
     func generateUniqueFilename(forUrlString urlString: String)-> String?{
         guard let data = urlString.data(using: .utf8) else {
@@ -57,6 +58,7 @@ class FileSystemManager{
         let fileName = digest.map{String(format: "%02hhx", $0)}.joined()
         return "image_"+fileName
     }
+    
     //Method for deleting the images from documentary.
     func deleteImage(forImageName imageName: String){
         if let filePath = self.filePath(forImageName: imageName){

@@ -9,9 +9,9 @@ import Foundation
 import UserNotifications
 
 class ActionableNotificationManager: UNUserNotificationCenter, UNUserNotificationCenterDelegate {
-    static func configureActionableNotification(){
+    static func configureActionableNotification() -> Set<UNNotificationCategory>{
         let acceptAction = UNNotificationAction(identifier: "ACCEPT_INVITATION",
-                                                title: "Accept",
+                                                title: "Acccccept",
                                                 options: [])
         let declineAction = UNNotificationAction(identifier: "DECLINE_INVITATION",
                                                  title: "Decline",
@@ -28,17 +28,12 @@ class ActionableNotificationManager: UNUserNotificationCenter, UNUserNotificatio
                                hiddenPreviewsBodyPlaceholder: "",
                                options: .customDismissAction)
         
-        let videoPlayerCategory =
-        UNNotificationCategory(identifier: "VIDEO_PLAYER",
-                               actions: [],
-                               intentIdentifiers: [],
-                               hiddenPreviewsBodyPlaceholder: "",
-                               options: .customDismissAction)
-        
         let newOfferCategory = UNNotificationCategory(identifier: "NEW_OFFER", actions: [book], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
         
         // Register the notification type.
-        let notificationCenter = UNUserNotificationCenter.current()
-        notificationCenter.setNotificationCategories([meetingInviteCategory,newOfferCategory,videoPlayerCategory])
+//        let notificationCenter = UNUserNotificationCenter.current()
+//        notificationCenter.setNotificationCategories([meetingInviteCategory,newOfferCategory])
+        let categoriesSet = Set.init([meetingInviteCategory,newOfferCategory])
+        return categoriesSet
     }
 }

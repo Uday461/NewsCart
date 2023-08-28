@@ -8,4 +8,15 @@ target 'NewsCart' do
   # Pods for NewsCart
 #  pod 'Firebase/Core'
 #  pod 'Firebase/Messaging'
+pod 'MoEngage-iOS-SDK','~>9.10.0'
+pod 'MoEngageInbox','~>2.10.0'
+pod 'MoEngageGeofence','~>5.10.0'
+end
+target 'NewsCartServiceExtension' do
+  use_frameworks!
+pod 'MoEngageRichNotification','~>7.10.0'
+end
+target 'NewsCartContentExtension' do
+  use_frameworks!
+pod 'MoEngageRichNotification','~>7.10.0'
 end
