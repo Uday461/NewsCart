@@ -54,7 +54,7 @@ class APINewsManager{
             articleNewsModel = decodedData
             fetchNewsDelegate?.fetchAndUpdateNews(articleNewsModel)
         }catch{
-            LogManager.log(error, logType:  .error)
+            LogManager.error(error.localizedDescription)
         }
     }
     
@@ -67,7 +67,7 @@ class APINewsManager{
                     validArticles = [articles[index]]
                 }
             } else {
-                LogManager.log("Invalid Article: News Article's title/description/url contains nil.", logType: .info)
+                LogManager.logging("Invalid Article: News Article's title/description/url contains nil.")
             }
         }
         return validArticles

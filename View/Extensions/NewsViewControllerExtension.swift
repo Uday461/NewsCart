@@ -10,6 +10,8 @@ import UIKit
 import SafariServices
 import MoEngageSDK
 import MoEngageInbox
+import MoEngageCards
+import MoEngageInApps
 
 //MARK: - FetchNews Protocol Methods
 
@@ -17,7 +19,7 @@ extension NewsViewController: FetchNews{
     
     //Following method is used to handle the error when URLSession requesting fails and display alert to user.
     func didFailErrorDueToNetwork(_ networkError: Error) {
-        LogManager.log(networkError, logType: .error)
+        LogManager.error(networkError.localizedDescription)
         let alert = AlertsManager.alertMessage(error: networkError)
         present(alert, animated: true, completion: nil)
     }
@@ -27,9 +29,9 @@ extension NewsViewController: FetchNews{
         self.apiNewsModel = apiNewsModel
         totalArticles = totalArticles + apiNewsModel.articles.count
         guard let _validArticles = apiNewsManager.validArticlesList(articles: apiNewsModel.articles) else{
-            LogManager.log("Valid Articles is nil", logType: .error)
+            LogManager.error("Valid Articles is nil")
             return }
-        LogManager.log("Total Articles:\(self.totalArticles)", logType: .info)
+        LogManager.logging("Total Articles:\(self.totalArticles)")
         if (page == 1){
             self.articles = _validArticles
             invalidArticlesCount = invalidArticlesCount + (apiNewsModel.articles.count - (articles?.count ?? 0))
@@ -54,6 +56,51 @@ extension NewsViewController: FetchInboxMessages{
     
 }
 
+//MARK: - FetchCardsInboxMessages Protocol Methods
+
+extension NewsViewController: CardsInboxMessages{
+    func fetchCardsInboxMessages() {
+        MoEngageSDKCards.sharedInstance.pushCardsViewController(toNavigationController: self.navigationController!, withUIConfiguration: nil, withCardsViewControllerDelegate: self)
+    }
+}
+
+//MARK: - FetchSelfHandledCards Protocol Methods
+
+extension NewsViewController: FetchSelfHandledCards{
+    func fetchSelfHandledCards() {
+        performSegue(withIdentifier: "goToSelfCards", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToSelfCards"){
+            let selfHandledCardsVC = segue.destination as! SelfHandledInAppViewController
+            selfHandledCardsVC.moEngageCardCampaignArray = moEngageCardsCampaignArray
+           }
+     }
+}
+
+
+
+//MARK: - MoEngageCards Callback methods
+
+extension NewsViewController: MoEngageCardsViewControllerDelegate{
+    // Called when MoEngageCardsListViewController is dismissed after being presented
+    @objc func cardsViewControllerDismissed(forAccountMeta accountMeta: MoEngageAccountMeta){
+        LogManager.logging("CardsViewController Dismissed: \(accountMeta.appID)")
+    }
+    // Called when a Card is deleted
+    @objc func cardDeleted(withCardInfo card: MoEngageCardCampaign, forAccountMeta accountMeta: MoEngageAccountMeta){
+        LogManager.logging("Cards is deleted: \(accountMeta.appID)")
+    }
+    // Called when a Card is clicked by the user
+    @objc func cardClicked(withCardInfo card: MoEngageCardCampaign, andAction action:MoEngageCardAction, forAccountMeta accountMeta: MoEngageAccountMeta) -> Bool{
+        LogManager.logging("Card is clicked by the user: \(accountMeta.appID)")
+        if (action.typeString == "screenName"){
+            NavigatingToScreen.navigatingToOtherScreen(toScreen: action.value)
+        }
+        return true
+    }
+    
+}
 
 //MARK: - FetchCategoryNews Protocol Methods
 
@@ -62,7 +109,7 @@ extension NewsViewController: FetchCategoryNews{
     func fetchCategoryNews(_ category: String) {
         page = 1
         invalidArticlesCount = 0
-        LogManager.log("Selected news category: \(category)", logType: .info)
+        LogManager.logging("Selected news category: \(category)")
         apiNewsManager.fetchSelectedCategoryNews(category: category, page: page)
     }
     //Following method is used for fetching saved news articles.
@@ -70,7 +117,6 @@ extension NewsViewController: FetchCategoryNews{
         let articlesPersisted = coreDataManager.loadArticles()
         if (articlesPersisted.count == 0){
             performSegue(withIdentifier: Identifiers.goToEmptyVC, sender: self)
-            MoEngageSDKAnalytics.sharedInstance.trackEvent("Added To Cart")
         } else{
             performSegue(withIdentifier: Identifiers.goToSavedArticlesVC, sender: self)
         }
@@ -148,7 +194,7 @@ extension NewsViewController:  UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         let newsUrl = articles?[indexPath.row].url
         guard let url = URL(string: newsUrl ?? "") else{
-            LogManager.log("Selected news article url contains nil.", logType: .error)
+            LogManager.error("Selected news article url contains nil.")
             return
         }
         let vc = SFSafariViewController(url: url)
@@ -157,13 +203,13 @@ extension NewsViewController:  UITableViewDelegate{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let _articles = articles{
             if (indexPath.row == _articles.count-1){
-                LogManager.log("Articles fetched page wise: \(_articles.count)", logType: .info)
-                LogManager.log("invalid Articles Count: \(self.invalidArticlesCount)", logType: .info)
+                LogManager.logging("Articles fetched page wise: \(_articles.count)")
+                LogManager.logging("invalid Articles Count: \(self.invalidArticlesCount)")
                 if (_articles.count < (apiNewsModel!.totalResults - invalidArticlesCount)){
                     page = page + 1
                     apiNewsManager.fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingNews)\(page)")
                 } else {
-                    LogManager.log("All the valid news updates has been fetched.", logType: .info)
+                    LogManager.logging("All the valid news updates has been fetched.")
                     let alert = AlertsManager.alertMessageForNewsUpdate()
                     present(alert, animated: true, completion: nil)
                 }
@@ -202,19 +248,19 @@ extension NewsViewController: ClickDelegate{
     func clicked(_ row: Int, _ buttonState: String) {
         if (buttonState == Identifiers.save){
             guard let uiImage = UIImage(data: imagesDictionary[(articles?[row].url)!]!.data), let imageFormat = imagesDictionary[(articles?[row].url)!]?.imageFormat, let key = imagesDictionary[(articles?[row].url)!]?.key else {
-                LogManager.log("Optional variable contains nil.", logType: .error)
+                LogManager.error("Optional variable contains nil.")
                 return
             }
             let newArticle = coreDataManager.articleInfoModel(imageName: key+imageFormat, newsDescription: (articles?[row].description)!, newsTitle: (articles?[row].title!)!, sourceName: articles?[row].source.name, urlLink: (articles?[row].url)!)
             fileSystemManager.store(image: uiImage, forImageName: key+imageFormat, imageFormat: imageFormat)
-            LogManager.log("News article is saved.", logType: .info)
+            LogManager.logging("News article is saved.")
         } else {
             fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink: (articles?[row].url)!)
             if let _imageName = fetchSavedArticle[0].imageName{
                 fileSystemManager.deleteImage(forImageName: _imageName)
             }
             coreDataManager.deleteArticle(articleInfo: fetchSavedArticle[0])
-            LogManager.log("News article is unsaved.", logType: .info)
+            LogManager.logging("News article is unsaved.")
         }
         coreDataManager.saveArticle()
     }

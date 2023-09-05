@@ -19,6 +19,8 @@ struct Constants{
     static let technologyNewsApiQuery = "technology"
     static let sportsNewsApiQuery = "sports"
     static let noImage = "no-image-icon"
+    static let appID = "DAO6UGZ73D9RTK8B5W96TPYN"
+    static let appGroupID = "group.com.Uday.NewsCart.MoEngage"
 }
 
 struct Identifiers{

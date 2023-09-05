@@ -13,10 +13,6 @@ class MoEngageInboxConfiguration{
         let configuration  = MoEngageInboxUIConfiguration()
         configuration.cellUnreadBackgroundColor = UIColor(named: "unreadColor")!
         configuration.cellSelectionTintColor = .darkGray
-        let navigationBarStyle = MoEngageInboxNavigationBarStyle()
-        navigationBarStyle.navigationBarColor = .white
-        navigationBarStyle.navigationBarTitleColor = .black
-        configuration.navigationBarStyle = navigationBarStyle
         return configuration
     }
 }

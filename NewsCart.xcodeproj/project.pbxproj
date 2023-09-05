@@ -19,6 +19,14 @@
 		7801459B2A7B7B1600844EBC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801459A2A7B7B1600844EBC /* NotificationViewController.swift */; };
 		7801459E2A7B7B1600844EBC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7801459C2A7B7B1600844EBC /* MainInterface.storyboard */; };
 		780145A22A7B7B1600844EBC /* NewsCartContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 780145942A7B7B1600844EBC /* NewsCartContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7840F56B2AA0ED8C003F4B91 /* SelfHandledInAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56A2AA0ED8C003F4B91 /* SelfHandledInAppViewController.swift */; };
+		7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */; };
+		7840F5712AA0F931003F4B91 /* FetchSelfHandledCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */; };
+		7840F57A2AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5792AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift */; };
+		7840F57C2AA1E7E6003F4B91 /* CardsillustrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F57B2AA1E7E6003F4B91 /* CardsillustrationCell.swift */; };
+		7840F57F2AA1F49F003F4B91 /* SelfHandledModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F57E2AA1F49F003F4B91 /* SelfHandledModel.swift */; };
+		7840F5812AA1F8D4003F4B91 /* SelfHandledManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5802AA1F8D4003F4B91 /* SelfHandledManager.swift */; };
+		7848B4FA2AA5F4A2008613B8 /* FileManagementSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7848B4F92AA5F4A2008613B8 /* FileManagementSDK */; };
 		787F4EF22A8C7AAB00376F2F /* CoreDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF12A8C7AAB00376F2F /* CoreDataConfiguration.swift */; };
 		787F4EF42A8DF68900376F2F /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF32A8DF68900376F2F /* LogManager.swift */; };
 		787F4EF62A8F6CF000376F2F /* ImagePropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF52A8F6CF000376F2F /* ImagePropertyModel.swift */; };
@@ -30,6 +38,9 @@
 		787F4F0F2A9B120800376F2F /* FetchInboxMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F0E2A9B120800376F2F /* FetchInboxMessages.swift */; };
 		787F4F112A9B663600376F2F /* MoEngageInboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F102A9B663600376F2F /* MoEngageInboxConfiguration.swift */; };
 		787F4F132A9CB25800376F2F /* RequestLocationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F122A9CB25800376F2F /* RequestLocationAuthorization.swift */; };
+		787F4F152A9DC7C800376F2F /* NavigatingToScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F142A9DC7C800376F2F /* NavigatingToScreen.swift */; };
+		787F4F172A9F42CC00376F2F /* CardsInboxMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F162A9F42CC00376F2F /* CardsInboxMessages.swift */; };
+		787F4F1B2AA0A64800376F2F /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F1A2AA0A64800376F2F /* InAppViewController.swift */; };
 		78817A1F2A7BACA300AC2CA7 /* ActionableNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78817A1E2A7BACA300AC2CA7 /* ActionableNotificationManager.swift */; };
 		789267372A6115B400959887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789267362A6115B400959887 /* AppDelegate.swift */; };
 		789267392A6115B400959887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789267382A6115B400959887 /* SceneDelegate.swift */; };
@@ -110,6 +121,13 @@
 		7801459A2A7B7B1600844EBC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7801459D2A7B7B1600844EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7801459F2A7B7B1600844EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7840F56A2AA0ED8C003F4B91 /* SelfHandledInAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledInAppViewController.swift; sourceTree = "<group>"; };
+		7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
+		7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSelfHandledCards.swift; sourceTree = "<group>"; };
+		7840F5792AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBasicWithImageCell.swift; sourceTree = "<group>"; };
+		7840F57B2AA1E7E6003F4B91 /* CardsillustrationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsillustrationCell.swift; sourceTree = "<group>"; };
+		7840F57E2AA1F49F003F4B91 /* SelfHandledModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledModel.swift; sourceTree = "<group>"; };
+		7840F5802AA1F8D4003F4B91 /* SelfHandledManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledManager.swift; sourceTree = "<group>"; };
 		787F4EF12A8C7AAB00376F2F /* CoreDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfiguration.swift; sourceTree = "<group>"; };
 		787F4EF32A8DF68900376F2F /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		787F4EF52A8F6CF000376F2F /* ImagePropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePropertyModel.swift; sourceTree = "<group>"; };
@@ -120,6 +138,9 @@
 		787F4F0E2A9B120800376F2F /* FetchInboxMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchInboxMessages.swift; sourceTree = "<group>"; };
 		787F4F102A9B663600376F2F /* MoEngageInboxConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoEngageInboxConfiguration.swift; sourceTree = "<group>"; };
 		787F4F122A9CB25800376F2F /* RequestLocationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationAuthorization.swift; sourceTree = "<group>"; };
+		787F4F142A9DC7C800376F2F /* NavigatingToScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatingToScreen.swift; sourceTree = "<group>"; };
+		787F4F162A9F42CC00376F2F /* CardsInboxMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInboxMessages.swift; sourceTree = "<group>"; };
+		787F4F1A2AA0A64800376F2F /* InAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
 		78817A1E2A7BACA300AC2CA7 /* ActionableNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableNotificationManager.swift; sourceTree = "<group>"; };
 		789267332A6115B400959887 /* NewsCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		789267362A6115B400959887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -176,6 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7848B4FA2AA5F4A2008613B8 /* FileManagementSDK in Frameworks */,
 				787F4F042A97845A00376F2F /* UserNotifications.framework in Frameworks */,
 				787F4F072A978A4300376F2F /* Pods_NewsCart.framework in Frameworks */,
 			);
@@ -199,6 +221,7 @@
 		780145762A70331300844EBC /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				7840F5762AA1C961003F4B91 /* Repositories */,
 				789267542A62F36C00959887 /* APINewsManager.swift */,
 				780145772A7122D600844EBC /* CoreDataManager.swift */,
 				7899FB752A84D87800814E8F /* ImageExtension.swift */,
@@ -210,6 +233,7 @@
 				787F4EF72A8F6E7100376F2F /* AlertsManager.swift */,
 				787F4F102A9B663600376F2F /* MoEngageInboxConfiguration.swift */,
 				787F4F122A9CB25800376F2F /* RequestLocationAuthorization.swift */,
+				787F4F142A9DC7C800376F2F /* NavigatingToScreen.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -242,6 +266,40 @@
 				7801459F2A7B7B1600844EBC /* Info.plist */,
 			);
 			path = NewsCartContentExtension;
+			sourceTree = "<group>";
+		};
+		7840F5762AA1C961003F4B91 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				7840F5782AA1C979003F4B91 /* Local Repository */,
+				7840F5772AA1C96D003F4B91 /* Remote Repository */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		7840F5772AA1C96D003F4B91 /* Remote Repository */ = {
+			isa = PBXGroup;
+			children = (
+				7840F5802AA1F8D4003F4B91 /* SelfHandledManager.swift */,
+			);
+			path = "Remote Repository";
+			sourceTree = "<group>";
+		};
+		7840F5782AA1C979003F4B91 /* Local Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Local Repository";
+			sourceTree = "<group>";
+		};
+		7840F57D2AA1E7F9003F4B91 /* CardsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */,
+				7840F5792AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift */,
+				7840F57B2AA1E7E6003F4B91 /* CardsillustrationCell.swift */,
+			);
+			path = CardsTableViewCell;
 			sourceTree = "<group>";
 		};
 		7892672A2A6115B300959887 = {
@@ -292,6 +350,7 @@
 			children = (
 				789267502A61399F00959887 /* APINewsModel.swift */,
 				787F4EF52A8F6CF000376F2F /* ImagePropertyModel.swift */,
+				7840F57E2AA1F49F003F4B91 /* SelfHandledModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,6 +358,7 @@
 		7892674E2A6123F300959887 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7840F57D2AA1E7F9003F4B91 /* CardsTableViewCell */,
 				7892673C2A6115B400959887 /* Main.storyboard */,
 				7892675B2A64686A00959887 /* HeaderView.xib */,
 				7892675D2A64687C00959887 /* HeaderView.swift */,
@@ -308,6 +368,8 @@
 				78939D7E2A66929E00BDDD23 /* NewsSavedVC.swift */,
 				78939D822A679E9700BDDD23 /* SavedArticleViewController.swift */,
 				780145742A6FC27500844EBC /* EmptyVC.swift */,
+				787F4F1A2AA0A64800376F2F /* InAppViewController.swift */,
+				7840F56A2AA0ED8C003F4B91 /* SelfHandledInAppViewController.swift */,
 				780145792A76A65500844EBC /* Extensions */,
 			);
 			path = View;
@@ -320,6 +382,8 @@
 				7892675F2A6521DF00959887 /* FetchCategoryNews.swift */,
 				78939D772A666A3D00BDDD23 /* ClickDelegate.swift */,
 				787F4F0E2A9B120800376F2F /* FetchInboxMessages.swift */,
+				787F4F162A9F42CC00376F2F /* CardsInboxMessages.swift */,
+				7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -402,6 +466,9 @@
 				780145A12A7B7B1600844EBC /* PBXTargetDependency */,
 			);
 			name = NewsCart;
+			packageProductDependencies = (
+				7848B4F92AA5F4A2008613B8 /* FileManagementSDK */,
+			);
 			productName = NewsCart;
 			productReference = 789267332A6115B400959887 /* NewsCart.app */;
 			productType = "com.apple.product-type.application";
@@ -436,6 +503,9 @@
 				Base,
 			);
 			mainGroup = 7892672A2A6115B300959887;
+			packageReferences = (
+				7848B4F82AA5F4A2008613B8 /* XCRemoteSwiftPackageReference "FileManagementSDK" */,
+			);
 			productRefGroup = 789267342A6115B400959887 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -592,16 +662,23 @@
 				787F4EF82A8F6E7100376F2F /* AlertsManager.swift in Sources */,
 				78939D832A679E9700BDDD23 /* SavedArticleViewController.swift in Sources */,
 				7892675E2A64687C00959887 /* HeaderView.swift in Sources */,
+				787F4F172A9F42CC00376F2F /* CardsInboxMessages.swift in Sources */,
 				787F4EF22A8C7AAB00376F2F /* CoreDataConfiguration.swift in Sources */,
 				7899FB592A836C5600814E8F /* DownloadVideoManager.swift in Sources */,
+				7840F5712AA0F931003F4B91 /* FetchSelfHandledCards.swift in Sources */,
 				78939D7F2A66929E00BDDD23 /* NewsSavedVC.swift in Sources */,
 				7892673B2A6115B400959887 /* NewsViewController.swift in Sources */,
 				7899FB762A84D87800814E8F /* ImageExtension.swift in Sources */,
 				7801457B2A76A6B300844EBC /* NewsViewControllerExtension.swift in Sources */,
 				780145782A7122D600844EBC /* CoreDataManager.swift in Sources */,
+				7840F56B2AA0ED8C003F4B91 /* SelfHandledInAppViewController.swift in Sources */,
 				789267512A61399F00959887 /* APINewsModel.swift in Sources */,
 				789267372A6115B400959887 /* AppDelegate.swift in Sources */,
+				787F4F1B2AA0A64800376F2F /* InAppViewController.swift in Sources */,
+				7840F57F2AA1F49F003F4B91 /* SelfHandledModel.swift in Sources */,
+				7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */,
 				789267392A6115B400959887 /* SceneDelegate.swift in Sources */,
+				7840F57C2AA1E7E6003F4B91 /* CardsillustrationCell.swift in Sources */,
 				7899FB5E2A83B4E700814E8F /* NotificationViewController.swift in Sources */,
 				7899FB742A84D67C00814E8F /* FileSystemManager.swift in Sources */,
 				787F4F112A9B663600376F2F /* MoEngageInboxConfiguration.swift in Sources */,
@@ -614,7 +691,10 @@
 				787F4F0F2A9B120800376F2F /* FetchInboxMessages.swift in Sources */,
 				789267552A62F36C00959887 /* APINewsManager.swift in Sources */,
 				780145752A6FC27500844EBC /* EmptyVC.swift in Sources */,
+				7840F5812AA1F8D4003F4B91 /* SelfHandledManager.swift in Sources */,
+				7840F57A2AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift in Sources */,
 				78817A1F2A7BACA300AC2CA7 /* ActionableNotificationManager.swift in Sources */,
+				787F4F152A9DC7C800376F2F /* NavigatingToScreen.swift in Sources */,
 				789267582A62F47600959887 /* FetchNews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -899,6 +979,7 @@
 				DEVELOPMENT_TEAM = BPWYRAF5X7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsCart/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "GeoFence Push Notifications Testing";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -932,6 +1013,7 @@
 				DEVELOPMENT_TEAM = BPWYRAF5X7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = NewsCart/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "GeoFence Push Notifications Testing";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -991,6 +1073,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7848B4F82AA5F4A2008613B8 /* XCRemoteSwiftPackageReference "FileManagementSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Uday-SDE-intern/FileManagementSDK.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7848B4F92AA5F4A2008613B8 /* FileManagementSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7848B4F82AA5F4A2008613B8 /* XCRemoteSwiftPackageReference "FileManagementSDK" */;
+			productName = FileManagementSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		78939D742A66497600BDDD23 /* NewsCart.xcdatamodeld */ = {

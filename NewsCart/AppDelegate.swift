@@ -16,9 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         //Add your MoEngage App ID and Data center.
-        let sdkConfig = MoEngageSDKConfig(appId: "DAO6UGZ73D9RTK8B5W96TPYN", dataCenter: .data_center_01);
+        let sdkConfig = MoEngageSDKConfig(appId: Constants.appID , dataCenter: .data_center_01);
         sdkConfig.enableLogs = true
-        sdkConfig.appGroupID = "group.com.Uday.NewsCart.MoEngage"
+        sdkConfig.appGroupID = Constants.appGroupID
         // MoEngage SDK Initialization
         // Separate initialization methods for Dev and Prod initializations
 #if DEBUG
@@ -30,10 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, error in
             guard success else{
-                LogManager.log("Error in APNS registry: \(String(describing: error))", logType: .error)
+                LogManager.error("Error in APNS registry: \(String(describing: error))")
                 return
             }
-            LogManager.log("Success in APNS registry.", logType: .info)
+            LogManager.logging("Success in APNS registry.")
         }
         // UIApplication.shared.registerForRemoteNotifications()
         let categoriesNotification = ActionableNotificationManager.configureActionableNotification()
@@ -43,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return true
     }
     
+    //Method for Processing Notification Clicked.
     func notificationClicked(withScreenName screenName: String?, kvPairs: [AnyHashable : Any]?, andPushPayload userInfo: [AnyHashable : Any]) {
         
         print("Push Payload: \(userInfo)")
@@ -53,32 +54,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         if let screenName = screenName {
             print("Navigate to Screen:\(screenName)")
-            if (screenName == "NewsSavedVC") {
-                DispatchQueue.main.async {
-                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                          let rootViewController = windowScene.windows.first?.rootViewController else {
-                        return
-                    }
-                    print("Root View Controller\(rootViewController)")
-                    guard let navigationVC = rootViewController as? UINavigationController else {
-                        return
-                    }
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                if let emptyVC = storyBoard.instantiateViewController(withIdentifier: "EmptyVC") as? EmptyVC, let newsSavedVC = storyBoard.instantiateViewController(withIdentifier: "NewsSavedVC") as? NewsSavedVC{
-                    let coreDataManager = CoreDataManager()
-                    let articles = coreDataManager.loadArticles()
-                    if (articles.count == 0){
-                        navigationVC.pushViewController(emptyVC, animated: true)
-                    } else {
-                        navigationVC.pushViewController(newsSavedVC, animated: true)
-                    }
-                }
-                }
-                
-
-            }
+            NavigatingToScreen.navigatingToOtherScreen(toScreen: screenName)
         }
-        
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -109,22 +86,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             token += String(format: "%02.2hhx", deviceToken[i] as CVarArg)
         }
         MoEngageSDKMessaging.sharedInstance.setPushToken(deviceToken)
-        LogManager.log("Device Token: \(token)", logType: .info)
+        LogManager.logging("Device Token: \(token)")
     }
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        LogManager.log("Error in registering for Remote Notifications: \(error)", logType: .error)
+        LogManager.error("Error in registering for Remote Notifications: \(error)")
     }
     
+    //DeepLink Processing for custom URL Link
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        print("URL: \(url)")
+        // Determine who sent the URL.
+       
         return true
     }
     
+    //DeepLink Processing for Universal Link
     func application(_ application: UIApplication,
                      continue userActivity: NSUserActivity,
                      restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool{
         if userActivity.activityType == NSUserActivityTypeBrowsingWeb ,
            let incomingURL = userActivity.webpageURL{
+            MoEngageSDKAnalytics.sharedInstance.processURL(incomingURL)
             print("incomingURL: \(incomingURL)")
         }
         return true;

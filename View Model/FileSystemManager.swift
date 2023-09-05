@@ -13,7 +13,7 @@ class FileSystemManager{
     func filePath(forImageName imageName: String) -> URL? {
         let fileManager = FileManager.default
         guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
-            LogManager.log("Error: File doesn't exit.", logType: .error)
+            LogManager.error("Error: File doesn't exit.")
             return nil
         }
         return documentURL.appendingPathComponent(imageName)
@@ -23,23 +23,21 @@ class FileSystemManager{
         if ((format == ".png") || (format == ".webp")){
             if let pngRepresentation = image.pngData() {
                 if let filePath = filePath(forImageName: imageName) {
-                    LogManager.log(filePath, logType: .info)
                     do  {
                         try pngRepresentation.write(to: filePath,
                                                     options: .atomic)
                     } catch let err {
-                        LogManager.log("Saving file resulted in error: \(err)", logType: .error)
+                        LogManager.error("Saving file resulted in error: \(err.localizedDescription)")
                     }
                 }
             }
         } else if (format == ".jpg"){
             if let jpgRepresentation = image.jpegData(compressionQuality: 1){
                 if let filePath = filePath(forImageName: imageName) {
-                    LogManager.log(filePath, logType: .info)
                     do  {
                         try jpgRepresentation.write(to: filePath)
                     } catch let err {
-                        LogManager.log("Saving file resulted in error: \(err)", logType: .error)
+                        LogManager.error("Saving file resulted in error: \(err.localizedDescription)")
                     }
                 }
             }
@@ -62,11 +60,10 @@ class FileSystemManager{
     //Method for deleting the images from documentary.
     func deleteImage(forImageName imageName: String){
         if let filePath = self.filePath(forImageName: imageName){
-            print(filePath)
             do{
                 try FileManager.default.removeItem(at: filePath)
             } catch{
-                LogManager.log("Error in deleting file from documentry folder:\(error)", logType: .error)
+                LogManager.error("Error in deleting file from documentry folder:\(error.localizedDescription)")
             }
         }
     }
@@ -77,7 +74,7 @@ class FileSystemManager{
            let image = UIImage(data: fileData) {
             return image
         }
-        LogManager.log("The selected Image File doesn't exit!!.", logType: .error)
+        LogManager.error("The selected Image File doesn't exit!!.")
         return nil
     }
     

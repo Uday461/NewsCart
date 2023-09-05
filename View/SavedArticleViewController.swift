@@ -7,9 +7,8 @@
 
 import UIKit
 import CoreData
-
+import MoEngageInApps
 class SavedArticleViewController: UIViewController {
-    
     @IBOutlet weak var titleLabel: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
@@ -22,7 +21,8 @@ class SavedArticleViewController: UIViewController {
     let coreDataManager = CoreDataManager()
     var articleArray = [ArticleInfo]()
     let fileSystemManager = FileSystemManager()
-    
+    var campaign_text: String = ""
+    var campaignInfo: MoEngageInAppSelfHandledCampaign? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
         articleArray = coreDataManager.loadArticles()
@@ -35,6 +35,9 @@ class SavedArticleViewController: UIViewController {
                 self.imageView.image = self.fileSystemManager.retrieveImage(forImageName: _imageName)
             }
         }
+        MoEngageSDKInApp.sharedInstance.setInAppDelegate(self)
+        MoEngageSDKInApp.sharedInstance.showInApp()
+        selfHandledInApps()
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
@@ -45,7 +48,7 @@ class SavedArticleViewController: UIViewController {
             }
             self.coreDataManager.deleteArticle(articleInfo: self.articleArray[self.indexPathRow])
             self.articleArray.remove(at: self.indexPathRow)
-            LogManager.log("News article is deleted.", logType: .info)
+            LogManager.logging("News article is deleted.")
             if self.articleArray.count != 0{
                 self.navigationController?.popViewController(animated: true)
             } else {
@@ -64,5 +67,55 @@ class SavedArticleViewController: UIViewController {
         present(alert,animated: true, completion: nil)
     }
     
+    func selfHandledInApps(){
+        MoEngageSDKInApp.sharedInstance.getSelfHandledInApp { campaignInfo, accountMeta in
+            if let campaignInfo = campaignInfo{
+                LogManager.logging("Self-Hanled InApp Content \(campaignInfo.campaignContent)")
+                self.campaign_text = campaignInfo.campaignContent
+                self.campaignInfo = campaignInfo
+                self.performSegue(withIdentifier: "goToInApp", sender: self)
+                // Update UI with Self Handled InApp Content
+            } else{
+                LogManager.logging("No Self Handled campaign available")
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         let inAppViewController = segue.destination as! InAppViewController
+         inAppViewController.inAppText = campaign_text
+         inAppViewController.campaignInfo = campaignInfo
+     }
 }
 
+
+extension SavedArticleViewController: MoEngageInAppNativeDelegate{
+    // Called when an inApp is shown on the screen
+    func inAppShown(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        LogManager.logging("InApp shown callback for Campaign ID(\(inappCampaign.campaignId)) and CampaignName(\(inappCampaign.campaignName))")
+        LogManager.logging("Account Meta AppID: \(accountMeta.appID)")
+    }
+    
+    // Called when an inApp is clicked by the user, and it has been configured with a navigation action
+    func inAppClicked(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, andNavigationActionInfo navigationAction: MoEngageInApps.MoEngageInAppAction, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        LogManager.logging("InApp Clicked with Campaign ID \(inappCampaign.campaignId)")
+        LogManager.logging("Navigation Action Screen Name \(navigationAction.screenName ?? "Screen Unknown") Key Value Pairs: \((navigationAction.keyValuePairs))")
+    }
+    
+    // Called when an inApp is clicked by the user, and it has been configured with a custom action
+    func inAppClicked(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, andCustomActionInfo customAction: MoEngageInApps.MoEngageInAppAction, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        LogManager.logging("InApp Clicked with Campaign ID \(inappCampaign.campaignId)")
+        LogManager.logging("Custom Actions Key Value Pairs: \(customAction.keyValuePairs)")
+    }
+    
+    // Called when an inApp is dismissed by the user
+    func inAppDismissed(withCampaignInfo inappCampaign: MoEngageInApps.MoEngageInAppCampaign, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        LogManager.logging("InApp dismissed callback for Campaign ID(\(inappCampaign.campaignId)) and CampaignName(\(inappCampaign.campaignName))")
+        LogManager.logging("Account Meta AppID: \(accountMeta.appID)")
+    }
+    
+
+    func selfHandledInAppTriggered(withInfo inappCampaign: MoEngageInApps.MoEngageInAppSelfHandledCampaign, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        print("InApp Campaign Creation: \(inappCampaign.campaignContent)")
+    }
+}

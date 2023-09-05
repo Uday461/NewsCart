@@ -19,7 +19,7 @@ class CoreDataManager{
         do{
             fetchSavedArticle = try context.fetch(request)
         } catch {
-            LogManager.log("Error in fetching Saved Articles in CoreData: \(error)", logType: .error)
+            LogManager.error("Error in fetching Saved Articles in CoreData: \(error.localizedDescription)")
         }
         return fetchSavedArticle
     }
@@ -29,7 +29,7 @@ class CoreDataManager{
         do{
             articleArray = try context.fetch(request)
         }catch{
-            LogManager.log("Error in retrieving data from CoreData: \(error)", logType: .error)
+            LogManager.error("Error in retrieving data from CoreData: \(error.localizedDescription)")
         }
         return articleArray
     }
@@ -39,7 +39,7 @@ class CoreDataManager{
         do{
             try self.context.save()
         }catch{
-            LogManager.log("Error saving data into context:\(error)", logType: .error)
+            LogManager.error("Error saving data into context:\(error.localizedDescription)")
         }
     }
     
@@ -47,10 +47,10 @@ class CoreDataManager{
         do{
             try context.save()
         }catch{
-            LogManager.log("Error saving data into context:\(error)", logType: .error)
+            LogManager.error("Error saving data into context:\(error.localizedDescription)")
         }
     }
-    
+ 
     func articleInfoModel(imageName: String, newsDescription: String, newsTitle: String, sourceName: String?, urlLink: String)->ArticleInfo{
         let newArticle = ArticleInfo(context: context)
         newArticle.imageName = imageName

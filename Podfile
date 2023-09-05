@@ -11,6 +11,8 @@ target 'NewsCart' do
 pod 'MoEngage-iOS-SDK','~>9.10.0'
 pod 'MoEngageInbox','~>2.10.0'
 pod 'MoEngageGeofence','~>5.10.0'
+pod 'MoEngageInApp','~> 4.10.0'
+pod 'MoEngageCards','~> 4.10.0'
 end
 target 'NewsCartServiceExtension' do
   use_frameworks!

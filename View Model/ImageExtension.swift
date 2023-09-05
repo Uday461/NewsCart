@@ -33,7 +33,7 @@ extension String {
     //This method is used for checking if the array of substrings is present in a given string.
     func contains(_ strings: [String]) -> Bool {
         guard strings.count > 0 else {
-            LogManager.log("String is empty", logType: .error)
+            LogManager.error("String is empty")
             return false
         }
         var allContained = true

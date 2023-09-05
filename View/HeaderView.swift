@@ -20,6 +20,10 @@ class HeaderView: UIView{
     var fetchCategoryNewsDelegate: FetchCategoryNews?
     
     var fetchInboxMessagesDelegate: FetchInboxMessages?
+    
+    var fetchCardsInboxMessagesDelegate: CardsInboxMessages?
+    
+    var fetchSelfHandledCardsInbox: FetchSelfHandledCards?
     //Following method is used to show the UIMenu() of various news categories.
     func setupPopButton(){
         let optionClosure = {(action: UIAction)->() in
@@ -47,6 +51,16 @@ class HeaderView: UIView{
         fetchCategoryNewsDelegate?.fetchSavedArticles()
     }
     
+    
+    @IBAction func cardsInboxButtonPressed(_ sender: Any) {
+        fetchCardsInboxMessagesDelegate?.fetchCardsInboxMessages()
+    }
+    
+    
+    @IBAction func selfCardsButtonPressed(_ sender: Any) {
+        fetchSelfHandledCardsInbox?.fetchSelfHandledCards()
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -58,7 +72,7 @@ class HeaderView: UIView{
     }
     
     override var intrinsicContentSize: CGSize{
-        return CGSize(width: UIView.noIntrinsicMetric, height: 170)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 190)
     }
     
     private func commonInit(){

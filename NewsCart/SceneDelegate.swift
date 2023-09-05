@@ -6,12 +6,42 @@
 //
 
 import UIKit
-
+import MoEngageSDK
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let urlContext = URLContexts.first,
+              let sendingAppID = urlContext.options.sourceApplication else {
+            return
+        }
+        let url = urlContext.url
+        print("source application = \(sendingAppID )")
+        print("DeepLink URL: \(url)")
+        // Process the URL.
+        guard let components = NSURLComponents(url: url, resolvingAgainstBaseURL: true),
+                  let newsCartPath = components.path,
+                  let params = components.queryItems,
+                  let host = components.host else {
+                print("Invalid URL")
+                return
+            }
+            print("NewsCartPath: \(newsCartPath)")
+            if let utm_source = params.first(where: { $0.name == "utm_source" })?.value {
+                print("newsCarthost = \(host)")
+                print("utm_source = \(utm_source)")
+            } else {
+                print("utm_source index missing")
+            }
+            NavigatingToScreen.navigatingToOtherScreen(toScreen: host)
+            MoEngageSDKAnalytics.sharedInstance.processURL(url)
+        
+    }
+    
+    func scene(_ scene: UIScene, willContinueUserActivityWithType userActivityType: String) {
+        print("Universal Linking Callback method")
+    }
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.

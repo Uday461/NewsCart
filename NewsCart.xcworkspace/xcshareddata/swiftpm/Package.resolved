@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "filemanagementsdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Uday-SDE-intern/FileManagementSDK.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b825c07d6e02111043191429a9a6e024f0273267"
+      }
+    }
+  ],
+  "version" : 2
+}

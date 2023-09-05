@@ -8,19 +8,30 @@
 import Foundation
 import CoreLocation
 import MoEngageGeofence
-class RequestLocationAuthorization{
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+import MoEngageCore
+class RequestLocationAuthorization: MoEngageGeofenceDelegate{
+    func geofenceEnterTriggered(withLocationManager locationManager: CLLocationManager?, andRegion region: CLRegion?, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        LogManager.logging("Geofence Entered")
+    }
+    
+    func geofenceExitTriggered(withLocationManager locationManager: CLLocationManager?, andRegion region: CLRegion?, forAccountMeta accountMeta: MoEngageCore.MoEngageAccountMeta) {
+        LogManager.logging("Geofence Exited")
+    }
+    
+    static func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
-        case .authorizedWhenInUse:  // Location services are available.
+        case .authorizedAlways:  // Location services are available.
           //  enableLocationFeatures()
+            MoEngageSDKGeofence.sharedInstance.startGeofenceMonitoring()
             break
             
         case .restricted, .denied:  // Location services currently unavailable.
          //   disableLocationFeatures()
+            MoEngageSDKGeofence.sharedInstance.stopGeofenceMonitoring()
             break
-            
+    
         case .notDetermined:        // Authorization not determined yet.
-           manager.requestWhenInUseAuthorization()
+           manager.requestAlwaysAuthorization()
             break
             
         default:

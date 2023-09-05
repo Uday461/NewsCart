@@ -7,14 +7,36 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */ = {
+		12124A02D6E3C6F6C43FA5415F7D861C /* MoEngageCards */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 5E95FF414B6D7E313173FA739A8F6AE3 /* Build configuration list for PBXAggregateTarget "MoEngageRichNotification" */;
+			buildConfigurationList = 5B2DDBE4449CC41CF70DCD8261D344A2 /* Build configuration list for PBXAggregateTarget "MoEngageCards" */;
 			buildPhases = (
-				6F60A43A3E2E0CBB8A7E2B512EEC409C /* [CP] Copy XCFrameworks */,
+				7C2065B983129C135D8BDACB2853DA63 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				76663071A73E53B4CAA5D9DD66058245 /* PBXTargetDependency */,
+				EA426D8605279B37238D735F16BB19E2 /* PBXTargetDependency */,
+			);
+			name = MoEngageCards;
+		};
+		2D600AAD7FD09C0FB418D95D26038256 /* MoEngageInApp */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8CDD707A1EE52D9AE8EF31B7B3E81C3E /* Build configuration list for PBXAggregateTarget "MoEngageInApp" */;
+			buildPhases = (
+				ED8D6478B5335D011EB2A313F1B7887B /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				6E75AB2143391CBBBA55CAE6E50E185D /* PBXTargetDependency */,
+			);
+			name = MoEngageInApp;
+		};
+		56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 010EA87B322D3395B3538E59BDCC8741 /* Build configuration list for PBXAggregateTarget "MoEngageRichNotification" */;
+			buildPhases = (
+				B44AA52D08D764D7F85F90623A53109F /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+				D607E703784057404D0817B6EE436E44 /* PBXTargetDependency */,
 			);
 			name = MoEngageRichNotification;
 		};
@@ -25,7 +47,7 @@
 				309A017C5BA4F470B86FD76D6DA79885 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				2E47FCA8DB7C7BCD1B74575A7E91C6FA /* PBXTargetDependency */,
+				B94804BCC44DAD67231CF36D122B8CEE /* PBXTargetDependency */,
 			);
 			name = MoEngageGeofence;
 		};
@@ -36,8 +58,8 @@
 				EC813D06587E6CA45AE378F47F7A11F1 /* [CP] Copy XCFrameworks */,
 			);
 			dependencies = (
-				4203B8315F899BBD898F5519277D8696 /* PBXTargetDependency */,
-				F0D1233276A70F2C7716336D19BDB04E /* PBXTargetDependency */,
+				29299F67C94ECF50D10EE6E4FC96E644 /* PBXTargetDependency */,
+				09C0FDFBAB0CB60B87F49548D6FFE425 /* PBXTargetDependency */,
 			);
 			name = MoEngageInbox;
 		};
@@ -55,155 +77,191 @@
 
 /* Begin PBXBuildFile section */
 		0659FD946893EA2AF36A9A6C1B970E5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		0B6830368AC92153A3F5D538767CC895 /* Pods-NewsCart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B72929A0317465906E1AA56550330296 /* Pods-NewsCart-dummy.m */; };
 		22210D625210CA2402F8D77BDCE75B95 /* Pods-NewsCartContentExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E9C9674B6FB1A701C5AB34C365AF604 /* Pods-NewsCartContentExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2AA05CF29F7FDC5F557DAD5EAEC92919 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		5DD457C4CBDCB8A00D78A8BA82D6C1FE /* Pods-NewsCart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B72929A0317465906E1AA56550330296 /* Pods-NewsCart-dummy.m */; };
+		3B4EEE2ADF154CC82C985303DCEB6107 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		78431688DFB7952F45639954D469B8BA /* Pods-NewsCart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1229D0D306F332BB84935AE8AD55F650 /* Pods-NewsCart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		81CB823EDC4F6B0801B4D4DF6F6C7225 /* Pods-NewsCartContentExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FA0FC965F092B0398AAB309F163DABF /* Pods-NewsCartContentExtension-dummy.m */; };
-		8377DC80BB5613BB0E07F4C021A04022 /* Pods-NewsCart-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1229D0D306F332BB84935AE8AD55F650 /* Pods-NewsCart-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		90821D8454C291E01E454188F1C10E08 /* Pods-NewsCartServiceExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7227FD557C1BA263596550DE558667BE /* Pods-NewsCartServiceExtension-dummy.m */; };
 		E1358A7E2E1461F27CB7BA7B8CC90BDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		E93FB6688C8C096376FF479AE3178880 /* Pods-NewsCartServiceExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 713B3196979C2C03798419C926B248E4 /* Pods-NewsCartServiceExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		02D5AC65ABAA0C5D4953AABF00A943CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
-			remoteInfo = MoEngageRichNotification;
-		};
-		05952E79F7AE0315575B95F834AF2D61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
-			remoteInfo = MoEngageRichNotification;
-		};
-		0A22CB1E4BCD5AB6404887A7C2E549DC /* PBXContainerItemProxy */ = {
+		077E2A94F68397F56AECF8EF22472B81 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
 			remoteInfo = "MoEngage-iOS-SDK";
 		};
-		0A479054C3363EC4CA792BC133E49F0A /* PBXContainerItemProxy */ = {
+		2C5A7A80661B8F3DFE90BF09669640A5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
 			remoteInfo = "MoEngage-iOS-SDK";
 		};
-		0C9EC1590A889A83BC8120FB0E461BE9 /* PBXContainerItemProxy */ = {
+		4246ABA6CCF32B680003E06BF2D79CFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
 			remoteInfo = "MoEngage-iOS-SDK";
 		};
-		460705F8D712666921E7F0CE84AD1149 /* PBXContainerItemProxy */ = {
+		47776C541B969F3D12EC904637C3BDB2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = A6277E1839D2B08B42428C1ECD9DEB3E;
 			remoteInfo = MoEngageInbox;
 		};
-		64F9EC7C2BD1D3890BCF1BEE339C20A4 /* PBXContainerItemProxy */ = {
+		4B1682AAA49B05FACCBC8C7042426075 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
 			remoteInfo = "MoEngage-iOS-SDK";
 		};
-		9C46738F9584F3F84D704F39ED4735B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
-			remoteInfo = "MoEngage-iOS-SDK";
-		};
-		CA6B39B538725D77266A6CCC4A11EB6E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
-			remoteInfo = MoEngageRichNotification;
-		};
-		D80A398F0A6FF04F26D9CB280DA69F13 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
-			remoteInfo = MoEngageRichNotification;
-		};
-		DDF45E2D2CAAE7C1710D229C48D2C40B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
-			remoteInfo = "MoEngage-iOS-SDK";
-		};
-		E0B87325FA2E3A0E6B91E35465A168F3 /* PBXContainerItemProxy */ = {
+		50065AF81C34D7B74848F29FA34B373E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8AF244A194F4867BB67A49D36CB24EAF;
 			remoteInfo = MoEngageGeofence;
 		};
+		6D2140375D9A75909E53FA515CBFCB59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
+			remoteInfo = "MoEngage-iOS-SDK";
+		};
+		85FA7364D745DCF25D300E8D901A746A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
+			remoteInfo = "MoEngage-iOS-SDK";
+		};
+		931803D2545A96C9EE7B5C00785536AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12124A02D6E3C6F6C43FA5415F7D861C;
+			remoteInfo = MoEngageCards;
+		};
+		A17EF8A76C1A7C3C4B6C833031906AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
+			remoteInfo = "MoEngage-iOS-SDK";
+		};
+		ABE7BE93A133FA75FBBF3893AC84A53D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC29B4915ADE6A84DB1A8D013EA0D366;
+			remoteInfo = "MoEngage-iOS-SDK";
+		};
+		BAA9BD9F9DAE2F34F7EFD35818E1B6FE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D600AAD7FD09C0FB418D95D26038256;
+			remoteInfo = MoEngageInApp;
+		};
+		C0F0F3F3EAE768FCE4E3A9C2CCFE6DA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
+			remoteInfo = MoEngageRichNotification;
+		};
+		CE939687127C1798D3786B5B00E63BBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
+			remoteInfo = MoEngageRichNotification;
+		};
+		D84C370F926AD565EA84D1ED8CDAD9B3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
+			remoteInfo = MoEngageRichNotification;
+		};
+		DD120CC49A761DF934B6B20AB513B692 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 56616681F7A1283BA5AD7D56FFE48571;
+			remoteInfo = MoEngageRichNotification;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		05C2FE4CEB1A7C7EA9F8682B15AF29CD /* Pods-NewsCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsCart.release.xcconfig"; sourceTree = "<group>"; };
-		0AD4C69CAB19E444FE6A7B367349E832 /* MoEngageInbox-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageInbox-xcframeworks.sh"; sourceTree = "<group>"; };
+		0AAEF08410AE146DF54A2CD59753615B /* MoEngage-iOS-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MoEngage-iOS-SDK.release.xcconfig"; sourceTree = "<group>"; };
 		0C14AE60C1446EA6CF4B96EC1DAB2027 /* Pods-NewsCartServiceExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsCartServiceExtension-Info.plist"; sourceTree = "<group>"; };
+		0F1C887C36EFCE77DFE7AEC1182095E2 /* MoEngageInbox-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageInbox-xcframeworks.sh"; sourceTree = "<group>"; };
+		0F4B3881E4630007CF5B0CF12E3AEC0B /* MoEngageCards-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageCards-xcframeworks.sh"; sourceTree = "<group>"; };
 		1229D0D306F332BB84935AE8AD55F650 /* Pods-NewsCart-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewsCart-umbrella.h"; sourceTree = "<group>"; };
 		13D71F9104454BF4C3E5512C2D3A6BF1 /* Pods-NewsCart */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-NewsCart"; path = Pods_NewsCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1563A1D87D707B2A9FBE4686136DFD5A /* MoEngageInbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageInbox.debug.xcconfig; sourceTree = "<group>"; };
+		1520757508D25EFB61B1FF47341FE56D /* MoEngageGeofence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageGeofence.release.xcconfig; sourceTree = "<group>"; };
 		1E4942D76801DDE28F6A272A88A10063 /* Pods-NewsCartServiceExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsCartServiceExtension-acknowledgements.plist"; sourceTree = "<group>"; };
 		1E68B111657753EE2964AC048442C92E /* Pods-NewsCartServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsCartServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		1E9A984A4FAC8198635997325051BE02 /* MoEngageGeofence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageGeofence.debug.xcconfig; sourceTree = "<group>"; };
 		27B16D497062A7E8527944382D72A2C2 /* Pods-NewsCart-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NewsCart-frameworks.sh"; sourceTree = "<group>"; };
-		2C46C721EA4BC5461AA0A1CC13AC87F3 /* MoEngageObjCUtils.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageObjCUtils.xcframework; path = Frameworks/MoEngageObjCUtils.xcframework; sourceTree = "<group>"; };
 		2DCD00D0F3CCDD90A35E88923D627F12 /* Pods-NewsCart-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsCart-acknowledgements.plist"; sourceTree = "<group>"; };
-		2E028D3C78178E6C6EDD8AB67C1BC7E9 /* MoEngageRichNotification-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageRichNotification-xcframeworks.sh"; sourceTree = "<group>"; };
 		3ABAE06B4364F0EF9BBC78EC6B7BEAC7 /* Pods-NewsCartServiceExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewsCartServiceExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		3E347AACE73F3C13C840D4289D39D037 /* MoEngageGeofence-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageGeofence-xcframeworks.sh"; sourceTree = "<group>"; };
-		40C055D309C4B29EE415279999D1B28C /* MoEngageAnalytics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageAnalytics.xcframework; path = Frameworks/MoEngageAnalytics.xcframework; sourceTree = "<group>"; };
-		4DB73CED2C8320675CB754CD19488C0C /* MoEngage-iOS-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MoEngage-iOS-SDK.debug.xcconfig"; sourceTree = "<group>"; };
+		3EF8DE14A2D1C2A3DD15A2983CE3FBBF /* MoEngageInApps.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageInApps.xcframework; path = Frameworks/MoEngageInApps.xcframework; sourceTree = "<group>"; };
+		47AFF8624CB1CCCC08C64A2516E7DC3D /* MoEngageRichNotification-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageRichNotification-xcframeworks.sh"; sourceTree = "<group>"; };
+		4C737C49C99813831B100979704C9C10 /* MoEngageInbox.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageInbox.debug.xcconfig; sourceTree = "<group>"; };
+		4D237047A5867428805B4968A697F617 /* MoEngageInApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageInApp.debug.xcconfig; sourceTree = "<group>"; };
+		5059EBBCA7E2FEDBE6B7E16D54BE597E /* MoEngageCards.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageCards.debug.xcconfig; sourceTree = "<group>"; };
+		5199D0628EF7CF2ACB593FC2CDF4D03E /* MoEngageGeofence-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageGeofence-xcframeworks.sh"; sourceTree = "<group>"; };
+		56485494EC875B44473C263CA00E3F1A /* MoEngageSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageSDK.xcframework; path = Frameworks/MoEngageSDK.xcframework; sourceTree = "<group>"; };
 		5E9C9674B6FB1A701C5AB34C365AF604 /* Pods-NewsCartContentExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewsCartContentExtension-umbrella.h"; sourceTree = "<group>"; };
 		5F27443985503C1BEEB1256D6F0C13D0 /* Pods-NewsCartContentExtension-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsCartContentExtension-Info.plist"; sourceTree = "<group>"; };
+		6010A2FFE54AA78FF15EDF6CC8EBF093 /* MoEngageInApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageInApp.release.xcconfig; sourceTree = "<group>"; };
 		61C1D9C2E8EB30C330B0CC0CB87309BC /* Pods-NewsCartContentExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewsCartContentExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 		632A461A6E84C7CA4F4D30E837C91F2D /* Pods-NewsCartServiceExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewsCartServiceExtension.modulemap"; sourceTree = "<group>"; };
 		667139581528D166F22BECE7C9B39BBF /* Pods-NewsCartServiceExtension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-NewsCartServiceExtension"; path = Pods_NewsCartServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C741E9EED9B24DECAEA5C1A790EA14F /* MoEngageGeofence.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageGeofence.debug.xcconfig; sourceTree = "<group>"; };
-		6D257A29DD993E3E18415250C92460ED /* MoEngageGeofence.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageGeofence.xcframework; path = Frameworks/MoEngageGeofence.xcframework; sourceTree = "<group>"; };
+		6D367552E26BB9A6F0752F930796C43D /* MoEngageRichNotification.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageRichNotification.xcframework; path = Frameworks/MoEngageRichNotification.xcframework; sourceTree = "<group>"; };
 		6FA0FC965F092B0398AAB309F163DABF /* Pods-NewsCartContentExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewsCartContentExtension-dummy.m"; sourceTree = "<group>"; };
 		713B3196979C2C03798419C926B248E4 /* Pods-NewsCartServiceExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-NewsCartServiceExtension-umbrella.h"; sourceTree = "<group>"; };
 		7227FD557C1BA263596550DE558667BE /* Pods-NewsCartServiceExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewsCartServiceExtension-dummy.m"; sourceTree = "<group>"; };
 		72605F1E18B4CB663B8589BC4AC42BE6 /* Pods-NewsCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsCart.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		77EE52C87B0DF9EF32AD4D5F5DE555EF /* MoEngageSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageSDK.xcframework; path = Frameworks/MoEngageSDK.xcframework; sourceTree = "<group>"; };
-		790B4FBEB5601ACA8364A3112465D03C /* MoEngageRichNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageRichNotification.debug.xcconfig; sourceTree = "<group>"; };
+		750BC0767C3053A8DEC223AF9E3A6532 /* MoEngage-iOS-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MoEngage-iOS-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		7E67FFEE535965C26C54633C7009B2E9 /* Pods-NewsCart-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NewsCart-acknowledgements.markdown"; sourceTree = "<group>"; };
 		7F917C5461A1F41307A01831BC5EEABF /* Pods-NewsCartContentExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsCartContentExtension.release.xcconfig"; sourceTree = "<group>"; };
-		8124FB4323263916446D32674590CD11 /* MoEngageRichNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageRichNotification.release.xcconfig; sourceTree = "<group>"; };
 		8A2AEA4DA6135285C8A624FB31C782ED /* Pods-NewsCart.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewsCart.modulemap"; sourceTree = "<group>"; };
-		8A6C176D1AB35E5498C553A630C62803 /* MoEngageSecurity.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageSecurity.xcframework; path = Frameworks/MoEngageSecurity.xcframework; sourceTree = "<group>"; };
-		906BA82CB338CD7483BC8077ADFE614D /* MoEngageGeofence.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageGeofence.release.xcconfig; sourceTree = "<group>"; };
-		974F2EA02CF29EF7A4A04865F154C223 /* MoEngageCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageCore.xcframework; path = Frameworks/MoEngageCore.xcframework; sourceTree = "<group>"; };
 		983BC571D8B4DCD55A70BCBDAC458685 /* Pods-NewsCartContentExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-NewsCartContentExtension.modulemap"; sourceTree = "<group>"; };
+		9960125CFAF73A0B7DA30269D024564D /* MoEngageRichNotification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageRichNotification.release.xcconfig; sourceTree = "<group>"; };
+		9BE65AB112E21C3EB600C66FCF7175BF /* MoEngageAnalytics.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageAnalytics.xcframework; path = Frameworks/MoEngageAnalytics.xcframework; sourceTree = "<group>"; };
+		9CC61B26D28A1B534C5D13C24FB821F6 /* MoEngageSecurity.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageSecurity.xcframework; path = Frameworks/MoEngageSecurity.xcframework; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E3A485BA5E330359D0216869079C034 /* MoEngageRichNotification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageRichNotification.debug.xcconfig; sourceTree = "<group>"; };
 		9FD2246FB7A10C1024EA5F6B259AF5C0 /* Pods-NewsCartContentExtension */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-NewsCartContentExtension"; path = Pods_NewsCartContentExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52FF962BE451A888742ACFDA42D8B8E /* Pods-NewsCart-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsCart-Info.plist"; sourceTree = "<group>"; };
+		AFE6561FC8008A5F8ECB2F6BBCCE731C /* MoEngageInApp-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngageInApp-xcframeworks.sh"; sourceTree = "<group>"; };
+		B3CC42B85DF4F54CD9069CD832CEAAB7 /* MoEngageCards.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageCards.xcframework; path = Frameworks/MoEngageCards.xcframework; sourceTree = "<group>"; };
 		B72929A0317465906E1AA56550330296 /* Pods-NewsCart-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NewsCart-dummy.m"; sourceTree = "<group>"; };
 		B87B396402A4C50676810F79FF1852A0 /* Pods-NewsCartContentExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-NewsCartContentExtension-acknowledgements.plist"; sourceTree = "<group>"; };
-		D92E31B941389EF6A11C2136BD49CBE9 /* MoEngage-iOS-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngage-iOS-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
-		DAA7135208393DA07701F6B18259909D /* MoEngage-iOS-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MoEngage-iOS-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		C311FD3AEB41352EA32989AE717E06EB /* MoEngage-iOS-SDK-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "MoEngage-iOS-SDK-xcframeworks.sh"; sourceTree = "<group>"; };
+		CC66276D39D48C0C2A4D783534C071F7 /* MoEngageInbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageInbox.release.xcconfig; sourceTree = "<group>"; };
+		D03A6047F0973C0D88C43DDFDF1B59C5 /* MoEngageCards.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageCards.release.xcconfig; sourceTree = "<group>"; };
+		D7F9B0648D8521546735194A196FD43E /* MoEngageObjCUtils.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageObjCUtils.xcframework; path = Frameworks/MoEngageObjCUtils.xcframework; sourceTree = "<group>"; };
 		DE047AB5694CB2D39437012104AC5C1A /* Pods-NewsCartContentExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsCartContentExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		E7CD1F1FE92004A1EC39D72840648D00 /* MoEngageInbox.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageInbox.xcframework; path = Frameworks/MoEngageInbox.xcframework; sourceTree = "<group>"; };
-		ECF51D08781BCB73985D4E1DE4E6E352 /* MoEngageInbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MoEngageInbox.release.xcconfig; sourceTree = "<group>"; };
-		EDE47DA2E8DD1B9B1857AE55B81A174E /* MoEngageRichNotification.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageRichNotification.xcframework; path = Frameworks/MoEngageRichNotification.xcframework; sourceTree = "<group>"; };
-		EDEFC5C5384CD403A21705E4E83D7BEE /* MoEngageMessaging.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageMessaging.xcframework; path = Frameworks/MoEngageMessaging.xcframework; sourceTree = "<group>"; };
+		E303D4B23933797924B6C520DBE1283F /* MoEngageGeofence.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageGeofence.xcframework; path = Frameworks/MoEngageGeofence.xcframework; sourceTree = "<group>"; };
+		E7C9743D0D777B6C05F5B6251B16A057 /* MoEngageInbox.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageInbox.xcframework; path = Frameworks/MoEngageInbox.xcframework; sourceTree = "<group>"; };
 		F09295894A376AE06FFCE370EE8D45DA /* Pods-NewsCartServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-NewsCartServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		F3DA81997AAFAEAC3B61DA4AE1F78140 /* MoEngageCore.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageCore.xcframework; path = Frameworks/MoEngageCore.xcframework; sourceTree = "<group>"; };
+		FA0127725D1FCC4567C791935E9E0FF2 /* MoEngageMessaging.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; name = MoEngageMessaging.xcframework; path = Frameworks/MoEngageMessaging.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +273,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7294ABA22FFF58FF0BD699267A76F835 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B4EEE2ADF154CC82C985303DCEB6107 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		98D0A15B9371B70BE21FB141FEC889B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -223,50 +289,67 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F46398C11BD36AFB1A0B6EC38DA5A4F7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2AA05CF29F7FDC5F557DAD5EAEC92919 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DBF274DD15AF1303F383031620F1CE2 /* Pods */ = {
+		002BBD122097AC2C997921716BEE5573 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				55688C99A7A79E90AF5FC318E46C6CE7 /* MoEngage-iOS-SDK */,
-				4A155C5E96603267DD5CF4798976FAE2 /* MoEngageGeofence */,
-				609D0D366DE2EBC779E4358DCF403C04 /* MoEngageInbox */,
-				C9A2B1677C914593516E889CB5B69CE8 /* MoEngageRichNotification */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		230B1C8FD0DC91749DAAF287A2128BF0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				40C055D309C4B29EE415279999D1B28C /* MoEngageAnalytics.xcframework */,
-				974F2EA02CF29EF7A4A04865F154C223 /* MoEngageCore.xcframework */,
-				EDEFC5C5384CD403A21705E4E83D7BEE /* MoEngageMessaging.xcframework */,
-				2C46C721EA4BC5461AA0A1CC13AC87F3 /* MoEngageObjCUtils.xcframework */,
-				77EE52C87B0DF9EF32AD4D5F5DE555EF /* MoEngageSDK.xcframework */,
-				8A6C176D1AB35E5498C553A630C62803 /* MoEngageSecurity.xcframework */,
+				3EF8DE14A2D1C2A3DD15A2983CE3FBBF /* MoEngageInApps.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		343FC3C00F3A13B669439BF073EF11A1 /* Support Files */ = {
+		00740A95C95EE24188B3D23FA3E85926 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0AD4C69CAB19E444FE6A7B367349E832 /* MoEngageInbox-xcframeworks.sh */,
-				1563A1D87D707B2A9FBE4686136DFD5A /* MoEngageInbox.debug.xcconfig */,
-				ECF51D08781BCB73985D4E1DE4E6E352 /* MoEngageInbox.release.xcconfig */,
+				AFE6561FC8008A5F8ECB2F6BBCCE731C /* MoEngageInApp-xcframeworks.sh */,
+				4D237047A5867428805B4968A697F617 /* MoEngageInApp.debug.xcconfig */,
+				6010A2FFE54AA78FF15EDF6CC8EBF093 /* MoEngageInApp.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/MoEngageInbox";
+			path = "../Target Support Files/MoEngageInApp";
+			sourceTree = "<group>";
+		};
+		04571777B62421D2E90331CC117BBA5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BE65AB112E21C3EB600C66FCF7175BF /* MoEngageAnalytics.xcframework */,
+				F3DA81997AAFAEAC3B61DA4AE1F78140 /* MoEngageCore.xcframework */,
+				FA0127725D1FCC4567C791935E9E0FF2 /* MoEngageMessaging.xcframework */,
+				D7F9B0648D8521546735194A196FD43E /* MoEngageObjCUtils.xcframework */,
+				56485494EC875B44473C263CA00E3F1A /* MoEngageSDK.xcframework */,
+				9CC61B26D28A1B534C5D13C24FB821F6 /* MoEngageSecurity.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0ACDC3BB378F90AC0683FE29BE8C2EC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6D367552E26BB9A6F0752F930796C43D /* MoEngageRichNotification.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		314BFE6054E9738CF5FDFE1732B71A65 /* MoEngageGeofence */ = {
+			isa = PBXGroup;
+			children = (
+				C461656C3B1EBB41A657EDC654CF90D2 /* Frameworks */,
+				F2E674C866D08A7D4F87CE9E94E49645 /* Support Files */,
+			);
+			name = MoEngageGeofence;
+			path = MoEngageGeofence;
+			sourceTree = "<group>";
+		};
+		343D3AD9787EFE72ABFFC1DDFD78653B /* MoEngageRichNotification */ = {
+			isa = PBXGroup;
+			children = (
+				0ACDC3BB378F90AC0683FE29BE8C2EC8 /* Frameworks */,
+				44177DC34F58E4F9BFFC4CD28CF11DC8 /* Support Files */,
+			);
+			name = MoEngageRichNotification;
+			path = MoEngageRichNotification;
 			sourceTree = "<group>";
 		};
 		35A78EB35F28813257B1BB7940C0C600 /* Pods-NewsCart */ = {
@@ -286,6 +369,16 @@
 			path = "Target Support Files/Pods-NewsCart";
 			sourceTree = "<group>";
 		};
+		361283F5C6262DD2DCBE4B63C779B01D /* MoEngageInApp */ = {
+			isa = PBXGroup;
+			children = (
+				002BBD122097AC2C997921716BEE5573 /* Frameworks */,
+				00740A95C95EE24188B3D23FA3E85926 /* Support Files */,
+			);
+			name = MoEngageInApp;
+			path = MoEngageInApp;
+			sourceTree = "<group>";
+		};
 		3EE5CA62689A89591AD4D5C99B3EDCC1 /* Pods-NewsCartServiceExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,24 +395,15 @@
 			path = "Target Support Files/Pods-NewsCartServiceExtension";
 			sourceTree = "<group>";
 		};
-		4A155C5E96603267DD5CF4798976FAE2 /* MoEngageGeofence */ = {
+		44177DC34F58E4F9BFFC4CD28CF11DC8 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F2D7BAD6819C2240BFA8D33544ECB375 /* Frameworks */,
-				848FE1C7751603CA25913555AC4B1708 /* Support Files */,
+				47AFF8624CB1CCCC08C64A2516E7DC3D /* MoEngageRichNotification-xcframeworks.sh */,
+				9E3A485BA5E330359D0216869079C034 /* MoEngageRichNotification.debug.xcconfig */,
+				9960125CFAF73A0B7DA30269D024564D /* MoEngageRichNotification.release.xcconfig */,
 			);
-			name = MoEngageGeofence;
-			path = MoEngageGeofence;
-			sourceTree = "<group>";
-		};
-		55688C99A7A79E90AF5FC318E46C6CE7 /* MoEngage-iOS-SDK */ = {
-			isa = PBXGroup;
-			children = (
-				230B1C8FD0DC91749DAAF287A2128BF0 /* Frameworks */,
-				E8C1DC61259AE23B44F461D903D6C6D4 /* Support Files */,
-			);
-			name = "MoEngage-iOS-SDK";
-			path = "MoEngage-iOS-SDK";
+			name = "Support Files";
+			path = "../Target Support Files/MoEngageRichNotification";
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -340,14 +424,15 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		609D0D366DE2EBC779E4358DCF403C04 /* MoEngageInbox */ = {
+		5C5E08F60D0BCD3B6712AF9408F3998D /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B65F94F6A84BD3D14CDEDDD1A2E7CF43 /* Frameworks */,
-				343FC3C00F3A13B669439BF073EF11A1 /* Support Files */,
+				0F1C887C36EFCE77DFE7AEC1182095E2 /* MoEngageInbox-xcframeworks.sh */,
+				4C737C49C99813831B100979704C9C10 /* MoEngageInbox.debug.xcconfig */,
+				CC66276D39D48C0C2A4D783534C071F7 /* MoEngageInbox.release.xcconfig */,
 			);
-			name = MoEngageInbox;
-			path = MoEngageInbox;
+			name = "Support Files";
+			path = "../Target Support Files/MoEngageInbox";
 			sourceTree = "<group>";
 		};
 		6B6411B0CDAFFFB83454E883EE5F45A2 /* Pods-NewsCartContentExtension */ = {
@@ -366,6 +451,17 @@
 			path = "Target Support Files/Pods-NewsCartContentExtension";
 			sourceTree = "<group>";
 		};
+		6EFE80AC2635D9E74BAECA1BB71E111F /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				0F4B3881E4630007CF5B0CF12E3AEC0B /* MoEngageCards-xcframeworks.sh */,
+				5059EBBCA7E2FEDBE6B7E16D54BE597E /* MoEngageCards.debug.xcconfig */,
+				D03A6047F0973C0D88C43DDFDF1B59C5 /* MoEngageCards.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MoEngageCards";
+			sourceTree = "<group>";
+		};
 		7665A3679E3638F1745A157D11AF740F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,41 +472,30 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		848FE1C7751603CA25913555AC4B1708 /* Support Files */ = {
+		7716E1A7124AEEBA6BC822970F35FA27 /* MoEngageCards */ = {
 			isa = PBXGroup;
 			children = (
-				3E347AACE73F3C13C840D4289D39D037 /* MoEngageGeofence-xcframeworks.sh */,
-				6C741E9EED9B24DECAEA5C1A790EA14F /* MoEngageGeofence.debug.xcconfig */,
-				906BA82CB338CD7483BC8077ADFE614D /* MoEngageGeofence.release.xcconfig */,
+				DFB6CEF1438C3071D519C34D11991F9F /* Frameworks */,
+				6EFE80AC2635D9E74BAECA1BB71E111F /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/MoEngageGeofence";
+			name = MoEngageCards;
+			path = MoEngageCards;
 			sourceTree = "<group>";
 		};
-		AA3D093DF5DDF5D173B1F52FC201BE4D /* Frameworks */ = {
+		8506E26EAD97BD50C4F9CCA372A6219B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EDE47DA2E8DD1B9B1857AE55B81A174E /* MoEngageRichNotification.xcframework */,
+				E7C9743D0D777B6C05F5B6251B16A057 /* MoEngageInbox.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B65F94F6A84BD3D14CDEDDD1A2E7CF43 /* Frameworks */ = {
+		C461656C3B1EBB41A657EDC654CF90D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E7CD1F1FE92004A1EC39D72840648D00 /* MoEngageInbox.xcframework */,
+				E303D4B23933797924B6C520DBE1283F /* MoEngageGeofence.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C9A2B1677C914593516E889CB5B69CE8 /* MoEngageRichNotification */ = {
-			isa = PBXGroup;
-			children = (
-				AA3D093DF5DDF5D173B1F52FC201BE4D /* Frameworks */,
-				E7851A38C510FD9905E7458E64F523D9 /* Support Files */,
-			);
-			name = MoEngageRichNotification;
-			path = MoEngageRichNotification;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -418,10 +503,21 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				0DBF274DD15AF1303F383031620F1CE2 /* Pods */,
+				FC8F55EA86D09F895531457D19407EFB /* Pods */,
 				7665A3679E3638F1745A157D11AF740F /* Products */,
 				597C21923C748FF61D7F99C8500BDC92 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		D040C3B03CECEB3F4E166D438AC6C0D2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				C311FD3AEB41352EA32989AE717E06EB /* MoEngage-iOS-SDK-xcframeworks.sh */,
+				750BC0767C3053A8DEC223AF9E3A6532 /* MoEngage-iOS-SDK.debug.xcconfig */,
+				0AAEF08410AE146DF54A2CD59753615B /* MoEngage-iOS-SDK.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MoEngage-iOS-SDK";
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
@@ -432,39 +528,69 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E7851A38C510FD9905E7458E64F523D9 /* Support Files */ = {
+		DFB6CEF1438C3071D519C34D11991F9F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2E028D3C78178E6C6EDD8AB67C1BC7E9 /* MoEngageRichNotification-xcframeworks.sh */,
-				790B4FBEB5601ACA8364A3112465D03C /* MoEngageRichNotification.debug.xcconfig */,
-				8124FB4323263916446D32674590CD11 /* MoEngageRichNotification.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MoEngageRichNotification";
-			sourceTree = "<group>";
-		};
-		E8C1DC61259AE23B44F461D903D6C6D4 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				D92E31B941389EF6A11C2136BD49CBE9 /* MoEngage-iOS-SDK-xcframeworks.sh */,
-				4DB73CED2C8320675CB754CD19488C0C /* MoEngage-iOS-SDK.debug.xcconfig */,
-				DAA7135208393DA07701F6B18259909D /* MoEngage-iOS-SDK.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/MoEngage-iOS-SDK";
-			sourceTree = "<group>";
-		};
-		F2D7BAD6819C2240BFA8D33544ECB375 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6D257A29DD993E3E18415250C92460ED /* MoEngageGeofence.xcframework */,
+				B3CC42B85DF4F54CD9069CD832CEAAB7 /* MoEngageCards.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDDD25C035E85A865D3A395FCE810D32 /* MoEngageInbox */ = {
+			isa = PBXGroup;
+			children = (
+				8506E26EAD97BD50C4F9CCA372A6219B /* Frameworks */,
+				5C5E08F60D0BCD3B6712AF9408F3998D /* Support Files */,
+			);
+			name = MoEngageInbox;
+			path = MoEngageInbox;
+			sourceTree = "<group>";
+		};
+		F2E674C866D08A7D4F87CE9E94E49645 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				5199D0628EF7CF2ACB593FC2CDF4D03E /* MoEngageGeofence-xcframeworks.sh */,
+				1E9A984A4FAC8198635997325051BE02 /* MoEngageGeofence.debug.xcconfig */,
+				1520757508D25EFB61B1FF47341FE56D /* MoEngageGeofence.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/MoEngageGeofence";
+			sourceTree = "<group>";
+		};
+		F82676871ADA28517EA09026F0ACDF45 /* MoEngage-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				04571777B62421D2E90331CC117BBA5E /* Frameworks */,
+				D040C3B03CECEB3F4E166D438AC6C0D2 /* Support Files */,
+			);
+			name = "MoEngage-iOS-SDK";
+			path = "MoEngage-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		FC8F55EA86D09F895531457D19407EFB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F82676871ADA28517EA09026F0ACDF45 /* MoEngage-iOS-SDK */,
+				7716E1A7124AEEBA6BC822970F35FA27 /* MoEngageCards */,
+				314BFE6054E9738CF5FDFE1732B71A65 /* MoEngageGeofence */,
+				361283F5C6262DD2DCBE4B63C779B01D /* MoEngageInApp */,
+				EDDD25C035E85A865D3A395FCE810D32 /* MoEngageInbox */,
+				343D3AD9787EFE72ABFFC1DDFD78653B /* MoEngageRichNotification */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		142D6A48869C56D023A0344EEC975780 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78431688DFB7952F45639954D469B8BA /* Pods-NewsCart-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		741375D0EECC4002F83BBB682FAB763F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,14 +604,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E93FB6688C8C096376FF479AE3178880 /* Pods-NewsCartServiceExtension-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CF8AC33114F689EAA8978C6D44D72F93 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8377DC80BB5613BB0E07F4C021A04022 /* Pods-NewsCart-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +622,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				740B6B7A158E18151A5CE866A9ACBCE9 /* PBXTargetDependency */,
-				7B030C1F25020CF6AA4C8FC9774F4C92 /* PBXTargetDependency */,
+				CE53078EC3C8A86C1AC1EB9F48C5BD60 /* PBXTargetDependency */,
+				DE7A8CD5D598D2773E6657EE22747833 /* PBXTargetDependency */,
 			);
 			name = "Pods-NewsCartServiceExtension";
 			productName = Pods_NewsCartServiceExtension;
@@ -514,20 +632,22 @@
 		};
 		DC5435E470DD530D81FE55F3198C7977 /* Pods-NewsCart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6EC202E409E0C1D5D9482C5D9351CAD3 /* Build configuration list for PBXNativeTarget "Pods-NewsCart" */;
+			buildConfigurationList = CDF52AAF77979584F201D033A96358EA /* Build configuration list for PBXNativeTarget "Pods-NewsCart" */;
 			buildPhases = (
-				CF8AC33114F689EAA8978C6D44D72F93 /* Headers */,
-				3D93DBB342FF4B5FC521836560399044 /* Sources */,
-				F46398C11BD36AFB1A0B6EC38DA5A4F7 /* Frameworks */,
-				1BEF2961BD2CEC5DEF994F75CF0E20C3 /* Resources */,
+				142D6A48869C56D023A0344EEC975780 /* Headers */,
+				7577DB4245ABD2887A0FBAD826ED35C6 /* Sources */,
+				7294ABA22FFF58FF0BD699267A76F835 /* Frameworks */,
+				0C1795008E82179ABBF3ED1D8BDD4022 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				EB0A3B5CD03084168106ED687723283F /* PBXTargetDependency */,
-				C6D850C3386B09D1DDED13B0E4DAC6CF /* PBXTargetDependency */,
-				9943AB0331EFD42F0F9161285A60FD4A /* PBXTargetDependency */,
-				726563984191C684D7A5196794A5458F /* PBXTargetDependency */,
+				1817C3F1E4E34F23B401B0A5264A60D7 /* PBXTargetDependency */,
+				C5027911DF4DDF09377B8943BDA9A40A /* PBXTargetDependency */,
+				04C653A6E3A1A5747224E04E33A12590 /* PBXTargetDependency */,
+				67ABF9EC520BF2AA24DE03E119AB48B5 /* PBXTargetDependency */,
+				69CDDF4D450D30333E571B3F8E1B7E47 /* PBXTargetDependency */,
+				15B9BD645AB347301B20EE8E291F2481 /* PBXTargetDependency */,
 			);
 			name = "Pods-NewsCart";
 			productName = Pods_NewsCart;
@@ -546,8 +666,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				63DC8CC3035F7DC19267A0097C6F4DDC /* PBXTargetDependency */,
-				E5F4AC75EBB8FC04313ABD7AC82B0296 /* PBXTargetDependency */,
+				AFBA11DCB1C2459AF034E817D11A0EF0 /* PBXTargetDependency */,
+				B270F82DCBFF891975E36E46062DFC05 /* PBXTargetDependency */,
 			);
 			name = "Pods-NewsCartContentExtension";
 			productName = Pods_NewsCartContentExtension;
@@ -577,7 +697,9 @@
 			projectRoot = "";
 			targets = (
 				DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */,
+				12124A02D6E3C6F6C43FA5415F7D861C /* MoEngageCards */,
 				8AF244A194F4867BB67A49D36CB24EAF /* MoEngageGeofence */,
+				2D600AAD7FD09C0FB418D95D26038256 /* MoEngageInApp */,
 				A6277E1839D2B08B42428C1ECD9DEB3E /* MoEngageInbox */,
 				56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */,
 				DC5435E470DD530D81FE55F3198C7977 /* Pods-NewsCart */,
@@ -588,7 +710,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1BEF2961BD2CEC5DEF994F75CF0E20C3 /* Resources */ = {
+		0C1795008E82179ABBF3ED1D8BDD4022 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -629,7 +751,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/MoEngageGeofence/MoEngageGeofence-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6F60A43A3E2E0CBB8A7E2B512EEC409C /* [CP] Copy XCFrameworks */ = {
+		7C2065B983129C135D8BDACB2853DA63 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/MoEngageCards/MoEngageCards-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/MoEngageCards/MoEngageCards-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/MoEngageCards/MoEngageCards-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B44AA52D08D764D7F85F90623A53109F /* [CP] Copy XCFrameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -680,22 +819,39 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/MoEngageInbox/MoEngageInbox-xcframeworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ED8D6478B5335D011EB2A313F1B7887B /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/MoEngageInApp/MoEngageInApp-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/MoEngageInApp/MoEngageInApp-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/MoEngageInApp/MoEngageInApp-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3D93DBB342FF4B5FC521836560399044 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5DD457C4CBDCB8A00D78A8BA82D6C1FE /* Pods-NewsCart-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		744F05638501C4D5BF0889AD87CADD15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				81CB823EDC4F6B0801B4D4DF6F6C7225 /* Pods-NewsCartContentExtension-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7577DB4245ABD2887A0FBAD826ED35C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B6830368AC92153A3F5D538767CC895 /* Pods-NewsCart-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,122 +866,108 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2E47FCA8DB7C7BCD1B74575A7E91C6FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MoEngage-iOS-SDK";
-			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
-			targetProxy = 0A22CB1E4BCD5AB6404887A7C2E549DC /* PBXContainerItemProxy */;
-		};
-		4203B8315F899BBD898F5519277D8696 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MoEngage-iOS-SDK";
-			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
-			targetProxy = 0A479054C3363EC4CA792BC133E49F0A /* PBXContainerItemProxy */;
-		};
-		63DC8CC3035F7DC19267A0097C6F4DDC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MoEngage-iOS-SDK";
-			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
-			targetProxy = 0C9EC1590A889A83BC8120FB0E461BE9 /* PBXContainerItemProxy */;
-		};
-		726563984191C684D7A5196794A5458F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MoEngageRichNotification;
-			target = 56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */;
-			targetProxy = 05952E79F7AE0315575B95F834AF2D61 /* PBXContainerItemProxy */;
-		};
-		740B6B7A158E18151A5CE866A9ACBCE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MoEngage-iOS-SDK";
-			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
-			targetProxy = 64F9EC7C2BD1D3890BCF1BEE339C20A4 /* PBXContainerItemProxy */;
-		};
-		76663071A73E53B4CAA5D9DD66058245 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "MoEngage-iOS-SDK";
-			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
-			targetProxy = DDF45E2D2CAAE7C1710D229C48D2C40B /* PBXContainerItemProxy */;
-		};
-		7B030C1F25020CF6AA4C8FC9774F4C92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MoEngageRichNotification;
-			target = 56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */;
-			targetProxy = CA6B39B538725D77266A6CCC4A11EB6E /* PBXContainerItemProxy */;
-		};
-		9943AB0331EFD42F0F9161285A60FD4A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = MoEngageInbox;
-			target = A6277E1839D2B08B42428C1ECD9DEB3E /* MoEngageInbox */;
-			targetProxy = 460705F8D712666921E7F0CE84AD1149 /* PBXContainerItemProxy */;
-		};
-		C6D850C3386B09D1DDED13B0E4DAC6CF /* PBXTargetDependency */ = {
+		04C653A6E3A1A5747224E04E33A12590 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MoEngageGeofence;
 			target = 8AF244A194F4867BB67A49D36CB24EAF /* MoEngageGeofence */;
-			targetProxy = E0B87325FA2E3A0E6B91E35465A168F3 /* PBXContainerItemProxy */;
+			targetProxy = 50065AF81C34D7B74848F29FA34B373E /* PBXContainerItemProxy */;
 		};
-		E5F4AC75EBB8FC04313ABD7AC82B0296 /* PBXTargetDependency */ = {
+		09C0FDFBAB0CB60B87F49548D6FFE425 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MoEngageRichNotification;
 			target = 56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */;
-			targetProxy = D80A398F0A6FF04F26D9CB280DA69F13 /* PBXContainerItemProxy */;
+			targetProxy = DD120CC49A761DF934B6B20AB513B692 /* PBXContainerItemProxy */;
 		};
-		EB0A3B5CD03084168106ED687723283F /* PBXTargetDependency */ = {
+		15B9BD645AB347301B20EE8E291F2481 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MoEngageRichNotification;
+			target = 56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */;
+			targetProxy = CE939687127C1798D3786B5B00E63BBC /* PBXContainerItemProxy */;
+		};
+		1817C3F1E4E34F23B401B0A5264A60D7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "MoEngage-iOS-SDK";
 			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
-			targetProxy = 9C46738F9584F3F84D704F39ED4735B9 /* PBXContainerItemProxy */;
+			targetProxy = A17EF8A76C1A7C3C4B6C833031906AF0 /* PBXContainerItemProxy */;
 		};
-		F0D1233276A70F2C7716336D19BDB04E /* PBXTargetDependency */ = {
+		29299F67C94ECF50D10EE6E4FC96E644 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = ABE7BE93A133FA75FBBF3893AC84A53D /* PBXContainerItemProxy */;
+		};
+		67ABF9EC520BF2AA24DE03E119AB48B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MoEngageInApp;
+			target = 2D600AAD7FD09C0FB418D95D26038256 /* MoEngageInApp */;
+			targetProxy = BAA9BD9F9DAE2F34F7EFD35818E1B6FE /* PBXContainerItemProxy */;
+		};
+		69CDDF4D450D30333E571B3F8E1B7E47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MoEngageInbox;
+			target = A6277E1839D2B08B42428C1ECD9DEB3E /* MoEngageInbox */;
+			targetProxy = 47776C541B969F3D12EC904637C3BDB2 /* PBXContainerItemProxy */;
+		};
+		6E75AB2143391CBBBA55CAE6E50E185D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = 85FA7364D745DCF25D300E8D901A746A /* PBXContainerItemProxy */;
+		};
+		AFBA11DCB1C2459AF034E817D11A0EF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = 4B1682AAA49B05FACCBC8C7042426075 /* PBXContainerItemProxy */;
+		};
+		B270F82DCBFF891975E36E46062DFC05 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MoEngageRichNotification;
 			target = 56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */;
-			targetProxy = 02D5AC65ABAA0C5D4953AABF00A943CA /* PBXContainerItemProxy */;
+			targetProxy = C0F0F3F3EAE768FCE4E3A9C2CCFE6DA3 /* PBXContainerItemProxy */;
+		};
+		B94804BCC44DAD67231CF36D122B8CEE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = 077E2A94F68397F56AECF8EF22472B81 /* PBXContainerItemProxy */;
+		};
+		C5027911DF4DDF09377B8943BDA9A40A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MoEngageCards;
+			target = 12124A02D6E3C6F6C43FA5415F7D861C /* MoEngageCards */;
+			targetProxy = 931803D2545A96C9EE7B5C00785536AF /* PBXContainerItemProxy */;
+		};
+		CE53078EC3C8A86C1AC1EB9F48C5BD60 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = 4246ABA6CCF32B680003E06BF2D79CFF /* PBXContainerItemProxy */;
+		};
+		D607E703784057404D0817B6EE436E44 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = 6D2140375D9A75909E53FA515CBFCB59 /* PBXContainerItemProxy */;
+		};
+		DE7A8CD5D598D2773E6657EE22747833 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MoEngageRichNotification;
+			target = 56616681F7A1283BA5AD7D56FFE48571 /* MoEngageRichNotification */;
+			targetProxy = D84C370F926AD565EA84D1ED8CDAD9B3 /* PBXContainerItemProxy */;
+		};
+		EA426D8605279B37238D735F16BB19E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "MoEngage-iOS-SDK";
+			target = DC29B4915ADE6A84DB1A8D013EA0D366 /* MoEngage-iOS-SDK */;
+			targetProxy = 2C5A7A80661B8F3DFE90BF09669640A5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B0D3BE68E8F2395282CBDB75CD39A46 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 05C2FE4CEB1A7C7EA9F8682B15AF29CD /* Pods-NewsCart.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		0BA9B285C4AE51B1DB5026E2E16055EC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4DB73CED2C8320675CB754CD19488C0C /* MoEngage-iOS-SDK.debug.xcconfig */;
+			baseConfigurationReference = 750BC0767C3053A8DEC223AF9E3A6532 /* MoEngage-iOS-SDK.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -878,9 +1020,46 @@
 			};
 			name = Release;
 		};
-		35F6045452DD5A0A87EE59D8F19E2D09 /* Debug */ = {
+		2F04E5C697D99109F152FF641F1D2759 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 790B4FBEB5601ACA8364A3112465D03C /* MoEngageRichNotification.debug.xcconfig */;
+			baseConfigurationReference = 72605F1E18B4CB663B8589BC4AC42BE6 /* Pods-NewsCart.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		353826C906FD966D3CE29EB86FD3EFDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E3A485BA5E330359D0216869079C034 /* MoEngageRichNotification.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -897,7 +1076,7 @@
 		};
 		39AB36A6A7EEDC440196F29A863A4AA9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 906BA82CB338CD7483BC8077ADFE614D /* MoEngageGeofence.release.xcconfig */;
+			baseConfigurationReference = 1520757508D25EFB61B1FF47341FE56D /* MoEngageGeofence.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -950,9 +1129,9 @@
 			};
 			name = Debug;
 		};
-		506C20D7621B1C367691453A92FB662E /* Release */ = {
+		4D9626BAA482B01361F23219FFE84FC1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8124FB4323263916446D32674590CD11 /* MoEngageRichNotification.release.xcconfig */;
+			baseConfigurationReference = D03A6047F0973C0D88C43DDFDF1B59C5 /* MoEngageCards.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -968,9 +1147,43 @@
 			};
 			name = Release;
 		};
+		51B1CCEFC37ADD5D300725EBA8E6C7F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D237047A5867428805B4968A697F617 /* MoEngageInApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		55D8B76992A9950E8078124D91CB0522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5059EBBCA7E2FEDBE6B7E16D54BE597E /* MoEngageCards.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		76B255EDC1E555750473E13FC9ED2090 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ECF51D08781BCB73985D4E1DE4E6E352 /* MoEngageInbox.release.xcconfig */;
+			baseConfigurationReference = CC66276D39D48C0C2A4D783534C071F7 /* MoEngageInbox.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1026,7 +1239,7 @@
 		};
 		7CAD04A74A2EBDD67FD7268E310817FB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAA7135208393DA07701F6B18259909D /* MoEngage-iOS-SDK.release.xcconfig */;
+			baseConfigurationReference = 0AAEF08410AE146DF54A2CD59753615B /* MoEngage-iOS-SDK.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1039,6 +1252,44 @@
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8F6319D637C019C28B08325D57114199 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05C2FE4CEB1A7C7EA9F8682B15AF29CD /* Pods-NewsCart.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -1207,46 +1458,27 @@
 			};
 			name = Debug;
 		};
-		C6EF25773A6413F00AB10BCF981C62E0 /* Debug */ = {
+		B709A4DA52DB8EF226087765A0D41EF4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 72605F1E18B4CB663B8589BC4AC42BE6 /* Pods-NewsCart.debug.xcconfig */;
+			baseConfigurationReference = 6010A2FFE54AA78FF15EDF6CC8EBF093 /* MoEngageInApp.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-NewsCart/Pods-NewsCart.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				VALIDATE_PRODUCT = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
 		C88D4FD1CA16BF12A6A28915966153A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1563A1D87D707B2A9FBE4686136DFD5A /* MoEngageInbox.debug.xcconfig */;
+			baseConfigurationReference = 4C737C49C99813831B100979704C9C10 /* MoEngageInbox.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1263,7 +1495,7 @@
 		};
 		D637EBA2E8B396FFC02DD058F34C287C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C741E9EED9B24DECAEA5C1A790EA14F /* MoEngageGeofence.debug.xcconfig */;
+			baseConfigurationReference = 1E9A984A4FAC8198635997325051BE02 /* MoEngageGeofence.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1278,9 +1510,36 @@
 			};
 			name = Debug;
 		};
+		EA2E09580DC3925AF4DA72C14306D0E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9960125CFAF73A0B7DA30269D024564D /* MoEngageRichNotification.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		010EA87B322D3395B3538E59BDCC8741 /* Build configuration list for PBXAggregateTarget "MoEngageRichNotification" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				353826C906FD966D3CE29EB86FD3EFDC /* Debug */,
+				EA2E09580DC3925AF4DA72C14306D0E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0DC37E2BD107A05104121068298D03B5 /* Build configuration list for PBXAggregateTarget "MoEngageInbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1308,20 +1567,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E95FF414B6D7E313173FA739A8F6AE3 /* Build configuration list for PBXAggregateTarget "MoEngageRichNotification" */ = {
+		5B2DDBE4449CC41CF70DCD8261D344A2 /* Build configuration list for PBXAggregateTarget "MoEngageCards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				35F6045452DD5A0A87EE59D8F19E2D09 /* Debug */,
-				506C20D7621B1C367691453A92FB662E /* Release */,
+				55D8B76992A9950E8078124D91CB0522 /* Debug */,
+				4D9626BAA482B01361F23219FFE84FC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6EC202E409E0C1D5D9482C5D9351CAD3 /* Build configuration list for PBXNativeTarget "Pods-NewsCart" */ = {
+		8CDD707A1EE52D9AE8EF31B7B3E81C3E /* Build configuration list for PBXAggregateTarget "MoEngageInApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C6EF25773A6413F00AB10BCF981C62E0 /* Debug */,
-				0B0D3BE68E8F2395282CBDB75CD39A46 /* Release */,
+				51B1CCEFC37ADD5D300725EBA8E6C7F9 /* Debug */,
+				B709A4DA52DB8EF226087765A0D41EF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDF52AAF77979584F201D033A96358EA /* Build configuration list for PBXNativeTarget "Pods-NewsCart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F04E5C697D99109F152FF641F1D2759 /* Debug */,
+				8F6319D637C019C28B08325D57114199 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

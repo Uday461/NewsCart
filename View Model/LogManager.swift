@@ -7,6 +7,7 @@
 
 import Foundation
 import OSLog
+
 class LogManager{
     static var isLoggingEnabled = true
     static var dateFormat = "yyyy-MM-dd hh:mm:ssSSS"
@@ -25,13 +26,20 @@ class LogManager{
         return components.isEmpty ? "" : components.last!
     }
     //Method for printing log messages to console.
-    static func log( _ object: Any,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function, logType: LogEvent){
+    static func logging( _ object: String,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function){
         if LogManager.isLoggingEnabled {
-            print("\(Date().toString()) \(logType.rawValue)[\(LogManager.sourceFileName(filePath: filename))]: Line: \(line) Col:\(column) \(funcName) -> \(object)")
-        
+            let defaultLog = Logger()
+            let info:LogEvent = .info
+            defaultLog.log("\(info.rawValue)[\(LogManager.sourceFileName(filePath: filename))]: Line: \(line) Col:\(column) \(funcName) -> \(object)")
         }
     }
-    
+    static func error( _ object: String,filename: String = #file,line: Int = #line,column: Int = #column,funcName: String = #function){
+        if LogManager.isLoggingEnabled {
+            let defaultLog = Logger()
+            let error:LogEvent = .error
+            defaultLog.log("\(error.rawValue)[\(LogManager.sourceFileName(filePath: filename))]: Line: \(line) Col:\(column) \(funcName) -> \(object)")
+        }
+    }
 }
 
 extension Date {

@@ -1,6 +1,10 @@
 PODS:
   - MoEngage-iOS-SDK (9.10.2)
+  - MoEngageCards (4.10.0):
+    - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
   - MoEngageGeofence (5.10.1):
+    - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
+  - MoEngageInApp (4.10.0):
     - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
   - MoEngageInbox (2.10.0):
     - MoEngage-iOS-SDK (< 9.11.0, >= 9.10.0)
@@ -10,23 +14,29 @@ PODS:
 
 DEPENDENCIES:
   - MoEngage-iOS-SDK (~> 9.10.0)
+  - MoEngageCards (~> 4.10.0)
   - MoEngageGeofence (~> 5.10.0)
+  - MoEngageInApp (~> 4.10.0)
   - MoEngageInbox (~> 2.10.0)
   - MoEngageRichNotification (~> 7.10.0)
 
 SPEC REPOS:
   trunk:
     - MoEngage-iOS-SDK
+    - MoEngageCards
     - MoEngageGeofence
+    - MoEngageInApp
     - MoEngageInbox
     - MoEngageRichNotification
 
 SPEC CHECKSUMS:
   MoEngage-iOS-SDK: 8ad13e521d92c19e0f1c05ee4242e88e0e6b42a2
+  MoEngageCards: 1f5fec6d40e0f8c71e3cf84b955b29903b2fbf8c
   MoEngageGeofence: 5e92ac6fba950916fd122195d62c219626663532
+  MoEngageInApp: 5a5e8a3b00edb0104c146ab793d6b787dbb87807
   MoEngageInbox: 6f5c2d344f725b181a4044d2c281a3792c0247f2
   MoEngageRichNotification: 790d4f5da384b80e822e4b8eda722d1ebdf574ad
 
-PODFILE CHECKSUM: 08cae73fe9cf22c3c09d966a033166fc434a5cc7
+PODFILE CHECKSUM: ba0738d4cfb4bc693f2d0fdb8c8588a2158cc251
 
 COCOAPODS: 1.11.3

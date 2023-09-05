@@ -7,7 +7,7 @@
 
 import UIKit
 import CoreData
-
+import MoEngageInApps
 class NewsSavedVC: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
@@ -20,6 +20,11 @@ class NewsSavedVC: UIViewController{
         tableView.dataSource = self
         tableView.rowHeight = 180
         articleArray = coreDataManager.loadArticles()
+        MoEngageSDKInApp.sharedInstance.setInAppDelegate(self)
+        MoEngageSDKInApp.sharedInstance.showInApp()
+        MoEngageSDKInApp.sharedInstance.showNudge(atPosition: NudgePositionTop)
+        MoEngageSDKInApp.sharedInstance.setCurrentInAppContexts(["Offer"])
+    //    selfHandledInApps()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -31,6 +36,18 @@ class NewsSavedVC: UIViewController{
             self.tableView.reloadData()
         }
     }
+    
+//    func selfHandledInApps(){
+//        MoEngageSDKInApp.sharedInstance.getSelfHandledInApp { campaignInfo, accountMeta in
+//            if let campaignInfo = campaignInfo{
+//                LogManager.logging("Self-Hanled InApp Content \(campaignInfo.campaignContent)")
+//                MoEngageSDKInApp.sharedInstance.selfHandledShown(campaignInfo: campaignInfo)
+//                // Update UI with Self Handled InApp Content
+//            } else{
+//                LogManager.logging("No Self Handled campaign available")
+//            }
+//        }
+//    }
 }
 
 

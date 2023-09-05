@@ -2,8 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Geofence Testing</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>GeoFence Push Notifications Testing</string>
+	<string>Geofence Testing</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>com.Uday.NewsCart</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>newscart</string>
+			</array>
+		</dict>
+	</array>
 	<key>MoEngageAppDelegateProxyEnabled</key>
 	<false/>
 	<key>NSAppTransportSecurity</key>
@@ -11,12 +26,6 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
-	<key>CFBundleExecutable</key>
-	<string></string>
-	<key>CFBundleIdentifier</key>
-	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -36,5 +45,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 </dict>
 </plist>
