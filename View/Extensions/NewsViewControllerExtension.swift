@@ -12,6 +12,7 @@ import MoEngageSDK
 import MoEngageInbox
 import MoEngageCards
 import MoEngageInApps
+import FileManagementSDK
 
 //MARK: - FetchNews Protocol Methods
 
@@ -252,12 +253,45 @@ extension NewsViewController: ClickDelegate{
                 return
             }
             let newArticle = coreDataManager.articleInfoModel(imageName: key+imageFormat, newsDescription: (articles?[row].description)!, newsTitle: (articles?[row].title!)!, sourceName: articles?[row].source.name, urlLink: (articles?[row].url)!)
-            fileSystemManager.store(image: uiImage, forImageName: key+imageFormat, imageFormat: imageFormat)
-            LogManager.logging("News article is saved.")
+          //  fileSystemManager.store(image: uiImage, forImageName: key+imageFormat, imageFormat: imageFormat)
+            LogManager.logging("ImageFileName: \(key+imageFormat)")
+           
+            guard let url = articles?[row].url, let _imageURL = articles?[row].urlToImage else {
+                return
+            }
+            let fileManager = FileManager.default
+            guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
+                LogManager.error("Error: File doesn't exit.")
+                return
+            }
+            print(documentURL)
+            var fileManagmentSDK = FileManagementSDK(fileURL: documentURL)
+            fileManagmentSDK.store(newsURL: url, imageURL: _imageURL) { result in
+                switch result {
+                case .success(let imageFileName):
+                    LogManager.logging("ImageFile saved Successfully!: \(imageFileName)")
+                case .failure(let error):
+                    LogManager.error("ImageFile is not saved: \(error.getErrorDescription())")
+                }
+            }
         } else {
+            let fileManager = FileManager.default
+            guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
+                LogManager.error("Error: File doesn't exit.")
+                return
+            }
+            print(documentURL)
+            var fileManagmentSDK = FileManagementSDK(fileURL: documentURL)
+            
             fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink: (articles?[row].url)!)
             if let _imageName = fetchSavedArticle[0].imageName{
-                fileSystemManager.deleteImage(forImageName: _imageName)
+            let result = fileManagmentSDK.deleteImage(forImageName: _imageName)
+            switch result{
+            case .success(let success):
+                LogManager.logging(success)
+            case .failure(let error):
+                LogManager.error(error.getErrorDescription())
+            }
             }
             coreDataManager.deleteArticle(articleInfo: fetchSavedArticle[0])
             LogManager.logging("News article is unsaved.")

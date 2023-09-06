@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 import MoEngageInApps
+import FileManagementSDK
+
 class SavedArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -41,6 +43,7 @@ class SavedArticleViewController: UIViewController {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIBarButtonItem) {
+        
         let alert = UIAlertController(title: "Are you sure, you want to delete.", message: "", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .destructive){ okAction in
             if let _imageName = self.articleArray[self.indexPathRow].imageName{

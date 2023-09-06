@@ -8,12 +8,16 @@
 import UIKit
 import CoreData
 import MoEngageInApps
+import FileManagementSDK
+
 class NewsSavedVC: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     var articleArray = [ArticleInfo]()
     let coreDataManager = CoreDataManager()
     let fileSystemManager = FileSystemManager()
+    let fileManager = FileManager.default
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self

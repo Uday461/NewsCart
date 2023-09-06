@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import MoEngageInApps
+import FileManagementSDK
 
 //MARK: - UITableViewDataSource Methods
 
@@ -26,11 +27,24 @@ extension NewsSavedVC: UITableViewDataSource{
         } else {
             cell.sourceLabel.text = "No source."
         }
-        DispatchQueue.main.async {
-            if let imageName = self.articleArray[indexPath.row].imageName {
-                cell.newsImage.image = self.fileSystemManager.retrieveImage(forImageName: imageName)
-            }
+        guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
+            LogManager.error("Error: File doesn't exit.")
+            return cell
         }
+        var fileManagmentSDK = FileManagementSDK(fileURL: documentURL)
+            if let imageName = self.articleArray[indexPath.row].imageName {
+                let result = fileManagmentSDK.retrieveImage(forImageName: imageName)
+                switch result{
+                case .success(let uiImage):
+                    DispatchQueue.main.async {
+                        cell.newsImage.image = uiImage
+                    }
+                    break
+                case .failure(let error):
+                    LogManager.error(error.getErrorDescription())
+                    break
+                }
+            }
         return cell
     }
     
