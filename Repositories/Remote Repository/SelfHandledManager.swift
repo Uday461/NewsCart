@@ -13,10 +13,17 @@ class SelfHandledManager{
     var cardTemplateType: String? = nil
     var imageLink: String? =  nil
     var text = [String]()
-    var typeOfAction = [String]()
-    var actionValue = [String]()
+    var typeOfAction: String?
+    var actionValue:String?
     var dateInString: String = ""
-    func returnSelfHandledData(moEngageCardCampaignArray: [MoEngageCardCampaign])-> [SelfHandledModel]{
+    var moEngageCardCampaignArray = [MoEngageCardCampaign]()
+    var actionTypeAndValue: ActionTypeAndValue? = nil
+    var buttonName: String? = nil
+    init (moEngageCards: [MoEngageCardCampaign]){
+        self.moEngageCardCampaignArray = moEngageCards
+    }
+    
+    func returnSelfHandledData()-> [SelfHandledModel]{
         for itr in 0..<moEngageCardCampaignArray.count{
             if let date = moEngageCardCampaignArray[itr].createdDate{
                 let dateFormatter = DateFormatter()
@@ -30,9 +37,10 @@ class SelfHandledManager{
             for index in 0..<(cardContainer?.count ?? 0){
                 let cardWidget = cardContainer?[index].widgets
                 if let actions = cardContainer?[index].actions {
+                    print("Actions Count: \(actions.count)")
                     for index in 0..<(actions.count){
-                        typeOfAction.append(actions[index].typeString)
-                        actionValue.append(actions[index].value)
+                       typeOfAction = actions[index].typeString
+                       actionValue = actions[index].value
                     }
                 }
                 cardTemplateType = cardContainer?[index].typeString
@@ -44,6 +52,15 @@ class SelfHandledManager{
                             var widgetModified = widgetContent.deletingPrefix("<div>")
                             widgetModified = widgetModified.deletingSuffix("</div>")
                             text.append(widgetModified)
+                        } else if (typeString == "button"){
+                            let actions = cardWidget?[i].actions
+                            if let actions = actions?[0]{
+                                var widgetModified = widgetContent.deletingPrefix("<div>")
+                                widgetModified = widgetModified.deletingSuffix("</div>")
+                                buttonName = widgetModified
+                                typeOfAction = actions.typeString
+                                actionValue = actions.value
+                            }
                         }
                         print(typeString)
                         print(widgetContent)
@@ -54,21 +71,26 @@ class SelfHandledManager{
                     check = check || text[index].hasPrefix("<")
                 }
                 if (check == false){
-                    let selfHandledCardDetails = SelfHandledModel(cardTemplateType: cardTemplateType, imageLink: imageLink, text: text, dateOfCreation: dateInString, typeOfAction: typeOfAction, actionValue: actionValue, moEngageCardCampaign: moEngageCardCampaignArray[itr])
+                    if let actionValue = actionValue, let typeOfAction = typeOfAction{
+                        actionTypeAndValue = ActionTypeAndValue(typeOfAction: typeOfAction, actionValue: actionValue )
+                    }
+                    let selfHandledCardDetails = SelfHandledModel(cardTemplateType: cardTemplateType, imageLink: imageLink, text: text, dateOfCreation: dateInString, actionTypeAndValue: actionTypeAndValue, buttonName: buttonName, moEngageCardCampaign: moEngageCardCampaignArray[itr])
                     selfHandledData.append(selfHandledCardDetails)
                     imageLink = nil
+                    typeOfAction = nil
+                    actionValue = nil
+                    actionTypeAndValue = nil
+                    buttonName = nil
                     text.removeAll()
-                    typeOfAction.removeAll()
-                    actionValue.removeAll()
                 }
             }
         }
         return selfHandledData
     }
     
-    func actionHandling(typeOfAction: String, actionValue: String){
+    static func actionHandling(typeOfAction: String, actionValue: String){
         if ((typeOfAction == "deepLink") || (typeOfAction == "richLanding")){
-           if let url = URL(string: actionValue){
+            if let url = URL(string: actionValue){
                 UIApplication.shared.open(url) { (result) in
                     if result {
                         LogManager.logging("DeepLink URL delivered successfully!")

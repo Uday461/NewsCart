@@ -8,13 +8,12 @@
 import UIKit
 import MoEngageCards
 
-class SelfHandledInAppViewController: UIViewController{
+class SelfHandledCardsViewController: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     var cardsCount: Int? = nil
     var moEngageCardCampaignArray:[MoEngageCardCampaign] = []
     var selfHandledData: [SelfHandledModel] = []
-    let selfHandledManager = SelfHandledManager()
     let apiManager = APINewsManager()
     var count = 0
     override func viewDidLoad() {
@@ -23,14 +22,17 @@ class SelfHandledInAppViewController: UIViewController{
         tableView.register(selfCardViewBasic, forCellReuseIdentifier: "selfCardBasicViewCell")
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress(_:)))
         tableView.addGestureRecognizer(longPressRecognizer)
-        selfHandledData = selfHandledManager.returnSelfHandledData(moEngageCardCampaignArray: moEngageCardCampaignArray)
         tableView.delegate = self
         tableView.dataSource = self
     }
-   
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
+    }
+    
 }
 
-extension SelfHandledInAppViewController: UITableViewDataSource{
+extension SelfHandledCardsViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         LogManager.logging("campaignArrayCount: \(selfHandledData.count)")
         return selfHandledData.count
@@ -47,12 +49,28 @@ extension SelfHandledInAppViewController: UITableViewDataSource{
                 cell.headerLabel.text = selfHandledCardData.text[0]
                 cell.messageLabel.text = selfHandledCardData.text[1]
                 cell.dateLabel.text = selfHandledCardData.dateOfCreation
+                cell.clickDelegate = self
+                cell.cellIndex = indexPath
+                if (selfHandledCardData.buttonName == nil){
+                    cell.buttonCTA.isHidden = true
+                } else {
+                    let buttonTitle = NSAttributedString(string: uiButtonConfiguration(title: selfHandledCardData.buttonName!), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
+                    cell.buttonCTA.setAttributedTitle(buttonTitle, for: .normal)
+                }
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cardsBasicWithImageCell") as! CardsBasicWithImageCell
                 cell.headerLabel.text = selfHandledCardData.text[0]
                 cell.messageLabel.text = selfHandledCardData.text[1]
                 cell.dateLabel.text = selfHandledCardData.dateOfCreation
+                cell.clickDelegate = self
+                cell.cellIndex = indexPath
+                if (selfHandledCardData.buttonName == nil){
+                    cell.buttonCTA.isHidden = true
+                } else {
+                    let buttonTitle = NSAttributedString(string: uiButtonConfiguration(title: selfHandledCardData.buttonName!), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
+                    cell.buttonCTA.setAttributedTitle(buttonTitle, for: .normal)
+                }
                 guard let url = selfHandledCardData.imageLink else {
                     return cell
                 }
@@ -66,18 +84,25 @@ extension SelfHandledInAppViewController: UITableViewDataSource{
                 return cell
             }
         }
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cardsillustrationCell") as! CardsillustrationCell
+       
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cardsillustrationCell") as! CardsillustrationCell
             cell.headerLabel.text = selfHandledCardData.text[0]
             if (selfHandledCardData.text.count == 2){
                 cell.messageLabel.text = selfHandledCardData.text[1]
             } else {
                 cell.messageLabel.isHidden = true
             }
+            if (selfHandledCardData.buttonName == nil){
+                cell.buttonCTA.isHidden = true
+            } else {
+                let buttonTitle = NSAttributedString(string: uiButtonConfiguration(title: selfHandledCardData.buttonName!), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
+                cell.buttonCTA.setAttributedTitle(buttonTitle, for: .normal)
+            }
             cell.dateLabel.text = selfHandledCardData.dateOfCreation
             guard let url = selfHandledCardData.imageLink else {
                 return cell
             }
+            
             apiManager.apiRequest(url: url) { data, response, error, key in
                 if let data = data{
                     DispatchQueue.main.async {
@@ -85,19 +110,18 @@ extension SelfHandledInAppViewController: UITableViewDataSource{
                     }
                 }
             }
-            
-            return cell
-
+        
+        return cell
     }
     
 }
 
-extension SelfHandledInAppViewController: UITableViewDelegate{
+extension SelfHandledCardsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let moEngageCardCampaign = selfHandledData[indexPath.row].moEngageCardCampaign
         let moEngageTemplateData = moEngageCardCampaign.templateData
         let moEngageContainer = moEngageTemplateData?.containers
-        let typeOfAction = selfHandledData[indexPath.row].typeOfAction
+        let actionTypeAndValue = selfHandledData[indexPath.row].actionTypeAndValue
         if let _moEngageContainer = moEngageContainer{
             let widget = _moEngageContainer[0].widgets
             for index in 0..<widget.count{
@@ -105,27 +129,29 @@ extension SelfHandledInAppViewController: UITableViewDelegate{
                 MoEngageSDKCards.sharedInstance.cardClicked(moEngageCardCampaign, withWidgetID: widgetId);
             }
         }
-        for index in 0..<typeOfAction.count{
-            if ((typeOfAction[index] == "deepLink") || (typeOfAction[index] == "screenName") || (typeOfAction[index]) == "richLanding"){
-                selfHandledManager.actionHandling(typeOfAction: typeOfAction[index], actionValue: selfHandledData[indexPath.row].actionValue[index])
+        
+        if let actionTypeAndValue = actionTypeAndValue{
+            let buttonName = selfHandledData[indexPath.row].buttonName
+            if (buttonName == nil) {
+                SelfHandledManager.actionHandling(typeOfAction: actionTypeAndValue.typeOfAction, actionValue: actionTypeAndValue.actionValue)
             }
         }
         tableView.deselectRow(at: indexPath, animated: true)
     }
     @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer) {
         let location = gestureRecognizer.location(in: tableView)
-            if let indexPath = tableView.indexPathForRow(at: location) {
+        if let indexPath = tableView.indexPathForRow(at: location) {
             let alertController = UIAlertController(title: "Delete Item", message: "Are you sure you want to delete this item?", preferredStyle: .alert)
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
                 self.count += 1
-
+                
                 MoEngageSDKCards.sharedInstance.deleteCards([self.selfHandledData[indexPath.row].moEngageCardCampaign]) { isDeleted, accountMeta in
-                 print("Card deletion was \(isDeleted)")
-                 self.selfHandledData.remove(at: indexPath.row)
-                DispatchQueue.main.async {
-                      self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    print("Card deletion was \(isDeleted)")
+                    self.selfHandledData.remove(at: indexPath.row)
+                    DispatchQueue.main.async {
+                        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+                    }
                 }
-            }
             }
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
             alertController.addAction(deleteAction)
@@ -135,12 +161,32 @@ extension SelfHandledInAppViewController: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if (selfHandledData[indexPath.row].cardTemplateType == "basic" && (selfHandledData[indexPath.row].imageLink == nil)){
-            return 100
+            return 95
         } else if (selfHandledData[indexPath.row].cardTemplateType == "basic" && (selfHandledData[indexPath.row].imageLink != nil)){
-            return 135
+            return 130
         } else if (selfHandledData[indexPath.row].cardTemplateType == "illustration"){
-            return 200
+            return 280
         }
         return 1
+    }
+}
+
+extension SelfHandledCardsViewController: ClickDelegate{
+    func clicked(_ row: Int, _ buttonState: String) {
+        let actionTypeAndValue = selfHandledData[row].actionTypeAndValue
+        if let actionTypeAndValue = actionTypeAndValue{
+            SelfHandledManager.actionHandling(typeOfAction: actionTypeAndValue.typeOfAction, actionValue: actionTypeAndValue.actionValue)
+        }
+    }
+}
+
+extension SelfHandledCardsViewController{
+    func uiButtonConfiguration(title: String)-> String{
+        var text = title // Replace with user input
+        let maxLength = 20 // Replace with desired maximum length
+        if title.count > maxLength {
+           text = title.prefix(maxLength) + "..."
+        }
+        return text
     }
 }

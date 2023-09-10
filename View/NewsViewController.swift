@@ -34,6 +34,7 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
     var _data: Data? = nil
     let context = CoreDataConfiguration.shared.persistentContainer.viewContext
     var inboxController: MoEngageInboxViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -54,7 +55,6 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
         MoEngageSDKAnalytics.sharedInstance.setUniqueID("NewsCart123")
         MoEngageSDKAnalytics.sharedInstance.setName("Uday Kiran")
         MoEngageSDKAnalytics.sharedInstance.setEmailID("uday123@gmail")
-        MoEngageSDKAnalytics.sharedInstance.trackEvent("NewsCartEvent")
         
         let manager = CLLocationManager()
         LogManager.logging("Location Status: \(manager.authorizationStatus)")
@@ -73,7 +73,7 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
                 self.moEngageCardsCampaignArray = _cards
             }
         }
-
+        
     }
     
     //Called when inbox cell is selected
@@ -82,25 +82,22 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
         LogManager.logging("Is Read: \(inboxItem.isRead)")
         if !inboxItem.isRead {
             MoEngageSDKInbox.sharedInstance.markInboxNotificationClicked(withCampaignID: inboxItem.campaignID!)
-         //   MoEngageSDKInbox.sharedInstance.processInboxNotification(withCampaignID: inboxItem.campaignID!)
+            MoEngageSDKInbox.sharedInstance.getInboxMessages(forAppID:Constants.appID) { inboxMessages, account in
+                print("Received Inbox messages")
+                print(inboxMessages)
+            }
+            
         }
-     //   MoEngageSDKInbox.sharedInstance.trackInboxClick(withCampaignID: inboxItem.campaignID!)
-        MoEngageSDKInbox.sharedInstance.getInboxMessages(forAppID:Constants.appID) { inboxMessages, account in
-             print("Received Inbox messages")
-             print(inboxMessages)
-         }
-       
+        
+        //Called when inbox item is deleted
+        func inboxEntryDeleted(_ inboxItem: MoEngageInboxEntry) {
+            LogManager.logging("Inbox item deleted")
+        }
+        
+        // Called when MoEngageInboxViewController is dismissed after being presented
+        func inboxViewControllerDismissed() {
+            LogManager.logging("Dismissed")
+        }
+        
     }
-    
-    //Called when inbox item is deleted
-    func inboxEntryDeleted(_ inboxItem: MoEngageInboxEntry) {
-        LogManager.logging("Inbox item deleted")
-    }
-    
-    // Called when MoEngageInboxViewController is dismissed after being presented
-    func inboxViewControllerDismissed() {
-        LogManager.logging("Dismissed")
-    }
-    
 }
-

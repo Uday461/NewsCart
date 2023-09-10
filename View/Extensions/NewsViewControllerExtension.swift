@@ -73,8 +73,11 @@ extension NewsViewController: FetchSelfHandledCards{
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goToSelfCards"){
-            let selfHandledCardsVC = segue.destination as! SelfHandledInAppViewController
-            selfHandledCardsVC.moEngageCardCampaignArray = moEngageCardsCampaignArray
+            let selfHandledCardsVC = segue.destination as! SelfHandledCardsViewController
+            let selfHandledManager = SelfHandledManager(moEngageCards: moEngageCardsCampaignArray)
+            let selfHandledCardsArray = selfHandledManager.returnSelfHandledData()
+            let selfHandledVM = SelfHandledViewModel(selfHandledModel: selfHandledCardsArray)
+            selfHandledCardsVC.selfHandledData = selfHandledVM.getSelfHandledVM()
            }
      }
 }
@@ -253,7 +256,6 @@ extension NewsViewController: ClickDelegate{
                 return
             }
             let newArticle = coreDataManager.articleInfoModel(imageName: key+imageFormat, newsDescription: (articles?[row].description)!, newsTitle: (articles?[row].title!)!, sourceName: articles?[row].source.name, urlLink: (articles?[row].url)!)
-          //  fileSystemManager.store(image: uiImage, forImageName: key+imageFormat, imageFormat: imageFormat)
             LogManager.logging("ImageFileName: \(key+imageFormat)")
            
             guard let url = articles?[row].url, let _imageURL = articles?[row].urlToImage else {

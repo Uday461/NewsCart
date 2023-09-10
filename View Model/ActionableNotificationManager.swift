@@ -31,8 +31,6 @@ class ActionableNotificationManager: UNUserNotificationCenter, UNUserNotificatio
         let newOfferCategory = UNNotificationCategory(identifier: "NEW_OFFER", actions: [book], intentIdentifiers: [], hiddenPreviewsBodyPlaceholder: "", options: .customDismissAction)
         
         // Register the notification type.
-//        let notificationCenter = UNUserNotificationCenter.current()
-//        notificationCenter.setNotificationCategories([meetingInviteCategory,newOfferCategory])
         let categoriesSet = Set.init([meetingInviteCategory,newOfferCategory])
         return categoriesSet
     }

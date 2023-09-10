@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import MoEngageCards
 protocol FetchSelfHandledCards{
     func fetchSelfHandledCards()
 }
+

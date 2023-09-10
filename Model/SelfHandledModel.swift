@@ -12,7 +12,12 @@ struct SelfHandledModel{
     let imageLink: String?
     let text: [String]
     let dateOfCreation: String
-    let typeOfAction: [String]
-    let actionValue: [String]
+    let actionTypeAndValue: ActionTypeAndValue?
+    let buttonName: String?
     let moEngageCardCampaign: MoEngageCardCampaign
+}
+
+struct ActionTypeAndValue{
+    var typeOfAction:String
+    var actionValue: String
 }
