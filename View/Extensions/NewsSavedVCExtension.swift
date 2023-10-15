@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import MoEngageInApps
-import FileManagementSDK
+//import FileManagementSDK
 
 //MARK: - UITableViewDataSource Methods
 
@@ -27,48 +27,31 @@ extension NewsSavedVC: UITableViewDataSource{
         } else {
             cell.sourceLabel.text = "No source."
         }
-        guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
-            LogManager.error("Error: File doesn't exit.")
-            return cell
-        }
-        var fileManagmentSDK = FileManagementSDK(fileURL: documentURL)
             if let imageName = self.articleArray[indexPath.row].imageName {
-                let result = fileManagmentSDK.retrieveImage(forImageName: imageName)
-                switch result{
-                case .success(let uiImage):
-                    DispatchQueue.main.async {
-                        cell.newsImage.image = uiImage
-                    }
-                    break
-                case .failure(let error):
-                    LogManager.error(error.getErrorDescription())
-                    break
+                if let uiImage = fileSystemManager.retrieveImage(forImageName: imageName) {
+                    cell.newsImage.image = uiImage
+                } else {
+                    cell.newsImage.image = UIImage(named: "no-image-icon")
                 }
             }
         return cell
     }
     
-}
-
-//MARK: - UITableViewDelegate Methods
-
-extension NewsSavedVC: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let count = articleArray.count
-        if  (count == 0){
-            return
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            if let _imageName = self.articleArray[indexPath.row].imageName{
+                self.fileSystemManager.deleteImage(forImageName: _imageName)
+            }
+            self.coreDataManager.deleteArticle(articleInfo: self.articleArray[indexPath.row])
+            articleArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            if (articleArray.count == 0) {
+                tableView.isHidden = true
+            }
         }
-        performSegue(withIdentifier: Identifiers.goToNewsVC, sender: self)
-        tableView.deselectRow(at: indexPath, animated: true)
     }
-   
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let savedArticlesVC = segue.destination as! SavedArticleViewController
-        let selectedRow = tableView.indexPathForSelectedRow!.row
-        savedArticlesVC.indexPathRow = selectedRow
-    }
+    
 }
-
 
 //MARK: - MoEngageInAppNativeDelegate callback methods
 

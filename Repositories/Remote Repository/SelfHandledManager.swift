@@ -9,80 +9,81 @@ import Foundation
 import MoEngageCards
 import UIKit
 class SelfHandledManager{
-    var selfHandledData: [SelfHandledModel] = []
-    var cardTemplateType: String? = nil
-    var imageLink: String? =  nil
-    var text = [String]()
-    var typeOfAction: String?
-    var actionValue:String?
-    var dateInString: String = ""
-    var moEngageCardCampaignArray = [MoEngageCardCampaign]()
-    var actionTypeAndValue: ActionTypeAndValue? = nil
-    var buttonName: String? = nil
-    init (moEngageCards: [MoEngageCardCampaign]){
+    private var selfHandledData: [SelfHandledModel] = []
+    private var cardTemplateType: CardType?
+    private var imageLink: String? =  nil
+    private var text = [NSAttributedString]()
+    private var typeOfAction: String?
+    private var actionValue:String?
+    private var dateInString: String = ""
+    private var moEngageCardCampaignArray = [MoEngageCardCampaign]()
+    private var cardTemplateBgColor:UIColor? = nil
+    private var actionTypeAndValue: ActionTypeAndValue? = nil
+    private var buttonName: NSAttributedString? = nil
+    init (moEngageCards: [MoEngageCardCampaign]) {
         self.moEngageCardCampaignArray = moEngageCards
     }
     
-    func returnSelfHandledData()-> [SelfHandledModel]{
-        for itr in 0..<moEngageCardCampaignArray.count{
-            if let date = moEngageCardCampaignArray[itr].createdDate{
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = .long
-                dateFormatter.timeStyle = .short
-                dateInString = dateFormatter.string(from: date)
+    func returnSelfHandledData()-> [SelfHandledModel] {
+        for itr in 0..<moEngageCardCampaignArray.count {
+            if let date = moEngageCardCampaignArray[itr].createdDate {
+                dateInString = DateUtils.dateInStringFormat(date: date)
             }
             let templateData = moEngageCardCampaignArray[itr].templateData
             let cardContainer = templateData?.containers
-            print(cardContainer?.count)
-            for index in 0..<(cardContainer?.count ?? 0){
+            for index in 0..<(cardContainer?.count ?? 0) {
                 let cardWidget = cardContainer?[index].widgets
+                cardTemplateBgColor = cardContainer?[index].style?.bgColor
+                if (cardContainer?[index].typeString == Constants.SelfHandledCardsConstants.basic) {
+                    cardTemplateType = .basic } else {
+                    cardTemplateType = .illustration
+                }
                 if let actions = cardContainer?[index].actions {
-                    print("Actions Count: \(actions.count)")
-                    for index in 0..<(actions.count){
-                       typeOfAction = actions[index].typeString
-                       actionValue = actions[index].value
+                    for index in 0..<(actions.count) {
+                        typeOfAction = actions[index].typeString
+                        actionValue = actions[index].value
                     }
                 }
-                cardTemplateType = cardContainer?[index].typeString
-                for i in 0..<(cardWidget?.count ?? 0){
+                for i in 0..<(cardWidget?.count ?? 0) {
                     if let typeString = cardWidget?[i].typeString, let widgetContent = cardWidget?[i].content{
-                        if (typeString == "image"){
+                        switch(typeString) {
+                        case CardWidgetType.image.rawValue:
                             imageLink = widgetContent
-                        } else if (typeString == "text"){
-                            var widgetModified = widgetContent.deletingPrefix("<div>")
-                            widgetModified = widgetModified.deletingSuffix("</div>")
-                            text.append(widgetModified)
-                        } else if (typeString == "button"){
+                            break
+                            
+                        case CardWidgetType.text.rawValue:
+                            if let attributedString = StringUtils.returnNSAttributedString(widgetContent: widgetContent){
+                                text.append(attributedString)
+                            }
+                            break
+                            
+                        case CardWidgetType.button.rawValue:
                             let actions = cardWidget?[i].actions
-                            if let actions = actions?[0]{
-                                var widgetModified = widgetContent.deletingPrefix("<div>")
-                                widgetModified = widgetModified.deletingSuffix("</div>")
-                                buttonName = widgetModified
+                            if let actions = actions?[0] {
+                                if let attributedString = StringUtils.returnNSAttributedString(widgetContent: widgetContent){
+                                    buttonName = attributedString
+                                }
                                 typeOfAction = actions.typeString
                                 actionValue = actions.value
                             }
+                        default:
+                            continue
                         }
-                        print(typeString)
-                        print(widgetContent)
+                        
                     }
                 }
-                var check:Bool = false
-                for index in 0..<text.count{
-                    check = check || text[index].hasPrefix("<")
+                if let actionValue = actionValue, let typeOfAction = typeOfAction {
+                    actionTypeAndValue = ActionTypeAndValue(typeOfAction: typeOfAction, actionValue: actionValue )
                 }
-                if (check == false){
-                    if let actionValue = actionValue, let typeOfAction = typeOfAction{
-                        actionTypeAndValue = ActionTypeAndValue(typeOfAction: typeOfAction, actionValue: actionValue )
-                    }
-                    let selfHandledCardDetails = SelfHandledModel(cardTemplateType: cardTemplateType, imageLink: imageLink, text: text, dateOfCreation: dateInString, actionTypeAndValue: actionTypeAndValue, buttonName: buttonName, moEngageCardCampaign: moEngageCardCampaignArray[itr])
-                    selfHandledData.append(selfHandledCardDetails)
-                    imageLink = nil
-                    typeOfAction = nil
-                    actionValue = nil
-                    actionTypeAndValue = nil
-                    buttonName = nil
-                    text.removeAll()
-                }
+                let selfHandledCardDetails = SelfHandledModel(cardTemplateType: cardTemplateType, imageLink: imageLink, text: text, dateOfCreation: dateInString, actionTypeAndValue: actionTypeAndValue, buttonName: buttonName, cardTemplateBgColor: cardTemplateBgColor, moEngageCardCampaign: moEngageCardCampaignArray[itr])
+                selfHandledData.append(selfHandledCardDetails)
+                imageLink = nil
+                typeOfAction = nil
+                actionValue = nil
+                actionTypeAndValue = nil
+                buttonName = nil
+                cardTemplateBgColor = nil
+                text.removeAll()
             }
         }
         return selfHandledData
@@ -104,15 +105,4 @@ class SelfHandledManager{
         }
     }
     
-}
-
-extension String {
-    func deletingPrefix(_ prefix: String) -> String {
-        guard self.hasPrefix(prefix) else { return self }
-        return String(self.dropFirst(prefix.count))
-    }
-    func deletingSuffix(_ suffix: String) -> String {
-        guard self.hasSuffix(suffix) else { return self }
-        return String(self.dropLast(suffix.count))
-    }
 }

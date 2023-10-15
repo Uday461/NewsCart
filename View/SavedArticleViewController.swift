@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 import MoEngageInApps
-import FileManagementSDK
+//import FileManagementSDK
 
 class SavedArticleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
@@ -83,12 +83,6 @@ class SavedArticleViewController: UIViewController {
             }
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         let inAppViewController = segue.destination as! InAppViewController
-         inAppViewController.inAppText = campaign_text
-         inAppViewController.campaignInfo = campaignInfo
-     }
 }
 
 

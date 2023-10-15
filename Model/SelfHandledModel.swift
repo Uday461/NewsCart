@@ -7,17 +7,20 @@
 
 import Foundation
 import MoEngageCards
-struct SelfHandledModel{
-    let cardTemplateType: String?
+import UIKit
+
+struct SelfHandledModel {
+    let cardTemplateType: CardType?
     let imageLink: String?
-    let text: [String]
+    let text: [NSAttributedString]
     let dateOfCreation: String
     let actionTypeAndValue: ActionTypeAndValue?
-    let buttonName: String?
+    let buttonName: NSAttributedString?
+    let cardTemplateBgColor: UIColor?
     let moEngageCardCampaign: MoEngageCardCampaign
 }
 
-struct ActionTypeAndValue{
+struct ActionTypeAndValue {
     var typeOfAction:String
     var actionValue: String
 }

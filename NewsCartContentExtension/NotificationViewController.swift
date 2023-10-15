@@ -17,7 +17,7 @@ class NotificationViewController: UIViewController, UNNotificationContentExtensi
     override func viewDidLoad() {
         super.viewDidLoad()
         MoEngageSDKRichNotification.setAppGroupID("group.com.Uday.NewsCart.MoEngage")
-    
+        
     }
     func didReceive(_ notification: UNNotification) {
 //        let content = notification.request.content

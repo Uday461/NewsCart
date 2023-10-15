@@ -20,14 +20,10 @@ class NavigatingToScreen{
             }
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             if (toScreen == "NewsSavedVC"){
-                if let emptyVC = storyBoard.instantiateViewController(withIdentifier: "EmptyVC") as? EmptyVC, let newsSavedVC = storyBoard.instantiateViewController(withIdentifier: "NewsSavedVC") as? NewsSavedVC{
+                if let newsSavedVC = storyBoard.instantiateViewController(withIdentifier: "NewsSavedVC") as? NewsSavedVC{
                     let coreDataManager = CoreDataManager()
                     let articles = coreDataManager.loadArticles()
-                    if (articles.count == 0){
-                        navigationVC.pushViewController(emptyVC, animated: true)
-                    } else {
-                        navigationVC.pushViewController(newsSavedVC, animated: true)
-                    }
+                    navigationVC.pushViewController(newsSavedVC, animated: true)
                 }
             }
         

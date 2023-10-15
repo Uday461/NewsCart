@@ -14,7 +14,7 @@ import MoEngageInbox
 import CoreLocation
 import MoEngageCards
 import MoEngageInApps
-import FileManagementSDK
+//import FileManagementSDK
 
 class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate, MoEngageCardsDelegate{
     
@@ -34,7 +34,8 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
     var _data: Data? = nil
     let context = CoreDataConfiguration.shared.persistentContainer.viewContext
     var inboxController: MoEngageInboxViewController?
-    
+    let child = SpinnerViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -47,6 +48,7 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
         tableView.dataSource = self
         setupTableHeaderView()
         header.setupPopButton()
+        createSpinnerView()
         apiNewsManager.fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingNews)\(page)")
         MoEngageSDKInbox.sharedInstance.getInboxViewController(withUIConfiguration: MoEngageInboxConfiguration.getMoEngageInboxConfiguration(), withInboxWithControllerDelegate: self, forAppID: Constants.appID) { inboxController in
             self.inboxController = inboxController
@@ -76,28 +78,12 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
         
     }
     
-    //Called when inbox cell is selected
-    func inboxEntryClicked(_ inboxItem: MoEngageInboxEntry) {
-        LogManager.logging("Inbox item clicked")
-        LogManager.logging("Is Read: \(inboxItem.isRead)")
-        if !inboxItem.isRead {
-            MoEngageSDKInbox.sharedInstance.markInboxNotificationClicked(withCampaignID: inboxItem.campaignID!)
-            MoEngageSDKInbox.sharedInstance.getInboxMessages(forAppID:Constants.appID) { inboxMessages, account in
-                print("Received Inbox messages")
-                print(inboxMessages)
-            }
-            
-        }
-        
-        //Called when inbox item is deleted
-        func inboxEntryDeleted(_ inboxItem: MoEngageInboxEntry) {
-            LogManager.logging("Inbox item deleted")
-        }
-        
-        // Called when MoEngageInboxViewController is dismissed after being presented
-        func inboxViewControllerDismissed() {
-            LogManager.logging("Dismissed")
-        }
-        
+    func createSpinnerView() {
+        // add the spinner view controller
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
     }
+
 }

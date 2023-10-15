@@ -12,7 +12,7 @@ import MoEngageSDK
 import MoEngageInbox
 import MoEngageCards
 import MoEngageInApps
-import FileManagementSDK
+//import FileManagementSDK
 
 //MARK: - FetchNews Protocol Methods
 
@@ -27,6 +27,15 @@ extension NewsViewController: FetchNews{
     
     //Following method is used for checking valid articles and updating "articles" variable.
     func fetchAndUpdateNews(_ apiNewsModel: APINewsModel) {
+        
+        // wait two seconds to simulate some work happening
+        DispatchQueue.main.asyncAfter(deadline: .now()) {
+            // then remove the spinner view controller
+            self.child.willMove(toParent: nil)
+            self.child.view.removeFromSuperview()
+            self.child.removeFromParent()
+        }
+        
         self.apiNewsModel = apiNewsModel
         totalArticles = totalArticles + apiNewsModel.articles.count
         guard let _validArticles = apiNewsManager.validArticlesList(articles: apiNewsModel.articles) else{
@@ -77,7 +86,7 @@ extension NewsViewController: FetchSelfHandledCards{
             let selfHandledManager = SelfHandledManager(moEngageCards: moEngageCardsCampaignArray)
             let selfHandledCardsArray = selfHandledManager.returnSelfHandledData()
             let selfHandledVM = SelfHandledViewModel(selfHandledModel: selfHandledCardsArray)
-            selfHandledCardsVC.selfHandledData = selfHandledVM.getSelfHandledVM()
+            selfHandledCardsVC.selfHandledCardsArray = selfHandledVM.getSelfHandledVM()
            }
      }
 }
@@ -103,7 +112,35 @@ extension NewsViewController: MoEngageCardsViewControllerDelegate{
         }
         return true
     }
-    
+}
+//MARK: - MoEngageIOSNotificationCentre callback methods
+
+extension NewsViewController{
+
+    //Called when inbox cell is selected
+    func inboxEntryClicked(_ inboxItem: MoEngageInboxEntry) {
+        LogManager.logging("Inbox item clicked")
+        LogManager.logging("Is Read: \(inboxItem.isRead)")
+        if !inboxItem.isRead {
+            MoEngageSDKInbox.sharedInstance.markInboxNotificationClicked(withCampaignID: inboxItem.campaignID!)
+            MoEngageSDKInbox.sharedInstance.getInboxMessages(forAppID:Constants.appID) { inboxMessages, account in
+                print("Received Inbox messages")
+                print(inboxMessages)
+            }
+            
+        }
+        
+        //Called when inbox item is deleted
+        func inboxEntryDeleted(_ inboxItem: MoEngageInboxEntry) {
+            LogManager.logging("Inbox item deleted")
+        }
+        
+        // Called when MoEngageInboxViewController is dismissed after being presented
+        func inboxViewControllerDismissed() {
+            LogManager.logging("Dismissed")
+        }
+        
+    }
 }
 
 //MARK: - FetchCategoryNews Protocol Methods
@@ -114,16 +151,13 @@ extension NewsViewController: FetchCategoryNews{
         page = 1
         invalidArticlesCount = 0
         LogManager.logging("Selected news category: \(category)")
+        createSpinnerView()
         apiNewsManager.fetchSelectedCategoryNews(category: category, page: page)
     }
     //Following method is used for fetching saved news articles.
     func fetchSavedArticles() {
         let articlesPersisted = coreDataManager.loadArticles()
-        if (articlesPersisted.count == 0){
-            performSegue(withIdentifier: Identifiers.goToEmptyVC, sender: self)
-        } else{
-            performSegue(withIdentifier: Identifiers.goToSavedArticlesVC, sender: self)
-        }
+        performSegue(withIdentifier: Identifiers.goToSavedArticlesVC, sender: self)
     }
 }
 
@@ -211,6 +245,7 @@ extension NewsViewController:  UITableViewDelegate{
                 LogManager.logging("invalid Articles Count: \(self.invalidArticlesCount)")
                 if (_articles.count < (apiNewsModel!.totalResults - invalidArticlesCount)){
                     page = page + 1
+                    createSpinnerView()
                     apiNewsManager.fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingNews)\(page)")
                 } else {
                     LogManager.logging("All the valid news updates has been fetched.")
@@ -261,39 +296,11 @@ extension NewsViewController: ClickDelegate{
             guard let url = articles?[row].url, let _imageURL = articles?[row].urlToImage else {
                 return
             }
-            let fileManager = FileManager.default
-            guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
-                LogManager.error("Error: File doesn't exit.")
-                return
-            }
-            print(documentURL)
-            var fileManagmentSDK = FileManagementSDK(fileURL: documentURL)
-            fileManagmentSDK.store(newsURL: url, imageURL: _imageURL) { result in
-                switch result {
-                case .success(let imageFileName):
-                    LogManager.logging("ImageFile saved Successfully!: \(imageFileName)")
-                case .failure(let error):
-                    LogManager.error("ImageFile is not saved: \(error.getErrorDescription())")
-                }
-            }
+            fileSystemManager.store(image: uiImage, forImageName: key, imageFormat: imageFormat)
         } else {
-            let fileManager = FileManager.default
-            guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
-                LogManager.error("Error: File doesn't exit.")
-                return
-            }
-            print(documentURL)
-            var fileManagmentSDK = FileManagementSDK(fileURL: documentURL)
-            
             fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink: (articles?[row].url)!)
-            if let _imageName = fetchSavedArticle[0].imageName{
-            let result = fileManagmentSDK.deleteImage(forImageName: _imageName)
-            switch result{
-            case .success(let success):
-                LogManager.logging(success)
-            case .failure(let error):
-                LogManager.error(error.getErrorDescription())
-            }
+            if let _imageName = fetchSavedArticle[0].imageName {
+                fileSystemManager.deleteImage(forImageName: _imageName)
             }
             coreDataManager.deleteArticle(articleInfo: fetchSavedArticle[0])
             LogManager.logging("News article is unsaved.")

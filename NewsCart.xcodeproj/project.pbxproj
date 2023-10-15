@@ -7,18 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E272DC87B601641811133AF /* Pods_NewsCartContentExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609FEEAEFCA595C9D8AF4034 /* Pods_NewsCartContentExtension.framework */; };
-		780145702A6A6FC300844EBC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7801456F2A6A6FC300844EBC /* GoogleService-Info.plist */; };
-		780145752A6FC27500844EBC /* EmptyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780145742A6FC27500844EBC /* EmptyVC.swift */; };
 		780145782A7122D600844EBC /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780145772A7122D600844EBC /* CoreDataManager.swift */; };
 		7801457B2A76A6B300844EBC /* NewsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801457A2A76A6B300844EBC /* NewsViewControllerExtension.swift */; };
 		7801457D2A76A80E00844EBC /* NewsSavedVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801457C2A76A80E00844EBC /* NewsSavedVCExtension.swift */; };
 		780145892A7A550E00844EBC /* NewsCartServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 780145822A7A550D00844EBC /* NewsCartServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7801458F2A7A5CE600844EBC /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780145842A7A550D00844EBC /* NotificationService.swift */; };
 		780145962A7B7B1600844EBC /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780145952A7B7B1600844EBC /* UserNotifications.framework */; };
 		7801459B2A7B7B1600844EBC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801459A2A7B7B1600844EBC /* NotificationViewController.swift */; };
 		7801459E2A7B7B1600844EBC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7801459C2A7B7B1600844EBC /* MainInterface.storyboard */; };
 		780145A22A7B7B1600844EBC /* NewsCartContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 780145942A7B7B1600844EBC /* NewsCartContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7822A6B52ADBB52900B22669 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */; };
 		7840F56B2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */; };
 		7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */; };
 		7840F5712AA0F931003F4B91 /* FetchSelfHandledCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */; };
@@ -26,22 +23,20 @@
 		7840F57C2AA1E7E6003F4B91 /* CardsillustrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F57B2AA1E7E6003F4B91 /* CardsillustrationCell.swift */; };
 		7840F57F2AA1F49F003F4B91 /* SelfHandledModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F57E2AA1F49F003F4B91 /* SelfHandledModel.swift */; };
 		7840F5812AA1F8D4003F4B91 /* SelfHandledManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5802AA1F8D4003F4B91 /* SelfHandledManager.swift */; };
-		7848B4FA2AA5F4A2008613B8 /* FileManagementSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 7848B4F92AA5F4A2008613B8 /* FileManagementSDK */; };
-		7848B4FC2AA99EB3008613B8 /* SelfHandledViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B4FB2AA99EB3008613B8 /* SelfHandledViewModel.swift */; };
+		7848B5012AAEF3A0008613B8 /* ReturnAPINewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B5002AAEF3A0008613B8 /* ReturnAPINewsModel.swift */; };
+		7848B5032AAEFB9A008613B8 /* SelfHandledViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848B5022AAEFB9A008613B8 /* SelfHandledViewModel.swift */; };
 		787F4EF22A8C7AAB00376F2F /* CoreDataConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF12A8C7AAB00376F2F /* CoreDataConfiguration.swift */; };
 		787F4EF42A8DF68900376F2F /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF32A8DF68900376F2F /* LogManager.swift */; };
 		787F4EF62A8F6CF000376F2F /* ImagePropertyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF52A8F6CF000376F2F /* ImagePropertyModel.swift */; };
 		787F4EF82A8F6E7100376F2F /* AlertsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4EF72A8F6E7100376F2F /* AlertsManager.swift */; };
 		787F4F032A95E15D00376F2F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780145952A7B7B1600844EBC /* UserNotifications.framework */; };
 		787F4F042A97845A00376F2F /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780145952A7B7B1600844EBC /* UserNotifications.framework */; };
-		787F4F072A978A4300376F2F /* Pods_NewsCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B7F41C6B2F7B9F9C59A3581 /* Pods_NewsCart.framework */; };
 		787F4F0A2A97979400376F2F /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 780145972A7B7B1600844EBC /* UserNotificationsUI.framework */; };
 		787F4F0F2A9B120800376F2F /* FetchInboxMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F0E2A9B120800376F2F /* FetchInboxMessages.swift */; };
 		787F4F112A9B663600376F2F /* MoEngageInboxConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F102A9B663600376F2F /* MoEngageInboxConfiguration.swift */; };
 		787F4F132A9CB25800376F2F /* RequestLocationAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F122A9CB25800376F2F /* RequestLocationAuthorization.swift */; };
 		787F4F152A9DC7C800376F2F /* NavigatingToScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F142A9DC7C800376F2F /* NavigatingToScreen.swift */; };
 		787F4F172A9F42CC00376F2F /* CardsInboxMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F162A9F42CC00376F2F /* CardsInboxMessages.swift */; };
-		787F4F1B2AA0A64800376F2F /* InAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787F4F1A2AA0A64800376F2F /* InAppViewController.swift */; };
 		78817A1F2A7BACA300AC2CA7 /* ActionableNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78817A1E2A7BACA300AC2CA7 /* ActionableNotificationManager.swift */; };
 		789267372A6115B400959887 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789267362A6115B400959887 /* AppDelegate.swift */; };
 		789267392A6115B400959887 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789267382A6115B400959887 /* SceneDelegate.swift */; };
@@ -67,7 +62,14 @@
 		7899FB5E2A83B4E700814E8F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801459A2A7B7B1600844EBC /* NotificationViewController.swift */; };
 		7899FB742A84D67C00814E8F /* FileSystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899FB732A84D67C00814E8F /* FileSystemManager.swift */; };
 		7899FB762A84D87800814E8F /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899FB752A84D87800814E8F /* ImageExtension.swift */; };
-		CAE5F4F482C37F529F6961C8 /* Pods_NewsCartServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F33FD93869F2C3AF904A405C /* Pods_NewsCartServiceExtension.framework */; };
+		78CC11412ADA7F530082D24F /* CardType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC11402ADA7F530082D24F /* CardType.swift */; };
+		78CC11432ADA7F730082D24F /* CardWidgetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC11422ADA7F730082D24F /* CardWidgetType.swift */; };
+		78CC11462ADA7FC50082D24F /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC11452ADA7FC50082D24F /* DateUtils.swift */; };
+		78CC11482ADA7FDC0082D24F /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CC11472ADA7FDC0082D24F /* StringUtils.swift */; };
+		78EBB1DA2AC29457009162B6 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780145842A7A550D00844EBC /* NotificationService.swift */; };
+		85440367209F41010F7D8F8B /* Pods_NewsCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE73D2D87AB0868717AE7CF8 /* Pods_NewsCart.framework */; };
+		A3DDBBD7B03C7C2D6BC6DA27 /* Pods_NewsCartContentExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8DCCA98D04EA345B7211FD2 /* Pods_NewsCartContentExtension.framework */; };
+		D324E7AEE4F1AB13653994BB /* Pods_NewsCartServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92F3D0F015BEAA28DAB10301 /* Pods_NewsCartServiceExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,13 +105,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4B7F41C6B2F7B9F9C59A3581 /* Pods_NewsCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5828CD2090B1013DA4799D3B /* Pods-NewsCartContentExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartContentExtension.release.xcconfig"; path = "Target Support Files/Pods-NewsCartContentExtension/Pods-NewsCartContentExtension.release.xcconfig"; sourceTree = "<group>"; };
-		609FEEAEFCA595C9D8AF4034 /* Pods_NewsCartContentExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCartContentExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		664FE2B6A1047A8D94A08EF1 /* Pods-NewsCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCart.debug.xcconfig"; path = "Target Support Files/Pods-NewsCart/Pods-NewsCart.debug.xcconfig"; sourceTree = "<group>"; };
+		118A23F77545D26D12DB1DCA /* Pods-NewsCartServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-NewsCartServiceExtension/Pods-NewsCartServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		3F0B1DEF28C7942D8FDECC4A /* Pods-NewsCartContentExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartContentExtension.debug.xcconfig"; path = "Target Support Files/Pods-NewsCartContentExtension/Pods-NewsCartContentExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7801456F2A6A6FC300844EBC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		780145712A6A759A00844EBC /* NewsCart.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewsCart.entitlements; sourceTree = "<group>"; };
-		780145742A6FC27500844EBC /* EmptyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVC.swift; sourceTree = "<group>"; };
 		780145772A7122D600844EBC /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7801457A2A76A6B300844EBC /* NewsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewControllerExtension.swift; sourceTree = "<group>"; };
 		7801457C2A76A80E00844EBC /* NewsSavedVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsSavedVCExtension.swift; sourceTree = "<group>"; };
@@ -122,6 +121,7 @@
 		7801459A2A7B7B1600844EBC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7801459D2A7B7B1600844EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7801459F2A7B7B1600844EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledCardsViewController.swift; sourceTree = "<group>"; };
 		7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSelfHandledCards.swift; sourceTree = "<group>"; };
@@ -129,7 +129,8 @@
 		7840F57B2AA1E7E6003F4B91 /* CardsillustrationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsillustrationCell.swift; sourceTree = "<group>"; };
 		7840F57E2AA1F49F003F4B91 /* SelfHandledModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledModel.swift; sourceTree = "<group>"; };
 		7840F5802AA1F8D4003F4B91 /* SelfHandledManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledManager.swift; sourceTree = "<group>"; };
-		7848B4FB2AA99EB3008613B8 /* SelfHandledViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledViewModel.swift; sourceTree = "<group>"; };
+		7848B5002AAEF3A0008613B8 /* ReturnAPINewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnAPINewsModel.swift; sourceTree = "<group>"; };
+		7848B5022AAEFB9A008613B8 /* SelfHandledViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledViewModel.swift; sourceTree = "<group>"; };
 		787F4EF12A8C7AAB00376F2F /* CoreDataConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConfiguration.swift; sourceTree = "<group>"; };
 		787F4EF32A8DF68900376F2F /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		787F4EF52A8F6CF000376F2F /* ImagePropertyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePropertyModel.swift; sourceTree = "<group>"; };
@@ -142,7 +143,6 @@
 		787F4F122A9CB25800376F2F /* RequestLocationAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationAuthorization.swift; sourceTree = "<group>"; };
 		787F4F142A9DC7C800376F2F /* NavigatingToScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigatingToScreen.swift; sourceTree = "<group>"; };
 		787F4F162A9F42CC00376F2F /* CardsInboxMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsInboxMessages.swift; sourceTree = "<group>"; };
-		787F4F1A2AA0A64800376F2F /* InAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppViewController.swift; sourceTree = "<group>"; };
 		78817A1E2A7BACA300AC2CA7 /* ActionableNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableNotificationManager.swift; sourceTree = "<group>"; };
 		789267332A6115B400959887 /* NewsCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		789267362A6115B400959887 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,11 +168,17 @@
 		7899FB582A836C5600814E8F /* DownloadVideoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadVideoManager.swift; sourceTree = "<group>"; };
 		7899FB732A84D67C00814E8F /* FileSystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemManager.swift; sourceTree = "<group>"; };
 		7899FB752A84D87800814E8F /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
-		87414EB4FE2B653718CE138E /* Pods-NewsCartServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NewsCartServiceExtension/Pods-NewsCartServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		D507D4F704BB62ADB1A396A4 /* Pods-NewsCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCart.release.xcconfig"; path = "Target Support Files/Pods-NewsCart/Pods-NewsCart.release.xcconfig"; sourceTree = "<group>"; };
-		D639A19F40D5B4D8EF13258D /* Pods-NewsCartContentExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartContentExtension.debug.xcconfig"; path = "Target Support Files/Pods-NewsCartContentExtension/Pods-NewsCartContentExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		F33FD93869F2C3AF904A405C /* Pods_NewsCartServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCartServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB8E5519E3464C099A926BE5 /* Pods-NewsCartServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartServiceExtension.release.xcconfig"; path = "Target Support Files/Pods-NewsCartServiceExtension/Pods-NewsCartServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		78CC11402ADA7F530082D24F /* CardType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardType.swift; sourceTree = "<group>"; };
+		78CC11422ADA7F730082D24F /* CardWidgetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardWidgetType.swift; sourceTree = "<group>"; };
+		78CC11452ADA7FC50082D24F /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		78CC11472ADA7FDC0082D24F /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		7F2DD40E1D297CEA242BC2B9 /* Pods-NewsCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCart.debug.xcconfig"; path = "Target Support Files/Pods-NewsCart/Pods-NewsCart.debug.xcconfig"; sourceTree = "<group>"; };
+		92F3D0F015BEAA28DAB10301 /* Pods_NewsCartServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCartServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8DCCA98D04EA345B7211FD2 /* Pods_NewsCartContentExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCartContentExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE73D2D87AB0868717AE7CF8 /* Pods_NewsCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NewsCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E30DC4C4AD36227A3C25CA78 /* Pods-NewsCartContentExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartContentExtension.release.xcconfig"; path = "Target Support Files/Pods-NewsCartContentExtension/Pods-NewsCartContentExtension.release.xcconfig"; sourceTree = "<group>"; };
+		F2011F1FAA987D6A913EE545 /* Pods-NewsCartServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCartServiceExtension.debug.xcconfig"; path = "Target Support Files/Pods-NewsCartServiceExtension/Pods-NewsCartServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		F780611DF0EFC59025CD6647 /* Pods-NewsCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NewsCart.release.xcconfig"; path = "Target Support Files/Pods-NewsCart/Pods-NewsCart.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				787F4F032A95E15D00376F2F /* UserNotifications.framework in Frameworks */,
-				CAE5F4F482C37F529F6961C8 /* Pods_NewsCartServiceExtension.framework in Frameworks */,
+				D324E7AEE4F1AB13653994BB /* Pods_NewsCartServiceExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,7 +197,7 @@
 			files = (
 				787F4F0A2A97979400376F2F /* UserNotificationsUI.framework in Frameworks */,
 				780145962A7B7B1600844EBC /* UserNotifications.framework in Frameworks */,
-				0E272DC87B601641811133AF /* Pods_NewsCartContentExtension.framework in Frameworks */,
+				A3DDBBD7B03C7C2D6BC6DA27 /* Pods_NewsCartContentExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,9 +205,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7848B4FA2AA5F4A2008613B8 /* FileManagementSDK in Frameworks */,
 				787F4F042A97845A00376F2F /* UserNotifications.framework in Frameworks */,
-				787F4F072A978A4300376F2F /* Pods_NewsCart.framework in Frameworks */,
+				85440367209F41010F7D8F8B /* Pods_NewsCart.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,11 +216,11 @@
 		57DED2359EA1A1A2E90A5E39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B7F41C6B2F7B9F9C59A3581 /* Pods_NewsCart.framework */,
 				780145952A7B7B1600844EBC /* UserNotifications.framework */,
 				780145972A7B7B1600844EBC /* UserNotificationsUI.framework */,
-				F33FD93869F2C3AF904A405C /* Pods_NewsCartServiceExtension.framework */,
-				609FEEAEFCA595C9D8AF4034 /* Pods_NewsCartContentExtension.framework */,
+				BE73D2D87AB0868717AE7CF8 /* Pods_NewsCart.framework */,
+				B8DCCA98D04EA345B7211FD2 /* Pods_NewsCartContentExtension.framework */,
+				92F3D0F015BEAA28DAB10301 /* Pods_NewsCartServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -232,7 +237,7 @@
 				787F4F102A9B663600376F2F /* MoEngageInboxConfiguration.swift */,
 				787F4F122A9CB25800376F2F /* RequestLocationAuthorization.swift */,
 				787F4F142A9DC7C800376F2F /* NavigatingToScreen.swift */,
-				7848B4FB2AA99EB3008613B8 /* SelfHandledViewModel.swift */,
+				7848B5022AAEFB9A008613B8 /* SelfHandledViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -280,7 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				7840F5802AA1F8D4003F4B91 /* SelfHandledManager.swift */,
-				789267542A62F36C00959887 /* APINewsManager.swift */,
+				7848B5002AAEF3A0008613B8 /* ReturnAPINewsModel.swift */,
 			);
 			path = "Remote Repository";
 			sourceTree = "<group>";
@@ -304,6 +309,14 @@
 			path = CardsTableViewCell;
 			sourceTree = "<group>";
 		};
+		7848B4FF2AAEF2EB008613B8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				789267542A62F36C00959887 /* APINewsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		7892672A2A6115B300959887 = {
 			isa = PBXGroup;
 			children = (
@@ -311,7 +324,10 @@
 				7892674E2A6123F300959887 /* View */,
 				789267562A62F44C00959887 /* Protocols */,
 				7840F5762AA1C961003F4B91 /* Repositories */,
+				7848B4FF2AAEF2EB008613B8 /* Managers */,
 				780145762A70331300844EBC /* View Model */,
+				78CC11442ADA7F8F0082D24F /* Utility */,
+				78CC113F2ADA7F110082D24F /* Enums */,
 				78939D792A66706100BDDD23 /* Constants */,
 				789267352A6115B400959887 /* NewsCart */,
 				780145832A7A550D00844EBC /* NewsCartServiceExtension */,
@@ -370,9 +386,8 @@
 				7892673A2A6115B400959887 /* NewsViewController.swift */,
 				78939D7E2A66929E00BDDD23 /* NewsSavedVC.swift */,
 				78939D822A679E9700BDDD23 /* SavedArticleViewController.swift */,
-				780145742A6FC27500844EBC /* EmptyVC.swift */,
-				787F4F1A2AA0A64800376F2F /* InAppViewController.swift */,
 				7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */,
+				7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */,
 				780145792A76A65500844EBC /* Extensions */,
 			);
 			path = View;
@@ -399,15 +414,33 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		78CC113F2ADA7F110082D24F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				78CC11402ADA7F530082D24F /* CardType.swift */,
+				78CC11422ADA7F730082D24F /* CardWidgetType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		78CC11442ADA7F8F0082D24F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				78CC11452ADA7FC50082D24F /* DateUtils.swift */,
+				78CC11472ADA7FDC0082D24F /* StringUtils.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		B1850B95057C3A663818EC2F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				664FE2B6A1047A8D94A08EF1 /* Pods-NewsCart.debug.xcconfig */,
-				D507D4F704BB62ADB1A396A4 /* Pods-NewsCart.release.xcconfig */,
-				87414EB4FE2B653718CE138E /* Pods-NewsCartServiceExtension.debug.xcconfig */,
-				FB8E5519E3464C099A926BE5 /* Pods-NewsCartServiceExtension.release.xcconfig */,
-				D639A19F40D5B4D8EF13258D /* Pods-NewsCartContentExtension.debug.xcconfig */,
-				5828CD2090B1013DA4799D3B /* Pods-NewsCartContentExtension.release.xcconfig */,
+				7F2DD40E1D297CEA242BC2B9 /* Pods-NewsCart.debug.xcconfig */,
+				F780611DF0EFC59025CD6647 /* Pods-NewsCart.release.xcconfig */,
+				3F0B1DEF28C7942D8FDECC4A /* Pods-NewsCartContentExtension.debug.xcconfig */,
+				E30DC4C4AD36227A3C25CA78 /* Pods-NewsCartContentExtension.release.xcconfig */,
+				F2011F1FAA987D6A913EE545 /* Pods-NewsCartServiceExtension.debug.xcconfig */,
+				118A23F77545D26D12DB1DCA /* Pods-NewsCartServiceExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -419,7 +452,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7801458D2A7A550E00844EBC /* Build configuration list for PBXNativeTarget "NewsCartServiceExtension" */;
 			buildPhases = (
-				3CB045B9FB1B2D46E17F4FC0 /* [CP] Check Pods Manifest.lock */,
+				9C0CCA5B203F6A7E3C9B5B16 /* [CP] Check Pods Manifest.lock */,
 				7801457E2A7A550D00844EBC /* Sources */,
 				7801457F2A7A550D00844EBC /* Frameworks */,
 				780145802A7A550D00844EBC /* Resources */,
@@ -437,7 +470,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 780145A32A7B7B1600844EBC /* Build configuration list for PBXNativeTarget "NewsCartContentExtension" */;
 			buildPhases = (
-				6EE84F329FB0C3C4EC279197 /* [CP] Check Pods Manifest.lock */,
+				2BF4758C4454C3F390726115 /* [CP] Check Pods Manifest.lock */,
 				780145902A7B7B1600844EBC /* Sources */,
 				780145912A7B7B1600844EBC /* Frameworks */,
 				780145922A7B7B1600844EBC /* Resources */,
@@ -455,12 +488,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7892674A2A6115B600959887 /* Build configuration list for PBXNativeTarget "NewsCart" */;
 			buildPhases = (
-				2A5E6A6B7AFA2989E8760B27 /* [CP] Check Pods Manifest.lock */,
+				29D479C77FC079356F86C731 /* [CP] Check Pods Manifest.lock */,
 				7892672F2A6115B400959887 /* Sources */,
 				789267302A6115B400959887 /* Frameworks */,
 				789267312A6115B400959887 /* Resources */,
 				7801458A2A7A550E00844EBC /* Embed Foundation Extensions */,
-				70C5E5D2E66B9D56FCDD1886 /* [CP] Embed Pods Frameworks */,
+				AF36554F9010D9B20DB507BE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -470,7 +503,6 @@
 			);
 			name = NewsCart;
 			packageProductDependencies = (
-				7848B4F92AA5F4A2008613B8 /* FileManagementSDK */,
 			);
 			productName = NewsCart;
 			productReference = 789267332A6115B400959887 /* NewsCart.app */;
@@ -507,7 +539,6 @@
 			);
 			mainGroup = 7892672A2A6115B300959887;
 			packageReferences = (
-				7848B4F82AA5F4A2008613B8 /* XCRemoteSwiftPackageReference "FileManagementSDK" */,
 			);
 			productRefGroup = 789267342A6115B400959887 /* Products */;
 			projectDirPath = "";
@@ -544,14 +575,13 @@
 				789267432A6115B600959887 /* Assets.xcassets in Resources */,
 				7892673E2A6115B400959887 /* Main.storyboard in Resources */,
 				7892675C2A64686A00959887 /* HeaderView.xib in Resources */,
-				780145702A6A6FC300844EBC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2A5E6A6B7AFA2989E8760B27 /* [CP] Check Pods Manifest.lock */ = {
+		29D479C77FC079356F86C731 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -573,29 +603,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3CB045B9FB1B2D46E17F4FC0 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-NewsCartServiceExtension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6EE84F329FB0C3C4EC279197 /* [CP] Check Pods Manifest.lock */ = {
+		2BF4758C4454C3F390726115 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -617,7 +625,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70C5E5D2E66B9D56FCDD1886 /* [CP] Embed Pods Frameworks */ = {
+		9C0CCA5B203F6A7E3C9B5B16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NewsCartServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF36554F9010D9B20DB507BE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -641,7 +671,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7801458F2A7A5CE600844EBC /* NotificationService.swift in Sources */,
+				78EBB1DA2AC29457009162B6 /* NotificationService.swift in Sources */,
 				7899FB5C2A83723C00814E8F /* DownloadVideoManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,32 +704,36 @@
 				7899FB762A84D87800814E8F /* ImageExtension.swift in Sources */,
 				7801457B2A76A6B300844EBC /* NewsViewControllerExtension.swift in Sources */,
 				780145782A7122D600844EBC /* CoreDataManager.swift in Sources */,
+				7822A6B52ADBB52900B22669 /* SpinnerViewController.swift in Sources */,
 				7840F56B2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift in Sources */,
+				78CC11412ADA7F530082D24F /* CardType.swift in Sources */,
 				789267512A61399F00959887 /* APINewsModel.swift in Sources */,
 				789267372A6115B400959887 /* AppDelegate.swift in Sources */,
-				787F4F1B2AA0A64800376F2F /* InAppViewController.swift in Sources */,
 				7840F57F2AA1F49F003F4B91 /* SelfHandledModel.swift in Sources */,
 				7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */,
 				789267392A6115B400959887 /* SceneDelegate.swift in Sources */,
 				7840F57C2AA1E7E6003F4B91 /* CardsillustrationCell.swift in Sources */,
 				7899FB5E2A83B4E700814E8F /* NotificationViewController.swift in Sources */,
 				7899FB742A84D67C00814E8F /* FileSystemManager.swift in Sources */,
+				78CC11432ADA7F730082D24F /* CardWidgetType.swift in Sources */,
 				787F4F112A9B663600376F2F /* MoEngageInboxConfiguration.swift in Sources */,
 				78939D7B2A66707200BDDD23 /* Constants.swift in Sources */,
 				78939D762A66497600BDDD23 /* NewsCart.xcdatamodeld in Sources */,
 				78939D812A66F26300BDDD23 /* CustomSavedNewsCell.swift in Sources */,
 				789267602A6521DF00959887 /* FetchCategoryNews.swift in Sources */,
 				787F4F132A9CB25800376F2F /* RequestLocationAuthorization.swift in Sources */,
+				78CC11462ADA7FC50082D24F /* DateUtils.swift in Sources */,
 				7801457D2A76A80E00844EBC /* NewsSavedVCExtension.swift in Sources */,
 				787F4F0F2A9B120800376F2F /* FetchInboxMessages.swift in Sources */,
+				78CC11482ADA7FDC0082D24F /* StringUtils.swift in Sources */,
 				789267552A62F36C00959887 /* APINewsManager.swift in Sources */,
-				780145752A6FC27500844EBC /* EmptyVC.swift in Sources */,
 				7840F5812AA1F8D4003F4B91 /* SelfHandledManager.swift in Sources */,
 				7840F57A2AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift in Sources */,
 				78817A1F2A7BACA300AC2CA7 /* ActionableNotificationManager.swift in Sources */,
 				787F4F152A9DC7C800376F2F /* NavigatingToScreen.swift in Sources */,
+				7848B5012AAEF3A0008613B8 /* ReturnAPINewsModel.swift in Sources */,
 				789267582A62F47600959887 /* FetchNews.swift in Sources */,
-				7848B4FC2AA99EB3008613B8 /* SelfHandledViewModel.swift in Sources */,
+				7848B5032AAEFB9A008613B8 /* SelfHandledViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,7 +782,7 @@
 /* Begin XCBuildConfiguration section */
 		7801458B2A7A550E00844EBC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87414EB4FE2B653718CE138E /* Pods-NewsCartServiceExtension.debug.xcconfig */;
+			baseConfigurationReference = F2011F1FAA987D6A913EE545 /* Pods-NewsCartServiceExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NewsCartServiceExtension/NewsCartServiceExtensionDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -776,7 +810,7 @@
 		};
 		7801458C2A7A550E00844EBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB8E5519E3464C099A926BE5 /* Pods-NewsCartServiceExtension.release.xcconfig */;
+			baseConfigurationReference = 118A23F77545D26D12DB1DCA /* Pods-NewsCartServiceExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -803,7 +837,7 @@
 		};
 		780145A42A7B7B1600844EBC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D639A19F40D5B4D8EF13258D /* Pods-NewsCartContentExtension.debug.xcconfig */;
+			baseConfigurationReference = 3F0B1DEF28C7942D8FDECC4A /* Pods-NewsCartContentExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = NewsCartContentExtension/NewsCartContentExtensionDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -831,7 +865,7 @@
 		};
 		780145A52A7B7B1600844EBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5828CD2090B1013DA4799D3B /* Pods-NewsCartContentExtension.release.xcconfig */;
+			baseConfigurationReference = E30DC4C4AD36227A3C25CA78 /* Pods-NewsCartContentExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -972,7 +1006,7 @@
 		};
 		7892674B2A6115B600959887 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 664FE2B6A1047A8D94A08EF1 /* Pods-NewsCart.debug.xcconfig */;
+			baseConfigurationReference = 7F2DD40E1D297CEA242BC2B9 /* Pods-NewsCart.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1006,7 +1040,7 @@
 		};
 		7892674C2A6115B600959887 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D507D4F704BB62ADB1A396A4 /* Pods-NewsCart.release.xcconfig */;
+			baseConfigurationReference = F780611DF0EFC59025CD6647 /* Pods-NewsCart.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1077,25 +1111,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		7848B4F82AA5F4A2008613B8 /* XCRemoteSwiftPackageReference "FileManagementSDK" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Uday-SDE-intern/FileManagementSDK.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		7848B4F92AA5F4A2008613B8 /* FileManagementSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7848B4F82AA5F4A2008613B8 /* XCRemoteSwiftPackageReference "FileManagementSDK" */;
-			productName = FileManagementSDK;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		78939D742A66497600BDDD23 /* NewsCart.xcdatamodeld */ = {

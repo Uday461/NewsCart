@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 import MoEngageInApps
-import FileManagementSDK
+//import FileManagementSDK
 
 class NewsSavedVC: UIViewController{
     
@@ -20,7 +20,6 @@ class NewsSavedVC: UIViewController{
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 180
         articleArray = coreDataManager.loadArticles()
@@ -28,7 +27,9 @@ class NewsSavedVC: UIViewController{
         MoEngageSDKInApp.sharedInstance.showInApp()
         MoEngageSDKInApp.sharedInstance.showNudge(atPosition: NudgePositionTop)
         MoEngageSDKInApp.sharedInstance.setCurrentInAppContexts(["Offer"])
-    //    selfHandledInApps()
+        if (articleArray.count == 0) {
+            tableView.isHidden = true
+        }
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -40,18 +41,6 @@ class NewsSavedVC: UIViewController{
             self.tableView.reloadData()
         }
     }
-    
-//    func selfHandledInApps(){
-//        MoEngageSDKInApp.sharedInstance.getSelfHandledInApp { campaignInfo, accountMeta in
-//            if let campaignInfo = campaignInfo{
-//                LogManager.logging("Self-Hanled InApp Content \(campaignInfo.campaignContent)")
-//                MoEngageSDKInApp.sharedInstance.selfHandledShown(campaignInfo: campaignInfo)
-//                // Update UI with Self Handled InApp Content
-//            } else{
-//                LogManager.logging("No Self Handled campaign available")
-//            }
-//        }
-//    }
 }
 
 

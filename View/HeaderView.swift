@@ -42,24 +42,24 @@ class HeaderView: UIView{
     }
     
     
-    @IBAction func messageInboxButtonPressed(_ sender: Any) {
-        fetchInboxMessagesDelegate?.fetchInboxMessages()
-    }
-    
+//    @IBAction func messageInboxButtonPressed(_ sender: Any) {
+//        fetchInboxMessagesDelegate?.fetchInboxMessages()
+//    }
+//    
     
     @IBAction func bookMarkButtonPressed(_ sender: Any) {
         fetchCategoryNewsDelegate?.fetchSavedArticles()
     }
     
     
-    @IBAction func cardsInboxButtonPressed(_ sender: Any) {
-        fetchCardsInboxMessagesDelegate?.fetchCardsInboxMessages()
-    }
+//    @IBAction func cardsInboxButtonPressed(_ sender: Any) {
+//        fetchCardsInboxMessagesDelegate?.fetchCardsInboxMessages()
+//    }
     
     
-    @IBAction func selfCardsButtonPressed(_ sender: Any) {
-        fetchSelfHandledCardsInbox?.fetchSelfHandledCards()
-    }
+//    @IBAction func selfCardsButtonPressed(_ sender: Any) {
+//        fetchSelfHandledCardsInbox?.fetchSelfHandledCards()
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -72,7 +72,7 @@ class HeaderView: UIView{
     }
     
     override var intrinsicContentSize: CGSize{
-        return CGSize(width: UIView.noIntrinsicMetric, height: 190)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 130)
     }
     
     private func commonInit(){

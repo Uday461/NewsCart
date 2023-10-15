@@ -9,11 +9,10 @@ import UIKit
 import MoEngageCards
 
 class SelfHandledCardsViewController: UIViewController{
-    
     @IBOutlet weak var tableView: UITableView!
     var cardsCount: Int? = nil
     var moEngageCardCampaignArray:[MoEngageCardCampaign] = []
-    var selfHandledData: [SelfHandledModel] = []
+    var selfHandledCardsArray: [SelfHandledModel] = []
     let apiManager = APINewsManager()
     var count = 0
     override func viewDidLoad() {
@@ -32,44 +31,66 @@ class SelfHandledCardsViewController: UIViewController{
     
 }
 
-extension SelfHandledCardsViewController: UITableViewDataSource{
+extension SelfHandledCardsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        LogManager.logging("campaignArrayCount: \(selfHandledData.count)")
-        return selfHandledData.count
+        LogManager.logging("campaignArrayCount: \(selfHandledCardsArray.count)")
+        return selfHandledCardsArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let selfHandledCardData = selfHandledData[indexPath.row]
-        MoEngageSDKCards.sharedInstance.cardDelivered(self.selfHandledData[indexPath.row].moEngageCardCampaign, forAppID: Constants.appID)
-        MoEngageSDKCards.sharedInstance.cardShown(self.selfHandledData[indexPath.row].moEngageCardCampaign, forAppID: Constants.appID)
+        let selfHandledCardData = selfHandledCardsArray[indexPath.row]
+        MoEngageSDKCards.sharedInstance.cardDelivered(self.selfHandledCardsArray[indexPath.row].moEngageCardCampaign, forAppID: Constants.appID)
+        MoEngageSDKCards.sharedInstance.cardShown(self.selfHandledCardsArray[indexPath.row].moEngageCardCampaign, forAppID: Constants.appID)
         
-        if (selfHandledCardData.cardTemplateType == "basic"){
-            if (selfHandledCardData.imageLink == nil){
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cardsCell") as! CardsCell
-                cell.headerLabel.text = selfHandledCardData.text[0]
-                cell.messageLabel.text = selfHandledCardData.text[1]
+        switch (selfHandledCardData.cardTemplateType) {
+        case .basic:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCellIdentifiers.cardsCell) as! CardsCell
+            if (selfHandledCardData.imageLink == nil) {
+                cell.headerLabel.attributedText = selfHandledCardData.text[0]
+                cell.headerLabel.font = UIFont.systemFont(ofSize: 16.0)
+                cell.messageLabel.attributedText = selfHandledCardData.text[1]
+                cell.messageLabel.font = UIFont.systemFont(ofSize: 16.0)
                 cell.dateLabel.text = selfHandledCardData.dateOfCreation
+                //      if let cardTemplateBgColor = selfHandledCardData.cardTemplateBgColor {
+                //                    cell.cardTemplateView.backgroundColor = cardTemplateBgColor
+                //                }  else {
+                //                    cell.cardTemplateView.backgroundColor = UIColor(named: "selfHandledCards")
+                //                }
+                //                cell.backgroundColor =  ColorUtils.hexToRGB(hex: "#003390")
                 cell.clickDelegate = self
                 cell.cellIndex = indexPath
-                if (selfHandledCardData.buttonName == nil){
+                if (selfHandledCardData.buttonName == nil) {
                     cell.buttonCTA.isHidden = true
                 } else {
-                    let buttonTitle = NSAttributedString(string: uiButtonConfiguration(title: selfHandledCardData.buttonName!), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
-                    cell.buttonCTA.setAttributedTitle(buttonTitle, for: .normal)
+                    cell.buttonCTA.isHidden = false
+                    if let attributedButtonTitle = StringUtils.returnNSMutableAttributedStringForButton(buttonName: selfHandledCardData.buttonName!) {
+                        cell.buttonCTA.setAttributedTitle(attributedButtonTitle, for: .normal)
+                    }
                 }
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cardsBasicWithImageCell") as! CardsBasicWithImageCell
-                cell.headerLabel.text = selfHandledCardData.text[0]
-                cell.messageLabel.text = selfHandledCardData.text[1]
+                let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCellIdentifiers.cardsBasicWithImageCell) as! CardsBasicWithImageCell
+                cell.headerLabel.attributedText = selfHandledCardData.text[0]
+                cell.headerLabel.font = UIFont.systemFont(ofSize: 16.0)
+                cell.messageLabel.attributedText = selfHandledCardData.text[1]
+                cell.messageLabel.font = UIFont.systemFont(ofSize: 16.0)
                 cell.dateLabel.text = selfHandledCardData.dateOfCreation
+                //     if let cardTemplateBgColor = selfHandledCardData.cardTemplateBgColor {
+                //                    cell.cardTemplateView.backgroundColor = cardTemplateBgColor
+                //                } else {
+                //                    cell.cardTemplateView.backgroundColor = UIColor(named: "selfHandledCards")
+                //                }
+                //                cell.backgroundColor =  ColorUtils.hexToRGB(hex: "#003390")
                 cell.clickDelegate = self
                 cell.cellIndex = indexPath
-                if (selfHandledCardData.buttonName == nil){
+                if (selfHandledCardData.buttonName == nil) {
                     cell.buttonCTA.isHidden = true
                 } else {
-                    let buttonTitle = NSAttributedString(string: uiButtonConfiguration(title: selfHandledCardData.buttonName!), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
-                    cell.buttonCTA.setAttributedTitle(buttonTitle, for: .normal)
+                    cell.buttonCTA.isHidden = false
+                    if let attributedButtonTitle = StringUtils.returnNSMutableAttributedStringForButton(buttonName: selfHandledCardData.buttonName!) {
+                        cell.buttonCTA.setAttributedTitle(attributedButtonTitle, for: .normal)
+                    }
+                    
                 }
                 guard let url = selfHandledCardData.imageLink else {
                     return cell
@@ -83,22 +104,35 @@ extension SelfHandledCardsViewController: UITableViewDataSource{
                 }
                 return cell
             }
-        }
-       
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cardsillustrationCell") as! CardsillustrationCell
-            cell.headerLabel.text = selfHandledCardData.text[0]
-            if (selfHandledCardData.text.count == 2){
-                cell.messageLabel.text = selfHandledCardData.text[1]
+            
+        case .illustration:
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCellIdentifiers.cardsillustrationCell) as! CardsillustrationCell
+            cell.headerLabel.attributedText = selfHandledCardData.text[0]
+            cell.headerLabel.font = UIFont.systemFont(ofSize: 16.0)
+            cell.clickDelegate = self
+            cell.cellIndex = indexPath
+            if (selfHandledCardData.text.count == 2) {
+                cell.messageLabel.attributedText = selfHandledCardData.text[1]
+                cell.messageLabel.font = UIFont.systemFont(ofSize: 16.0)
             } else {
                 cell.messageLabel.isHidden = true
             }
-            if (selfHandledCardData.buttonName == nil){
+            if (selfHandledCardData.buttonName == nil) {
                 cell.buttonCTA.isHidden = true
             } else {
-                let buttonTitle = NSAttributedString(string: uiButtonConfiguration(title: selfHandledCardData.buttonName!), attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14.0)])
-                cell.buttonCTA.setAttributedTitle(buttonTitle, for: .normal)
+                cell.buttonCTA.isHidden = false
+                if let attributedButtonTitle = StringUtils.returnNSMutableAttributedStringForButton(buttonName: selfHandledCardData.buttonName!) {
+                    cell.buttonCTA.setAttributedTitle(attributedButtonTitle, for: .normal)
+                }
+                
             }
             cell.dateLabel.text = selfHandledCardData.dateOfCreation
+            //            if let cardTemplateBgColor = selfHandledCardData.cardTemplateBgColor {
+            //                cell.cardTemplateView.backgroundColor = cardTemplateBgColor
+            //            } else {
+            //                cell.cardTemplateView.backgroundColor = UIColor(named: "selfHandledCards")
+            //            }
             guard let url = selfHandledCardData.imageLink else {
                 return cell
             }
@@ -110,18 +144,25 @@ extension SelfHandledCardsViewController: UITableViewDataSource{
                     }
                 }
             }
+            
+            return cell
+            
+        case .none:
+            break
+            
+        }
         
-        return cell
+        return UITableViewCell()
     }
     
 }
 
 extension SelfHandledCardsViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let moEngageCardCampaign = selfHandledData[indexPath.row].moEngageCardCampaign
+        let moEngageCardCampaign = selfHandledCardsArray[indexPath.row].moEngageCardCampaign
         let moEngageTemplateData = moEngageCardCampaign.templateData
         let moEngageContainer = moEngageTemplateData?.containers
-        let actionTypeAndValue = selfHandledData[indexPath.row].actionTypeAndValue
+        let actionTypeAndValue = selfHandledCardsArray[indexPath.row].actionTypeAndValue
         if let _moEngageContainer = moEngageContainer{
             let widget = _moEngageContainer[0].widgets
             for index in 0..<widget.count{
@@ -131,7 +172,7 @@ extension SelfHandledCardsViewController: UITableViewDelegate{
         }
         
         if let actionTypeAndValue = actionTypeAndValue{
-            let buttonName = selfHandledData[indexPath.row].buttonName
+            let buttonName = selfHandledCardsArray[indexPath.row].buttonName
             if (buttonName == nil) {
                 SelfHandledManager.actionHandling(typeOfAction: actionTypeAndValue.typeOfAction, actionValue: actionTypeAndValue.actionValue)
             }
@@ -145,9 +186,9 @@ extension SelfHandledCardsViewController: UITableViewDelegate{
             let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
                 self.count += 1
                 
-                MoEngageSDKCards.sharedInstance.deleteCards([self.selfHandledData[indexPath.row].moEngageCardCampaign]) { isDeleted, accountMeta in
+                MoEngageSDKCards.sharedInstance.deleteCards([self.selfHandledCardsArray[indexPath.row].moEngageCardCampaign]) { isDeleted, accountMeta in
                     print("Card deletion was \(isDeleted)")
-                    self.selfHandledData.remove(at: indexPath.row)
+                    self.selfHandledCardsArray.remove(at: indexPath.row)
                     DispatchQueue.main.async {
                         self.tableView.deleteRows(at: [indexPath], with: .automatic)
                     }
@@ -160,11 +201,11 @@ extension SelfHandledCardsViewController: UITableViewDelegate{
         }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if (selfHandledData[indexPath.row].cardTemplateType == "basic" && (selfHandledData[indexPath.row].imageLink == nil)){
+        if (selfHandledCardsArray[indexPath.row].cardTemplateType?.rawValue == Constants.SelfHandledCardsConstants.basic && (selfHandledCardsArray[indexPath.row].imageLink == nil)) {
             return 95
-        } else if (selfHandledData[indexPath.row].cardTemplateType == "basic" && (selfHandledData[indexPath.row].imageLink != nil)){
+        } else if (selfHandledCardsArray[indexPath.row].cardTemplateType?.rawValue == Constants.SelfHandledCardsConstants.basic && (selfHandledCardsArray[indexPath.row].imageLink != nil)) {
             return 130
-        } else if (selfHandledData[indexPath.row].cardTemplateType == "illustration"){
+        } else if (selfHandledCardsArray[indexPath.row].cardTemplateType?.rawValue == Constants.SelfHandledCardsConstants.illustration){
             return 280
         }
         return 1
@@ -173,20 +214,9 @@ extension SelfHandledCardsViewController: UITableViewDelegate{
 
 extension SelfHandledCardsViewController: ClickDelegate{
     func clicked(_ row: Int, _ buttonState: String) {
-        let actionTypeAndValue = selfHandledData[row].actionTypeAndValue
+        let actionTypeAndValue = selfHandledCardsArray[row].actionTypeAndValue
         if let actionTypeAndValue = actionTypeAndValue{
             SelfHandledManager.actionHandling(typeOfAction: actionTypeAndValue.typeOfAction, actionValue: actionTypeAndValue.actionValue)
         }
-    }
-}
-
-extension SelfHandledCardsViewController{
-    func uiButtonConfiguration(title: String)-> String{
-        var text = title // Replace with user input
-        let maxLength = 20 // Replace with desired maximum length
-        if title.count > maxLength {
-           text = title.prefix(maxLength) + "..."
-        }
-        return text
     }
 }

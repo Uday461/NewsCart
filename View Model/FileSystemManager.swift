@@ -10,19 +10,19 @@ import CommonCrypto
 import UIKit
 class FileSystemManager{
     //Method for fetching the documentary URL path.
-    func filePath(forImageName imageName: String) -> URL? {
+    func filePath(forImageName imageName: String, imageFormat: String = "") -> URL? {
         let fileManager = FileManager.default
         guard let documentURL = fileManager.urls(for: .documentDirectory,in: FileManager.SearchPathDomainMask.userDomainMask).first else {
             LogManager.error("Error: File doesn't exit.")
             return nil
         }
-        return documentURL.appendingPathComponent(imageName)
+        return documentURL.appendingPathComponent(imageName+imageFormat)
     }
     //Method for storing the image into documentary.
     func store(image: UIImage, forImageName imageName: String, imageFormat format: String) {
         if ((format == ".png") || (format == ".webp")){
             if let pngRepresentation = image.pngData() {
-                if let filePath = filePath(forImageName: imageName) {
+                if let filePath = filePath(forImageName: imageName, imageFormat: format) {
                     do  {
                         try pngRepresentation.write(to: filePath,
                                                     options: .atomic)
@@ -33,7 +33,7 @@ class FileSystemManager{
             }
         } else if (format == ".jpg"){
             if let jpgRepresentation = image.jpegData(compressionQuality: 1){
-                if let filePath = filePath(forImageName: imageName) {
+                if let filePath = filePath(forImageName: imageName, imageFormat: format) {
                     do  {
                         try jpgRepresentation.write(to: filePath)
                     } catch let err {

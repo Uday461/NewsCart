@@ -21,6 +21,17 @@ struct Constants{
     static let noImage = "no-image-icon"
     static let appID = "DAO6UGZ73D9RTK8B5W96TPYN"
     static let appGroupID = "group.com.Uday.NewsCart.MoEngage"
+    
+    struct SelfHandledCardsConstants {
+        static let basic = "basic"
+        static let illustration = "illustration"
+    }
+    
+    struct TableViewCellIdentifiers {
+        static let cardsillustrationCell = "cardsillustrationCell"
+        static let cardsBasicWithImageCell = "cardsBasicWithImageCell"
+        static let cardsCell = "cardsCell"
+    }
 }
 
 struct Identifiers{
