@@ -7,8 +7,8 @@
 
 import Foundation
 struct APIEndPoints{
-    static let apiForFetchingNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e8e7563acd3f46b4b70bb69f63f3d48c&pageSize=\(pageSize)&page="
-    static let apiForFetchingCategoryNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=e8e7563acd3f46b4b70bb69f63f3d48c&pageSize=\(pageSize)&category="
+    static let apiForFetchingNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=\(Constants.apiKey)&pageSize=\(pageSize)&page="
+    static let apiForFetchingCategoryNews = "https://newsapi.org/v2/top-headlines?country=in&apiKey=\(Constants.apiKey)&pageSize=\(pageSize)&category="
     static let pageSize = 5
 }
 struct Constants{
@@ -19,9 +19,9 @@ struct Constants{
     static let technologyNewsApiQuery = "technology"
     static let sportsNewsApiQuery = "sports"
     static let noImage = "no-image-icon"
-    static let appID = "DAO6UGZ73D9RTK8B5W96TPYN"
+    static let appID = ""
     static let appGroupID = "group.com.Uday.NewsCart.MoEngage"
-    
+    static let apiKey = ""
     struct SelfHandledCardsConstants {
         static let basic = "basic"
         static let illustration = "illustration"
