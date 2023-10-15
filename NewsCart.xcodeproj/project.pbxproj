@@ -16,6 +16,7 @@
 		7801459E2A7B7B1600844EBC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7801459C2A7B7B1600844EBC /* MainInterface.storyboard */; };
 		780145A22A7B7B1600844EBC /* NewsCartContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 780145942A7B7B1600844EBC /* NewsCartContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7822A6B52ADBB52900B22669 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */; };
+		7822A6B82ADBD00800B22669 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7822A6B72ADBD00800B22669 /* .gitignore */; };
 		7840F56B2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */; };
 		7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */; };
 		7840F5712AA0F931003F4B91 /* FetchSelfHandledCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */; };
@@ -122,6 +123,8 @@
 		7801459D2A7B7B1600844EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7801459F2A7B7B1600844EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		7822A6B72ADBD00800B22669 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7822A6B92ADBD02500B22669 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledCardsViewController.swift; sourceTree = "<group>"; };
 		7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSelfHandledCards.swift; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 		7892672A2A6115B300959887 = {
 			isa = PBXGroup;
 			children = (
+				7822A6B72ADBD00800B22669 /* .gitignore */,
+				7822A6B92ADBD02500B22669 /* Config.xcconfig */,
 				7892674D2A6123EB00959887 /* Model */,
 				7892674E2A6123F300959887 /* View */,
 				789267562A62F44C00959887 /* Protocols */,
@@ -571,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7822A6B82ADBD00800B22669 /* .gitignore in Resources */,
 				789267462A6115B600959887 /* LaunchScreen.storyboard in Resources */,
 				789267432A6115B600959887 /* Assets.xcassets in Resources */,
 				7892673E2A6115B400959887 /* Main.storyboard in Resources */,
@@ -892,6 +898,7 @@
 		};
 		789267482A6115B600959887 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7822A6B92ADBD02500B22669 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -952,6 +959,7 @@
 		};
 		789267492A6115B600959887 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7822A6B92ADBD02500B22669 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
