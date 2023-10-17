@@ -52,9 +52,9 @@ class HeaderView: UIView{
     }
     
     
-//    @IBAction func cardsInboxButtonPressed(_ sender: Any) {
-//        fetchCardsInboxMessagesDelegate?.fetchCardsInboxMessages()
-//    }
+    @IBAction func cardsInboxButtonPressed(_ sender: Any) {
+        fetchCardsInboxMessagesDelegate?.fetchCardsInboxMessages()
+    }
     
     
 //    @IBAction func selfCardsButtonPressed(_ sender: Any) {
@@ -72,7 +72,7 @@ class HeaderView: UIView{
     }
     
     override var intrinsicContentSize: CGSize{
-        return CGSize(width: UIView.noIntrinsicMetric, height: 130)
+        return CGSize(width: UIView.noIntrinsicMetric, height: 165)
     }
     
     private func commonInit(){
