@@ -14,7 +14,6 @@ import MoEngageInbox
 import CoreLocation
 import MoEngageCards
 import MoEngageInApps
-//import FileManagementSDK
 
 class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate, MoEngageCardsDelegate{
     
@@ -34,8 +33,9 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
     var _data: Data? = nil
     let context = CoreDataConfiguration.shared.persistentContainer.viewContext
     var inboxController: MoEngageInboxViewController?
-    let child = SpinnerViewController()
-
+    var isLoading = false
+    var isPaginationComplete = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,7 +48,10 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
         tableView.dataSource = self
         setupTableHeaderView()
         header.setupPopButton()
-        createSpinnerView()
+      //  createSpinnerView()
+        let tableViewLoadingCellNib = UINib(nibName: "LoadingCell", bundle: nil)
+        self.tableView.register(tableViewLoadingCellNib, forCellReuseIdentifier: "loadingcellid")
+        
         apiNewsManager.fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingNews)\(page)")
         MoEngageSDKInbox.sharedInstance.getInboxViewController(withUIConfiguration: MoEngageInboxConfiguration.getMoEngageInboxConfiguration(), withInboxWithControllerDelegate: self, forAppID: Constants.appID) { inboxController in
             self.inboxController = inboxController
@@ -78,12 +81,15 @@ class NewsViewController: UIViewController, MoEngageInboxViewControllerDelegate,
         
     }
     
-    func createSpinnerView() {
-        // add the spinner view controller
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
+    func loadMoreData() {
+            if !self.isLoading {
+                self.isLoading = true
+                DispatchQueue.global().asyncAfter(deadline: .now()) {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.isLoading = false
+                    }
+                }
+            }
     }
-
 }

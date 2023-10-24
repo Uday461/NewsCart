@@ -20,8 +20,10 @@ struct Constants{
     static let sportsNewsApiQuery = "sports"
     static let noImage = "no-image-icon"
     static let appID = Bundle.main.infoDictionary?["APP_ID"] as! String
+ 
     static let appGroupID = "group.com.Uday.NewsCart.MoEngage"
     static let apiKey = Bundle.main.infoDictionary?["API_KEY"] as! String
+
     struct SelfHandledCardsConstants {
         static let basic = "basic"
         static let illustration = "illustration"

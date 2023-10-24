@@ -1,0 +1,11 @@
+//
+//  Config.xcconfig
+//  NewsCart
+//
+//  Created by UdayKiran Naik on 23/10/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+APP_ID = DAO6UGZ73D9RTK8B5W96TPYN
+API_KEY = e8e7563acd3f46b4b70bb69f63f3d48c

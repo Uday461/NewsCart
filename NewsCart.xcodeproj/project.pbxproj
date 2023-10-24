@@ -15,7 +15,12 @@
 		7801459B2A7B7B1600844EBC /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7801459A2A7B7B1600844EBC /* NotificationViewController.swift */; };
 		7801459E2A7B7B1600844EBC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7801459C2A7B7B1600844EBC /* MainInterface.storyboard */; };
 		780145A22A7B7B1600844EBC /* NewsCartContentExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 780145942A7B7B1600844EBC /* NewsCartContentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7822A6B52ADBB52900B22669 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */; };
+		782BA6AC2AE64E6600B63EBA /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 782BA6AB2AE64E6600B63EBA /* Config.xcconfig */; };
+		782BA6B42AE6742100B63EBA /* NewsCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA6B32AE6742100B63EBA /* NewsCartTests.swift */; };
+		782BA6BB2AE6744E00B63EBA /* APINewsManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA6BA2AE6744E00B63EBA /* APINewsManagerTests.swift */; };
+		782BA6BD2AE6746C00B63EBA /* URLProtocolMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA6BC2AE6746C00B63EBA /* URLProtocolMock.swift */; };
+		782BA6C02AE7869A00B63EBA /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782BA6BE2AE7869A00B63EBA /* LoadingCell.swift */; };
+		782BA6C12AE7869A00B63EBA /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 782BA6BF2AE7869A00B63EBA /* LoadingCell.xib */; };
 		7840F56B2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */; };
 		7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */; };
 		7840F5712AA0F931003F4B91 /* FetchSelfHandledCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */; };
@@ -87,6 +92,13 @@
 			remoteGlobalIDString = 780145932A7B7B1600844EBC;
 			remoteInfo = NewsCartContentExtension;
 		};
+		782BA6B52AE6742100B63EBA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7892672B2A6115B300959887 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 789267322A6115B400959887;
+			remoteInfo = NewsCart;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,8 +133,13 @@
 		7801459A2A7B7B1600844EBC /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		7801459D2A7B7B1600844EBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		7801459F2A7B7B1600844EBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
-		7822A6B92ADBD02500B22669 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		782BA6AB2AE64E6600B63EBA /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		782BA6B12AE6742100B63EBA /* NewsCartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NewsCartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		782BA6B32AE6742100B63EBA /* NewsCartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCartTests.swift; sourceTree = "<group>"; };
+		782BA6BA2AE6744E00B63EBA /* APINewsManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APINewsManagerTests.swift; sourceTree = "<group>"; };
+		782BA6BC2AE6746C00B63EBA /* URLProtocolMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLProtocolMock.swift; sourceTree = "<group>"; };
+		782BA6BE2AE7869A00B63EBA /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
+		782BA6BF2AE7869A00B63EBA /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfHandledCardsViewController.swift; sourceTree = "<group>"; };
 		7840F56E2AA0F1E5003F4B91 /* CardsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsCell.swift; sourceTree = "<group>"; };
 		7840F5702AA0F931003F4B91 /* FetchSelfHandledCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSelfHandledCards.swift; sourceTree = "<group>"; };
@@ -202,6 +219,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		782BA6AE2AE6742100B63EBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		789267302A6115B400959887 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -273,6 +297,15 @@
 			path = NewsCartContentExtension;
 			sourceTree = "<group>";
 		};
+		782BA6B22AE6742100B63EBA /* NewsCartTests */ = {
+			isa = PBXGroup;
+			children = (
+				782BA6B32AE6742100B63EBA /* NewsCartTests.swift */,
+				782BA6BA2AE6744E00B63EBA /* APINewsManagerTests.swift */,
+			);
+			path = NewsCartTests;
+			sourceTree = "<group>";
+		};
 		7840F5762AA1C961003F4B91 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				789267542A62F36C00959887 /* APINewsManager.swift */,
+				782BA6BC2AE6746C00B63EBA /* URLProtocolMock.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -321,7 +355,7 @@
 		7892672A2A6115B300959887 = {
 			isa = PBXGroup;
 			children = (
-				7822A6B92ADBD02500B22669 /* Config.xcconfig */,
+				782BA6AB2AE64E6600B63EBA /* Config.xcconfig */,
 				7892674D2A6123EB00959887 /* Model */,
 				7892674E2A6123F300959887 /* View */,
 				789267562A62F44C00959887 /* Protocols */,
@@ -334,6 +368,7 @@
 				789267352A6115B400959887 /* NewsCart */,
 				780145832A7A550D00844EBC /* NewsCartServiceExtension */,
 				780145992A7B7B1600844EBC /* NewsCartContentExtension */,
+				782BA6B22AE6742100B63EBA /* NewsCartTests */,
 				789267342A6115B400959887 /* Products */,
 				B1850B95057C3A663818EC2F /* Pods */,
 				57DED2359EA1A1A2E90A5E39 /* Frameworks */,
@@ -346,6 +381,7 @@
 				789267332A6115B400959887 /* NewsCart.app */,
 				780145822A7A550D00844EBC /* NewsCartServiceExtension.appex */,
 				780145942A7B7B1600844EBC /* NewsCartContentExtension.appex */,
+				782BA6B12AE6742100B63EBA /* NewsCartTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -383,13 +419,14 @@
 				7892673C2A6115B400959887 /* Main.storyboard */,
 				7892675B2A64686A00959887 /* HeaderView.xib */,
 				7892675D2A64687C00959887 /* HeaderView.swift */,
+				782BA6BF2AE7869A00B63EBA /* LoadingCell.xib */,
+				782BA6BE2AE7869A00B63EBA /* LoadingCell.swift */,
 				789267522A6170D300959887 /* CustomNewsCell.swift */,
 				78939D802A66F26300BDDD23 /* CustomSavedNewsCell.swift */,
 				7892673A2A6115B400959887 /* NewsViewController.swift */,
 				78939D7E2A66929E00BDDD23 /* NewsSavedVC.swift */,
 				78939D822A679E9700BDDD23 /* SavedArticleViewController.swift */,
 				7840F56A2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift */,
-				7822A6B42ADBB52900B22669 /* SpinnerViewController.swift */,
 				780145792A76A65500844EBC /* Extensions */,
 			);
 			path = View;
@@ -486,6 +523,24 @@
 			productReference = 780145942A7B7B1600844EBC /* NewsCartContentExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		782BA6B02AE6742100B63EBA /* NewsCartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 782BA6B72AE6742100B63EBA /* Build configuration list for PBXNativeTarget "NewsCartTests" */;
+			buildPhases = (
+				782BA6AD2AE6742100B63EBA /* Sources */,
+				782BA6AE2AE6742100B63EBA /* Frameworks */,
+				782BA6AF2AE6742100B63EBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				782BA6B62AE6742100B63EBA /* PBXTargetDependency */,
+			);
+			name = NewsCartTests;
+			productName = NewsCartTests;
+			productReference = 782BA6B12AE6742100B63EBA /* NewsCartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		789267322A6115B400959887 /* NewsCart */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7892674A2A6115B600959887 /* Build configuration list for PBXNativeTarget "NewsCart" */;
@@ -517,7 +572,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					780145812A7A550D00844EBC = {
@@ -525,6 +580,10 @@
 					};
 					780145932A7B7B1600844EBC = {
 						CreatedOnToolsVersion = 14.3.1;
+					};
+					782BA6B02AE6742100B63EBA = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 789267322A6115B400959887;
 					};
 					789267322A6115B400959887 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -549,6 +608,7 @@
 				789267322A6115B400959887 /* NewsCart */,
 				780145812A7A550D00844EBC /* NewsCartServiceExtension */,
 				780145932A7B7B1600844EBC /* NewsCartContentExtension */,
+				782BA6B02AE6742100B63EBA /* NewsCartTests */,
 			);
 		};
 /* End PBXProject section */
@@ -569,11 +629,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		782BA6AF2AE6742100B63EBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		789267312A6115B400959887 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				789267462A6115B600959887 /* LaunchScreen.storyboard in Resources */,
+				782BA6AC2AE64E6600B63EBA /* Config.xcconfig in Resources */,
+				782BA6C12AE7869A00B63EBA /* LoadingCell.xib in Resources */,
 				789267432A6115B600959887 /* Assets.xcassets in Resources */,
 				7892673E2A6115B400959887 /* Main.storyboard in Resources */,
 				7892675C2A64686A00959887 /* HeaderView.xib in Resources */,
@@ -686,6 +755,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		782BA6AD2AE6742100B63EBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				782BA6B42AE6742100B63EBA /* NewsCartTests.swift in Sources */,
+				782BA6BB2AE6744E00B63EBA /* APINewsManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7892672F2A6115B400959887 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -706,11 +784,11 @@
 				7899FB762A84D87800814E8F /* ImageExtension.swift in Sources */,
 				7801457B2A76A6B300844EBC /* NewsViewControllerExtension.swift in Sources */,
 				780145782A7122D600844EBC /* CoreDataManager.swift in Sources */,
-				7822A6B52ADBB52900B22669 /* SpinnerViewController.swift in Sources */,
 				7840F56B2AA0ED8C003F4B91 /* SelfHandledCardsViewController.swift in Sources */,
 				78CC11412ADA7F530082D24F /* CardType.swift in Sources */,
 				789267512A61399F00959887 /* APINewsModel.swift in Sources */,
 				789267372A6115B400959887 /* AppDelegate.swift in Sources */,
+				782BA6BD2AE6746C00B63EBA /* URLProtocolMock.swift in Sources */,
 				7840F57F2AA1F49F003F4B91 /* SelfHandledModel.swift in Sources */,
 				7840F56F2AA0F1E5003F4B91 /* CardsCell.swift in Sources */,
 				789267392A6115B400959887 /* SceneDelegate.swift in Sources */,
@@ -731,6 +809,7 @@
 				789267552A62F36C00959887 /* APINewsManager.swift in Sources */,
 				7840F5812AA1F8D4003F4B91 /* SelfHandledManager.swift in Sources */,
 				7840F57A2AA1E7BE003F4B91 /* CardsBasicWithImageCell.swift in Sources */,
+				782BA6C02AE7869A00B63EBA /* LoadingCell.swift in Sources */,
 				78817A1F2A7BACA300AC2CA7 /* ActionableNotificationManager.swift in Sources */,
 				787F4F152A9DC7C800376F2F /* NavigatingToScreen.swift in Sources */,
 				7848B5012AAEF3A0008613B8 /* ReturnAPINewsModel.swift in Sources */,
@@ -751,6 +830,11 @@
 			isa = PBXTargetDependency;
 			target = 780145932A7B7B1600844EBC /* NewsCartContentExtension */;
 			targetProxy = 780145A02A7B7B1600844EBC /* PBXContainerItemProxy */;
+		};
+		782BA6B62AE6742100B63EBA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 789267322A6115B400959887 /* NewsCart */;
+			targetProxy = 782BA6B52AE6742100B63EBA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -892,9 +976,55 @@
 			};
 			name = Release;
 		};
+		782BA6B82AE6742100B63EBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BPWYRAF5X7;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Uday.NewsCartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsCart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewsCart";
+			};
+			name = Debug;
+		};
+		782BA6B92AE6742100B63EBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = BPWYRAF5X7;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Uday.NewsCartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NewsCart.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NewsCart";
+			};
+			name = Release;
+		};
 		789267482A6115B600959887 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7822A6B92ADBD02500B22669 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -955,7 +1085,6 @@
 		};
 		789267492A6115B600959887 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7822A6B92ADBD02500B22669 /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1092,6 +1221,15 @@
 			buildConfigurations = (
 				780145A42A7B7B1600844EBC /* Debug */,
 				780145A52A7B7B1600844EBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		782BA6B72AE6742100B63EBA /* Build configuration list for PBXNativeTarget "NewsCartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				782BA6B82AE6742100B63EBA /* Debug */,
+				782BA6B92AE6742100B63EBA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

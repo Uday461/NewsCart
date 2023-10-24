@@ -35,13 +35,21 @@ class APINewsManager{
     
     
     //Method for URL session GET request.
-    func apiRequest(url: String, key:String="" , _ completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?, _ key: String) -> Void){
+    func apiRequest(url: String, key:String="" , urlSessionWithConfiguration: URLSession? = nil, _ completion: @escaping (_ data: Data?, _ response: URLResponse?, _ error: Error?, _ key: String) -> Void){
         let url = URL(string: url)
         if let _url = url{
+            if let urlSessionWithConfiguration = urlSessionWithConfiguration {
+           let task = urlSessionWithConfiguration.dataTask(with: _url) { data, response, error in
+            completion(data, response, error, key)
+            }
+                task.resume()
+            }
+            else { 
             let task = URLSession.shared.dataTask(with: _url) { data, response, error in
                 completion(data, response, error, key)
             }
-            task.resume()
+                task.resume()
+            }
         }
     }
     

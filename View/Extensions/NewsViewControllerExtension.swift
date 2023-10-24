@@ -12,12 +12,10 @@ import MoEngageSDK
 import MoEngageInbox
 import MoEngageCards
 import MoEngageInApps
-//import FileManagementSDK
 
 //MARK: - FetchNews Protocol Methods
 
 extension NewsViewController: FetchNews{
-    
     //Following method is used to handle the error when URLSession requesting fails and display alert to user.
     func didFailErrorDueToNetwork(_ networkError: Error) {
         LogManager.error(networkError.localizedDescription)
@@ -27,20 +25,14 @@ extension NewsViewController: FetchNews{
     
     //Following method is used for checking valid articles and updating "articles" variable.
     func fetchAndUpdateNews(_ apiNewsModel: APINewsModel) {
-        
-        // wait two seconds to simulate some work happening
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            // then remove the spinner view controller
-            self.child.willMove(toParent: nil)
-            self.child.view.removeFromSuperview()
-            self.child.removeFromParent()
-        }
-        
         self.apiNewsModel = apiNewsModel
         totalArticles = totalArticles + apiNewsModel.articles.count
         guard let _validArticles = apiNewsManager.validArticlesList(articles: apiNewsModel.articles) else{
             LogManager.error("Valid Articles is nil")
-            return }
+            isPaginationComplete = true
+            loadMoreData()
+            return
+        }
         LogManager.logging("Total Articles:\(self.totalArticles)")
         if (page == 1){
             self.articles = _validArticles
@@ -50,9 +42,11 @@ extension NewsViewController: FetchNews{
             self.articles?.append(contentsOf: _validArticles)
             invalidArticlesCount = invalidArticlesCount + (apiNewsModel.articles.count - (_validArticles.count))
         }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        if let _articles = articles, _articles.count == (apiNewsModel.totalResults - invalidArticlesCount) {
+            isPaginationComplete = true
         }
+        loadMoreData()
+        
     }
     
 }
@@ -87,8 +81,8 @@ extension NewsViewController: FetchSelfHandledCards{
             let selfHandledCardsArray = selfHandledManager.returnSelfHandledData()
             let selfHandledVM = SelfHandledViewModel(selfHandledModel: selfHandledCardsArray)
             selfHandledCardsVC.selfHandledCardsArray = selfHandledVM.getSelfHandledVM()
-           }
-     }
+        }
+    }
 }
 
 
@@ -116,7 +110,7 @@ extension NewsViewController: MoEngageCardsViewControllerDelegate{
 //MARK: - MoEngageIOSNotificationCentre callback methods
 
 extension NewsViewController{
-
+    
     //Called when inbox cell is selected
     func inboxEntryClicked(_ inboxItem: MoEngageInboxEntry) {
         LogManager.logging("Inbox item clicked")
@@ -151,7 +145,6 @@ extension NewsViewController: FetchCategoryNews{
         page = 1
         invalidArticlesCount = 0
         LogManager.logging("Selected news category: \(category)")
-        createSpinnerView()
         apiNewsManager.fetchSelectedCategoryNews(category: category, page: page)
     }
     //Following method is used for fetching saved news articles.
@@ -165,63 +158,93 @@ extension NewsViewController: FetchCategoryNews{
 
 extension NewsViewController:UITableViewDataSource{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return articles?.count ?? 0
+        if section == 0 {
+            return articles?.count ?? 0
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.newsCell) as! CustomNewsCell
-        cell.clickDelegate = self
-        cell.cellIndex = indexPath
-        fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink:(articles?[indexPath.row].url)!)
-        
-        if (fetchSavedArticle.count == 0){
-            cell.saveImageView.image = UIImage(systemName: Identifiers.systemName.bookmark)
-        } else {
-            cell.saveImageView.image = UIImage(systemName: Identifiers.systemName.bookmarkfill)
-        }
-        
-        cell.newsTitle.text = articles?[indexPath.row].title
-        cell.newsDescription.text = articles?[indexPath.row].description
-        if let source = articles?[indexPath.row].source.name{
-            cell.newsSource.text = source
-        } else{
-            cell.newsSource.text = "No Source."
-        }
-        let fileName = fileSystemManager.generateUniqueFilename(forUrlString: (articles?[indexPath.row].url)!)
-        if let urlToImage = articles?[indexPath.row].urlToImage, let fileName = fileName{
-            apiNewsManager.apiRequest(url: urlToImage, key: fileName) { data, response, error, fileName in
-                var imageType = ""
-                if let _data = data{
-                    DispatchQueue.main.async {
-                        let imageFetched: UIImage = UIImage(data: _data) ?? UIImage(named: Constants.noImage)!
-                        cell.newsImage.image = imageFetched
-                        imageType = ImageExtension.returnImageExtension(imageFormat: _data.format())
-                        print(imageType)
-                        let imageProperty = ImagePropertyModel(data: _data, key: fileName, imageFormat: imageType)
-                        self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
+        let cellSection = indexPath.section
+        switch (cellSection) {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.newsCell) as! CustomNewsCell
+            cell.clickDelegate = self
+            cell.cellIndex = indexPath
+            if let urlLink = (articles?[indexPath.row].url) {
+                fetchSavedArticle = coreDataManager.fetchSavedArticle(urlLink: urlLink)
+            }
+            if (fetchSavedArticle.count == 0){
+                cell.saveImageView.image = UIImage(systemName: Identifiers.systemName.bookmark)
+            } else {
+                cell.saveImageView.image = UIImage(systemName: Identifiers.systemName.bookmarkfill)
+            }
+            
+            cell.newsTitle.text = articles?[indexPath.row].title
+            cell.newsDescription.text = articles?[indexPath.row].description
+            if let source = articles?[indexPath.row].source.name{
+                cell.newsSource.text = source
+            } else{
+                cell.newsSource.text = "No Source."
+            }
+            let fileName = fileSystemManager.generateUniqueFilename(forUrlString: (articles?[indexPath.row].url)!)
+            if let urlToImage = articles?[indexPath.row].urlToImage, let fileName = fileName{
+                apiNewsManager.apiRequest(url: urlToImage, key: fileName) { data, response, error, fileName in
+                    var imageType = ""
+                    if let _data = data{
+                        DispatchQueue.main.async {
+                            let imageFetched: UIImage = UIImage(data: _data) ?? UIImage(named: Constants.noImage)!
+                            cell.newsImage.image = imageFetched
+                            imageType = ImageExtension.returnImageExtension(imageFormat: _data.format())
+                            print(imageType)
+                            let imageProperty = ImagePropertyModel(data: _data, key: fileName, imageFormat: imageType)
+                            self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
+                        }
+                    }
+                    else{
+                        DispatchQueue.main.async {
+                            cell.newsImage.image = UIImage(named: Constants.noImage)
+                            let imageData = UIImage(named: Constants.noImage)?.pngData()
+                            guard let _imageData = imageData else {return}
+                            let imageProperty = ImagePropertyModel(data: _imageData, key: fileName, imageFormat: ".png")
+                            self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
+                        }
                     }
                 }
-                else{
-                    DispatchQueue.main.async {
-                        cell.newsImage.image = UIImage(named: Constants.noImage)
-                        let imageData = UIImage(named: Constants.noImage)?.pngData()
-                        guard let _imageData = imageData else {return}
-                        let imageProperty = ImagePropertyModel(data: _imageData, key: fileName, imageFormat: ".png")
-                        self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
-                    }
+            } else {
+                DispatchQueue.main.async {
+                    cell.newsImage.image = UIImage(named: Constants.noImage)
+                    let imageData = UIImage(named: Constants.noImage)?.pngData()
+                    guard let _imageData = imageData, let fileName = fileName else {return}
+                    let imageProperty = ImagePropertyModel(data: _imageData, key: fileName, imageFormat: ".png")
+                    self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
                 }
             }
-        } else {
-            DispatchQueue.main.async {
-                cell.newsImage.image = UIImage(named: Constants.noImage)
-                let imageData = UIImage(named: Constants.noImage)?.pngData()
-                guard let _imageData = imageData, let fileName = fileName else {return}
-                let imageProperty = ImagePropertyModel(data: _imageData, key: fileName, imageFormat: ".png")
-                self.imagesDictionary[(self.articles?[indexPath.row].url)!] = imageProperty
-            }
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "loadingcellid", for: indexPath) as! LoadingCell
+            cell.activityIndicator.startAnimating()
+            return cell
+            
+        default:
+            break
         }
-        return cell
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 140 // Item Cell height
+        } else {
+            return isPaginationComplete ? 0 : 140 // Loading Cell height
+        }
     }
 }
 
@@ -245,7 +268,6 @@ extension NewsViewController:  UITableViewDelegate{
                 LogManager.logging("invalid Articles Count: \(self.invalidArticlesCount)")
                 if (_articles.count < (apiNewsModel!.totalResults - invalidArticlesCount)){
                     page = page + 1
-                    createSpinnerView()
                     apiNewsManager.fetchNews(newsUrl: "\(APIEndPoints.apiForFetchingNews)\(page)")
                 } else {
                     LogManager.logging("All the valid news updates has been fetched.")
@@ -292,7 +314,7 @@ extension NewsViewController: ClickDelegate{
             }
             let newArticle = coreDataManager.articleInfoModel(imageName: key+imageFormat, newsDescription: (articles?[row].description)!, newsTitle: (articles?[row].title!)!, sourceName: articles?[row].source.name, urlLink: (articles?[row].url)!)
             LogManager.logging("ImageFileName: \(key+imageFormat)")
-           
+            
             guard let url = articles?[row].url, let _imageURL = articles?[row].urlToImage else {
                 return
             }
