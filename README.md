@@ -1,0 +1,2 @@
+# NewsCart
+NewsCart Application
