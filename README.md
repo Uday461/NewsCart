@@ -1,5 +1,5 @@
 # NewsCart iOS Application
-> A mobile iOS application that displays real-time news articles.
+> A mobile iOS application that displays users with the real-time news articles.
 > 
 > Utilizing CoreData and file storage management, the application provides an option to save the news articles offline/bookmark them.
 > 
